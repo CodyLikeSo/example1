@@ -8,7 +8,7 @@ import HoverButton from './navigation/hoverbar'
 function App() {
   return (
     <>
-      <div className='text-6xl'>
+      <div className='text-2xl'>
         <HoverButton />
       </div>
     </>
