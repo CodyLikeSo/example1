@@ -1,36 +1,27 @@
-// import React from 'react';
-// // import 'react-tooltip/dist/react-tooltip.css';
-// import { Tooltip } from 'react-tooltip';
+import React, { useState } from 'react';
 
-// export default function HoverButton() {
-//   return (
-//     <div className="flex justify-center items-center h-screen">
-//       TEXT
-//     </div>
-//   );
-// }
+export default function HoverButton({ word }) {
+  const [isHovered, setIsHovered] = useState(false);
 
-
-
-import React from 'react';
-// import 'react-tooltip/dist/react-tooltip.css';
-import { Tooltip } from 'react-tooltip';
-
-export default function HoverButton() {
   return (
-    <div className="flex justify-center items-center h-screen">
-      <button
-        data-tooltip-id="my-tooltip"
-        className="px-32 py-1 bg-green-600 font-bold rounded-lg hover:px-48 hover:bg-green-500 duration-100 ease-in-out"
-      >
-        {/* EMPTY */}
-      </button>
-      <Tooltip id="my-tooltip" place="right" className='bg-[#242424]'>
-        <span>TEXT</span>
-      </Tooltip>
+    <div className="items-center">
+      <div className="relative inline-block">
+        <button
+          className={`h-1 bg-green-600 rounded transition-all duration-600 ${
+            isHovered ? 'w-20' : 'w-10'
+          }`}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        ></button>
+
+        <div
+          className={`absolute left-full top-0 ml-2 text-[#D9D9D9] transition-opacity duration-200 ${
+            isHovered ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          <p className="rounded px-2 text-lg">{word}</p>
+        </div>
+      </div>
     </div>
   );
 }
-
-
-

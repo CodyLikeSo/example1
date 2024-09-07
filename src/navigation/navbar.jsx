@@ -1,5 +1,7 @@
+import HoverButton from "./hoverbar";
+
 export default function Navbar() {
     return (
-        <h1>TEXT</h1>
+        <div></div>
     );
 }
