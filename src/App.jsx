@@ -8,18 +8,7 @@ import InteractiveBars from './navigation/navbar'
 function App() {
   return (
     <>
-    {/* <div className="flex flex-col justify-center items-start h-screen">
-      <div className="flex flex-col items-start space-y-2">
-        <HoverButton word="Home" />
-        <HoverButton word="Aboutme" />
-        <HoverButton word="Projects" />
-        <HoverButton word="Stack" />
-        <HoverButton word="AskLlama" />
-      </div>
-    </div> */}
-
       <InteractiveBars />
-
     </>
   )
 }
