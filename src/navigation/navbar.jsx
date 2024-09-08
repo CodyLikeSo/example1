@@ -5,9 +5,10 @@ import { Project } from '../segments/projects/project';
 import { Llama } from '../segments/llama/llama';
 import { Stack } from '../segments/stack/stack';
 import { About } from '../segments/about/about';
+import { Hero } from '../segments/hero/hero';
 
 const InteractiveBars = () => {
-  const [activeScreen, setActiveScreen] = useState(1);
+  const [activeScreen, setActiveScreen] = useState(null);
 
   const bars = [
     { id: 1, component: <Home /> },
@@ -18,19 +19,24 @@ const InteractiveBars = () => {
   ];
 
   const handleScroll = (event) => {
-    if (event.deltaY > 0) {
-      setActiveScreen((prev) => (prev < bars.length ? prev + 1 : prev));
-    } else {
-      setActiveScreen((prev) => (prev > 1 ? prev - 1 : prev));
-    }
+    setActiveScreen((prev) => {
+      if (event.deltaY > 0) {
+        return prev < bars.length ? (prev === null ? 1 : prev + 1) : prev;
+      } else {
+        return prev > 1 ? prev - 1 : null;
+      }
+    });
   };
 
   const handleKeyDown = (event) => {
-    if (event.key === 'ArrowDown') {
-      setActiveScreen((prev) => (prev < bars.length ? prev + 1 : prev));
-    } else if (event.key === 'ArrowUp') {
-      setActiveScreen((prev) => (prev > 1 ? prev - 1 : prev));
-    }
+    setActiveScreen((prev) => {
+      if (event.key === 'ArrowDown') {
+        return prev < bars.length ? (prev === null ? 1 : prev + 1) : prev;
+      } else if (event.key === 'ArrowUp') {
+        return prev > 1 ? prev - 1 : null;
+      }
+      return prev;
+    });
   };
 
   useEffect(() => {
@@ -56,7 +62,11 @@ const InteractiveBars = () => {
         ))}
       </div>
       <div className="flex-grow flex justify-center items-center">
-        {activeScreen !== null && (
+        {activeScreen === null ? (
+          <div className="w-1/2 h-1/2 p-4 bg-[#242424] rounded-2xl shadow-[0_0px_40px_10px_rgba(0,0,0,0.25)] text-[#D9D9D9]">
+            <Hero />
+          </div>
+        ) : (
           <div className="w-1/2 h-1/2 p-4 bg-[#242424] rounded-2xl shadow-[0_0px_40px_10px_rgba(0,0,0,0.25)] text-[#D9D9D9]">
             {bars.find(bar => bar.id === activeScreen).component}
           </div>
