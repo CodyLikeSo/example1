@@ -63,11 +63,11 @@ const InteractiveBars = () => {
       </div>
       <div className="flex-grow flex justify-center items-center">
         {activeScreen === null ? (
-          <div className="w-1/2 h-1/2 p-4 bg-[#242424] rounded-2xl shadow-[0_0px_40px_10px_rgba(0,0,0,0.25)] text-[#D9D9D9]">
+          <div className="2xl:w-3/5 2xl:h-3/5 xl:w-3/5 xl:h-3/5 lg:w-4/5 lg:h-3/5 md:w-4/5 md:h-3/5 sm:w-4/5 sm:h-3/5 max-sm:w-4/5 max-sm:h-3/5 p-4 bg-[#242424] rounded-2xl shadow-[0_0px_40px_10px_rgba(0,0,0,0.25)] text-[#D9D9D9]">
             <Hero />
           </div>
         ) : (
-          <div className="w-1/2 h-1/2 p-4 bg-[#242424] rounded-2xl shadow-[0_0px_40px_10px_rgba(0,0,0,0.25)] text-[#D9D9D9]">
+          <div className="2xl:w-3/5 2xl:h-3/5 xl:w-3/5 xl:h-3/5 lg:w-4/5 lg:h-3/5 md:w-4/5 md:h-3/5 sm:w-4/5 sm:h-3/5 max-sm:w-4/5 max-sm:h-3/5 p-4 bg-[#242424] rounded-2xl shadow-[0_0px_40px_10px_rgba(0,0,0,0.25)] text-[#D9D9D9]">
             {bars.find(bar => bar.id === activeScreen).component}
           </div>
         )}
