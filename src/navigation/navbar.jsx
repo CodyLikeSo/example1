@@ -55,7 +55,7 @@ const InteractiveBars = () => {
         {bars.map(bar => (
           <div
             key={bar.id}
-            className="w-6 h-1 bg-green-600 m-5 cursor-pointer transform transition-transform duration-300"
+            className="w-6 h-[2px] rounded-[0.7px] bg-green-600 m-5 cursor-pointer transform transition-transform duration-300"
             style={{ transform: activeScreen === bar.id ? 'scaleX(6.0) scaleY(3.0)' : 'scaleX(1) scaleY(1)' }}
             onMouseEnter={() => setActiveScreen(bar.id)}
           />
