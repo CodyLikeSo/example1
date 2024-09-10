@@ -70,23 +70,21 @@ const InteractiveBars = () => {
           <div
             key={bar.id}
             className={`absolute w-3/5 h-3/5 p-4 bg-[#242424] rounded-[30px] shadow-[0_0px_40px_10px_rgba(0,0,0,0.25)] text-[#D9D9D9] transition-all duration-700 ease-in-out ${
-              activeScreen === bar.id ? 'opacity-100 transform scale-100' : 'opacity-0 transform scale-90 pointer-events-none'
+              activeScreen === bar.id ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'
             }`}
           >
             {bar.component}
           </div>
         ))}
 
-        <div
-          className={`absolute w-3/5 h-3/5 p-4 bg-[#242424] rounded-[30px] shadow-[0_0px_40px_10px_rgba(0,0,0,0.25)] text-[#D9D9D9] transition-all duration-700 ease-in-out ${
-            activeScreen === null ? 'opacity-100 transform scale-100' : 'opacity-0 transform scale-90 pointer-events-none'
-          }`}
-        >
-          <div className="container mx-auto p-4">
-            <img src={mountain} className="absolute bottom-0 left-0 right-0 mx-auto object-contain" alt="Mountain" />
+        {activeScreen === null && (
+          <div className="absolute w-3/5 h-3/5 p-4 bg-[#242424] rounded-[30px] shadow-[0_0px_40px_10px_rgba(0,0,0,0.25)] text-[#D9D9D9] transition-all duration-700 ease-in-out opacity-100 translate-x-0">
+            <div className="container mx-auto p-4">
+              <img src={mountain} className="absolute bottom-0 left-0 right-0 mx-auto object-contain" />
+            </div>
+            <Hero />
           </div>
-          <Hero />
-        </div>
+        )}
       </div>
     </div>
   );
