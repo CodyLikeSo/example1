@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import { Home } from '../segments/home/home';
 import { Project } from '../segments/projects/project';
 import { Llama } from '../segments/llama/llama';
@@ -6,10 +7,9 @@ import { Stack } from '../segments/stack/stack';
 import { About } from '../segments/about/about';
 import { Hero } from '../segments/hero/hero';
 
-import mountain from '/home/cody/Cody/Programming/React/example1/example1/src/assets/Mountain_full.png'
+import RoundedTriangle from '../segments/hero/triangle';
 
-
-const InteractiveBars = () => {
+const InteractiveBars1 = () => {
   const [activeScreen, setActiveScreen] = useState(null);
 
   const bars = [
@@ -52,37 +52,31 @@ const InteractiveBars = () => {
   }, []);
 
   return (
-    <div className="flex h-screen relative">
-      <div className="flex flex-col justify-center absolute left-0 top-0 bottom-0">
-        {bars.map((bar) => (
+    <div className="flex h-screen">
+      <div className="flex flex-col justify-center">
+        {bars.map(bar => (
           <div
             key={bar.id}
             className="w-6 h-[2px] rounded-[0.7px] bg-green-600 m-5 cursor-pointer transform transition-transform duration-300"
-            style={{
-              transform: activeScreen === bar.id ? 'scaleX(6.0) scaleY(3.0)' : 'scaleX(1) scaleY(1)',
-            }}
+            style={{ transform: activeScreen === bar.id ? 'scaleX(6.0) scaleY(3.0)' : 'scaleX(1) scaleY(1)' }}
             onMouseEnter={() => setActiveScreen(bar.id)}
           />
         ))}
       </div>
-
-      <div className="flex justify-center items-center w-full">
-        <div className="w-3/5 h-3/5 p-4 bg-[#242424] rounded-2xl shadow-[0_0px_40px_10px_rgba(0,0,0,0.25)] text-[#D9D9D9] relative">
-          {activeScreen === null ? (
-            <div className='container mx-auto p-4'>
-              <Hero />
-            </div>
-          ) : (
-            bars.find((bar) => bar.id === activeScreen)?.component
-          )}
-          <img
-            src={mountain}
-            className="absolute bottom-0 left-0 right-0 mx-auto object-contain 2xl:h-4/5 "
-          />
-        </div>
+      <div className="flex-grow flex justify-center items-center">
+        {activeScreen === null ? (
+          <div className="2xl:w-3/5 2xl:h-3/5 xl:w-3/5 xl:h-3/5 lg:w-4/5 lg:h-3/5 md:w-4/5 md:h-3/5 sm:w-4/5 sm:h-3/5 max-sm:w-4/5 max-sm:h-3/5 p-4 bg-[#242424] rounded-2xl shadow-[0_0px_40px_10px_rgba(0,0,0,0.25)] text-[#D9D9D9] relative">
+            <img src={mountain} className="absolute inset-0 w-full h-full object-contain"/>
+            <Hero />
+          </div>
+        ) : (
+          <div className="2xl:w-3/5 2xl:h-3/5 xl:w-3/5 xl:h-3/5 lg:w-4/5 lg:h-3/5 md:w-4/5 md:h-3/5 sm:w-4/5 sm:h-3/5 max-sm:w-4/5 max-sm:h-3/5 p-4 bg-[#242424] rounded-2xl shadow-[0_0px_40px_10px_rgba(0,0,0,0.25)] text-[#D9D9D9]">
+            {bars.find(bar => bar.id === activeScreen).component}
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
-export default InteractiveBars;
+export default InteractiveBars1;
