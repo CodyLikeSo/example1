@@ -70,15 +70,14 @@ const InteractiveBars = () => {
         <div className="w-3/5 h-3/5 p-4 bg-[#242424] rounded-2xl shadow-[0_0px_40px_10px_rgba(0,0,0,0.25)] text-[#D9D9D9] relative">
           {activeScreen === null ? (
             <div className='container mx-auto p-4'>
+              <img src={mountain} className="absolute bottom-0 left-0 right-0 mx-auto object-contain"/>
               <Hero />
             </div>
+            
           ) : (
             bars.find((bar) => bar.id === activeScreen)?.component
           )}
-          <img
-            src={mountain}
-            className="absolute bottom-0 left-0 right-0 mx-auto object-contain 2xl:h-4/5 "
-          />
+
         </div>
       </div>
     </div>
