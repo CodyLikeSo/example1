@@ -1,7 +1,14 @@
-export const Home = () => (
-  <div>
-    <div className="p-4 bg-[#242424] rounded-2xl shadow-[0_0px_40px_10px_rgba(0,0,0,0.25)]">
+import Box from "./box";
+import Box1 from "./box1";
 
+export const Home = () => (
+  <div className="flex h-full w-full py-6 px-6">
+    <div className="h-full w-full rounded-[15px] mr-12 hover:scale-105 border-4 border-transparent hover:border-green-600 hover:border-opacity-100 transition-all duration-300">
+      <Box />
+    </div>
+
+    <div className="h-full w-full rounded-[15px] hover:scale-105 border-4 border-transparent hover:border-green-600 hover:border-opacity-100 transition-all duration-300">
+      <Box1 />
     </div>
   </div>
 );
