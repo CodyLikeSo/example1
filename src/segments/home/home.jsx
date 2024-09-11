@@ -2,8 +2,8 @@ import Box from "./box";
 import Box1 from "./box1";
 
 export const Home = () => (
-  <div className="flex h-full w-full py-6 px-6">
-    <div className="h-full w-full rounded-[15px] mr-12 hover:scale-105 border-2 border-transparent hover:border-opacity-100 transition-all duration-300">
+  <div className="flex h-full w-full py-[1%] px-[1%]">
+    <div className="h-full w-full rounded-[15px] mr-[3%] hover:scale-105 border-2 border-transparent hover:border-opacity-100 transition-all duration-300">
       <Box />
     </div>
 
