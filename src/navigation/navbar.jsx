@@ -6,6 +6,7 @@ import { Stack } from '../segments/stack/stack';
 import { About } from '../segments/about/about';
 import { Hero } from '../segments/hero/hero';
 
+import Snowfall from '../segments/hero/snowfall';
 import mountain from '/home/cody/Cody/Programming/React/example1/example1/src/assets/Mountain_full.png';
 
 const InteractiveBars = () => {
@@ -67,12 +68,13 @@ const InteractiveBars = () => {
               }}
             />
             <span
-              className={`absolute left-24 text-[#D9D9D9] hidden lg:block transition-opacity duration-300 ${
-                activeScreen === bar.id ? 'opacity-100' : 'opacity-0'
+              className={`absolute left-24 text-[#D9D9D9] hidden lg:block transition-all duration-700 transform ${
+                activeScreen === bar.id ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
               }`}
             >
               {bar.name}
             </span>
+
           </div>
         ))}
       </div>
@@ -96,6 +98,10 @@ const InteractiveBars = () => {
         >
           <div className="container mx-auto p-4">
             <img src={mountain} className="absolute bottom-0 left-0 right-0 mx-auto object-contain" alt="Mountain" />
+          </div>
+          
+          <div className='rounded-[30px]'>
+            <Snowfall />
           </div>
           <Hero />
         </div>
