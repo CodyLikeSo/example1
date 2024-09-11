@@ -12,11 +12,11 @@ const InteractiveBars = () => {
   const [activeScreen, setActiveScreen] = useState(null);
 
   const bars = [
-    { id: 1, component: <Home /> },
-    { id: 2, component: <About /> },
-    { id: 3, component: <Project /> },
-    { id: 4, component: <Stack /> },
-    { id: 5, component: <Llama /> },
+    { id: 1, name: 'Home', component: <Home /> },
+    { id: 2, name: 'About', component: <About /> },
+    { id: 3, name: 'Project', component: <Project /> },
+    { id: 4, name: 'Stack', component: <Stack /> },
+    { id: 5, name: 'Llama', component: <Llama /> },
   ];
 
   const handleScroll = (event) => {
@@ -56,12 +56,24 @@ const InteractiveBars = () => {
         {bars.map((bar) => (
           <div
             key={bar.id}
-            className="w-6 h-[2px] rounded-[0.7px] bg-green-600 m-5 cursor-pointer transition-transform duration-300"
-            style={{
-              transform: activeScreen === bar.id ? 'scaleX(6.0) scaleY(3.0)' : 'scaleX(1) scaleY(1)',
-            }}
+            className="relative flex items-center m-5 cursor-pointer"
             onMouseEnter={() => setActiveScreen(bar.id)}
-          />
+          >
+            <div
+              className="w-6 h-[2px] rounded-[0.7px] bg-green-600 transition-transform duration-300"
+              style={{
+                transformOrigin: 'left',
+                transform: activeScreen === bar.id ? 'scaleX(3.0)' : 'scaleX(1)',
+              }}
+            />
+            <span
+              className={`absolute left-24 text-[#D9D9D9] hidden lg:block transition-opacity duration-300 ${
+                activeScreen === bar.id ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              {bar.name}
+            </span>
+          </div>
         ))}
       </div>
 

@@ -1,6 +1,7 @@
+import { Text_about } from "./text_about";
+
 export const About = () => (
-  <div className="text-center">
-    <h2 className="text-xl font-bold">About screen</h2>
-    <p>Content About</p>
+  <div className="relative h-full w-full">
+    <Text_about/>
   </div>
 );
