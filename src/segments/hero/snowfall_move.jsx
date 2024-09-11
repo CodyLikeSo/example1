@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-const Snowfall = () => {
+const SnowfallMove = () => {
   useEffect(() => {
     const canvas = document.getElementById('snowfall');
     const ctx = canvas.getContext('2d');
@@ -56,16 +56,15 @@ const Snowfall = () => {
     };
 
     const handleMouseMove = (event) => {
-      const rect = canvas.getBoundingClientRect();
-      mouseX = event.clientX - rect.left;
-      mouseY = event.clientY - rect.top;
+      mouseX = event.offsetX;
+      mouseY = event.offsetY;
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    canvas.addEventListener('mousemove', handleMouseMove);
     updateParticles();
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      canvas.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('resize', resizeCanvas);
     };
   }, []);
@@ -78,4 +77,4 @@ const Snowfall = () => {
   );
 };
 
-export default Snowfall;
+export default SnowfallMove;
