@@ -61,8 +61,8 @@ const InteractiveBars = () => {
     <div className="flex h-screen relative overflow-hidden">
       <div className="flex flex-col justify-center absolute left-0 top-0 bottom-0">
         {bars.map((bar) => {
-          const offsetX = Math.max(-20, Math.min(20, (mousePosition.x - window.innerWidth / 2) / 50));
-          const offsetY = Math.max(-20, Math.min(20, (mousePosition.y - window.innerHeight / 2) / 50));
+          const offsetX = Math.max(0, Math.min(20, (mousePosition.x - window.innerWidth / 2) / 60));
+          const offsetY = Math.max(-30, Math.min(30, (mousePosition.y - window.innerHeight / 2) / 30));
 
           return (
             <div
@@ -98,8 +98,8 @@ const InteractiveBars = () => {
 
       <div className="flex justify-center items-center w-full overflow-hidden">
         {bars.map((bar) => {
-          const offsetX = Math.max(-10, Math.min(10, (mousePosition.x - window.innerWidth / 2) / 100));
-          const offsetY = Math.max(-10, Math.min(10, (mousePosition.y - window.innerHeight / 2) / 100));
+          const offsetX = Math.max(-100, Math.min(50, (mousePosition.x - window.innerWidth / 2) / 45));
+          const offsetY = Math.max(-100, Math.min(50, (mousePosition.y - window.innerHeight / 2) / 35));
 
           return (
             <div
@@ -109,7 +109,7 @@ const InteractiveBars = () => {
               }`}
               style={{
                 transform: `translate(${offsetX}px, ${offsetY}px)`,
-                transition: 'transform 0.2s ease-out, opacity 0.5s ease-out',
+                transition: 'transform 0.4s ease-out, opacity 0.4s ease-out',
               }}
             >
               {bar.component}
@@ -122,8 +122,8 @@ const InteractiveBars = () => {
             activeScreen === null ? 'opacity-100 transform scale-100' : 'opacity-0 transform scale-90 pointer-events-none'
           }`}
           style={{
-            transform: `translate(${Math.max(-10, Math.min(10, (mousePosition.x - window.innerWidth / 2) / 100))}px, ${Math.max(-10, Math.min(10, (mousePosition.y - window.innerHeight / 2) / 100))}px)`,
-            transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
+            transform: `translate(${Math.max(-100, Math.min(50, (mousePosition.x - window.innerWidth / 2) / 45))}px, ${Math.max(-100, Math.min(50, (mousePosition.y - window.innerHeight / 2) / 35))}px)`,
+            transition: 'transform 0.4s ease-out, opacity 0.4s ease-out',
           }}
         >
           <div className="container mx-auto p-4 ">

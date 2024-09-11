@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 const ParticleEffect = () => {
   const canvasRef = useRef(null);
   const particles = [];
-  const numParticles = 300;
+  const numParticles = 350;
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -31,7 +31,7 @@ const ParticleEffect = () => {
       }
 
       draw() {
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
         ctx.fillRect(this.x, this.y, this.size, this.size);
       }
 
