@@ -1,4 +1,4 @@
-import Icon from "./icons/icon";
+import Icon from "../icons/icon";
 
 export const Box = () => (
   <div className="relative h-full group">

@@ -1,6 +1,6 @@
-import Box from "./box";
-import Box1 from "./box1";
-import Box2 from "./box2";
+import Box2 from "./boxes/box2";
+import Box1 from "./boxes/box1";
+import Box from "./boxes/box";
 
 export const Home = () => (
   <div className="flex flex-col 2xl:flex-row h-full w-full py-4 px-4">
