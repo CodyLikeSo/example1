@@ -10,4 +10,4 @@ function Development() {
   )
 }
 
-export default Development;
+export default Transition(Development);
