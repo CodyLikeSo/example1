@@ -6,6 +6,8 @@ import { Stack } from '../segments/stack/stack';
 import { About } from '../segments/about/about';
 import { Hero } from '../segments/hero/hero';
 
+import Transition from './transition';
+
 import mountain from '/home/cody/Cody/Programming/React/example1/example1/src/assets/Mountain_full.png';
 
 const InteractiveBars = () => {
@@ -13,7 +15,7 @@ const InteractiveBars = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const bars = [
-    { id: 1, name: 'Home', component: <Home /> },
+    { id: 1, name: 'Experience', component: <Home /> },
     { id: 2, name: 'About', component: <About /> },
     { id: 3, name: 'Project', component: <Project /> },
     { id: 4, name: 'Stack', component: <Stack /> },
@@ -136,4 +138,4 @@ const InteractiveBars = () => {
   );
 };
 
-export default InteractiveBars;
+export default Transition(InteractiveBars);
