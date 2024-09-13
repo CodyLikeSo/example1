@@ -1,3 +1,5 @@
+import Transition from "../../../navigation/transition"
+
 function Development() {
   return (
     <>
@@ -8,4 +10,4 @@ function Development() {
   )
 }
 
-export default Development
+export default Development;

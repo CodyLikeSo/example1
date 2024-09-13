@@ -138,4 +138,4 @@ const InteractiveBars = () => {
   );
 };
 
-export default Transition(InteractiveBars);
+export default InteractiveBars;
