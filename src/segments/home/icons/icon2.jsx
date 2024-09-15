@@ -3,7 +3,7 @@ import { GiSoundWaves } from "react-icons/gi";
 
 export const Icon = () => (
     <div>
-        <GiSoundWaves size={84} color="#16A34A"/>
+        <GiSoundWaves size={64} color="#16A34A"/>
     </div>
   );
   
