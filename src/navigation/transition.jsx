@@ -9,7 +9,7 @@ const transition = (OgComponent) => {
         initial={{ scaleY: 0 }}
         animate={{ scaleY: 0 }}
         exit={{ scaleY: 1 }}
-        transition={{ duration: 0.6, ease: [0.6, 0.05, -0.01, 0.9] }}
+        transition={{ duration: 1.0, ease: [0.6, 0.05, -0.01, 0.95] }}
       />
 
       <motion.div
@@ -17,7 +17,7 @@ const transition = (OgComponent) => {
         initial={{ scaleY: 1 }}
         animate={{ scaleY: 0 }}
         exit={{ scaleY: 0 }}
-        transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
+        transition={{ duration: 1.0, ease: [0.3, 0.05, -0.01, 0.95] }}
       />
     </>
   );
