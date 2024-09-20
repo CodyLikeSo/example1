@@ -31,7 +31,7 @@ const ParticleEffect = () => {
       }
 
       draw() {
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
         ctx.fillRect(this.x, this.y, this.size, this.size);
       }
 

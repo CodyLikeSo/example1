@@ -130,7 +130,7 @@ const InteractiveBars = () => {
             background: 'linear-gradient(to bottom, #2a2a2a 30%, #242424 70%)',
           }}
         >
-          <div className="container mx-auto p-4 ">
+          <div className="container mx-auto p-4">
             <img src={mountain} className="absolute bottom-0 left-0 right-0 mx-auto object-contain rounded-[30px]" alt="Mountain" />
           </div>
           <Hero/>

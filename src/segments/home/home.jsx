@@ -4,6 +4,8 @@ import Box2 from "./boxes/box2";
 import Box1 from "./boxes/box1";
 import Box from "./boxes/box";
 
+import ParticleEffect from "../hero/particle";
+
 export const Home = () => {
   const [activeBox, setActiveBox] = useState(null);
   const navigate = useNavigate();
@@ -33,6 +35,9 @@ export const Home = () => {
 
   return (
     <div className="flex flex-col 2xl:flex-row h-full w-full py-4 px-4">
+      <div>
+        <ParticleEffect />
+      </div>
       {boxes.map((box, index) => (
         <div
           key={index}

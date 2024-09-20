@@ -9,7 +9,7 @@ export const Hero = () => {
       </div>
       <div className="relative 2xl:right-[20%] xl:right-[20%] lg:right-0 md:right-0 sm:right-0 mt-[12%]">
         <h2
-          className="2xl:text-8xl xl:text-7xl lg:text-7xl md:text-6xl sm:text-6xl text-2xl top-0 right-0 text-transparent bg-clip-text transition-transform duration-300 ease-out"
+          className="2xl:text-7xl xl:text-7xl lg:text-7xl md:text-6xl sm:text-6xl text-2xl top-0 right-0 text-transparent bg-clip-text transition-transform duration-300 ease-out"
           style={{
             backgroundImage: 'linear-gradient(to right, #ffffff 50%, #1A1A1A 70%)',
           }}
