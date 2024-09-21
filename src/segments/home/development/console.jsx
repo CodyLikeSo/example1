@@ -1,6 +1,10 @@
 import React, { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import consoleImage from '/home/cody/Cody/Programming/React/example1/example1/src/assets/arch.png';
 import NeofetchOutput from './neofetch_text';
+import development from './development';
+import management from '../management/management';
+import sound_design from '../sound_design/sound_design';
 
 const json = {
   "arch": "Arch | Bash \n \n Words cannot describe how much I fell in love with this system when a friend first recommended it to me. I started using Linux systems with the Manjaro distribution. At that moment I tried out the console for the first time and realized that this is what I wanted. I've always lacked the quick startup and tracking of processes like launching applications by typing a single command or working with Git repositories without touching the code editor. Also, I can't help but notice the fast performance of the system, even on an hdd disk, and the ability to customize it to fit my needs. \n \n Several times I installed Arch manually or with a script, but I settled on hyprdots by prasanthrangan and still use it."
@@ -9,9 +13,54 @@ const json = {
 function ConsoleEmulator() {
   const [input, setInput] = useState('');
   const [history, setHistory] = useState([
-    { type: 'component', content: <NeofetchOutput /> }
+    { type: 'component', content: <NeofetchOutput className=''/> }
   ]);
   const inputRef = useRef(null);
+  const navigate = useNavigate();
+
+  const commands = {
+    hello: {
+      action: () => setHistory(prev => [...prev, { type: 'text', content: 'hello world' }]),
+      description: 'Prints "hello world".'
+    },
+    bye: {
+      action: () => setHistory(prev => [...prev, { type: 'text', content: 'bye bye' }]),
+      description: 'Prints "bye bye".'
+    },
+    arch: {
+      action: () => setHistory(prev => [...prev, { type: 'text', content: json.arch }]),
+      description: 'Displays information about Arch Linux.'
+    },
+    clear: {
+      action: () => setHistory([]),
+      description: 'Clears the console history.'
+    },
+    refresh: {
+      action: () => window.location.reload(),
+      description: 'Reloads the page.'
+    },
+    list: {
+      action: () => {
+        const commandDescriptions = Object.entries(commands)
+          .map(([cmd, { description }]) => `${cmd.padEnd(15)} --${description}`)
+          .join('\n');
+        setHistory(prev => [...prev, { type: 'text', content: commandDescriptions }]);
+      },
+      description: 'Lists all available commands with descriptions.'
+    },
+    main: {
+      action: () => navigate('/'),
+      description: 'Redirects to the main page.'
+    },
+    management: {
+      action: () => navigate('/manage'),
+      description: 'Redirects to the management page.'
+    },
+    sound: {
+      action: () => navigate('/sound'),
+      description: 'Redirects to the sound design page.'
+    }
+  };
 
   const handleInputChange = (e) => {
     setInput(e.target.value);
@@ -22,16 +71,10 @@ function ConsoleEmulator() {
       const command = input.trim();
       setInput('');
       setTimeout(() => {
-        if (command === 'hello') {
-          setHistory((prevHistory) => [...prevHistory, { type: 'text', content: 'hello world' }]);
-        } else if (command === 'bye') {
-          setHistory((prevHistory) => [...prevHistory, { type: 'text', content: 'bye bye' }]);
-        } else if (command === 'arch') {
-          setHistory((prevHistory) => [...prevHistory, { type: 'text', content: json.arch }]);
-        } else if (command === 'clear') {
-          setHistory([]);
+        if (commands[command]) {
+          commands[command].action();
         } else {
-          setHistory((prevHistory) => [...prevHistory, { type: 'text', content: `zsh: command not found: ${command}` }]);
+          setHistory(prev => [...prev, { type: 'text', content: `zsh: command not found: ${command}` }]);
         }
       }, 200);
     }
@@ -44,12 +87,12 @@ function ConsoleEmulator() {
   };
 
   const highlightCommands = (text) => {
-    const commands = ['hello', 'clear', 'bye', 'arch'];
-    const regex = new RegExp(`\\b(${commands.join('|')})\\b`, 'gi');
+    const commandList = Object.keys(commands);
+    const regex = new RegExp(`\\b(${commandList.join('|')})\\b`, 'gi');
     const parts = text.split(regex);
 
     return parts.map((part, index) =>
-      commands.includes(part.toLowerCase()) ? (
+      commandList.includes(part.toLowerCase()) ? (
         <span key={index} className="text-green-600">{part}</span>
       ) : (
         <span key={index}>{part}</span>
@@ -74,7 +117,7 @@ function ConsoleEmulator() {
             )}
           </div>
         ))}
-        <div className="flex">
+        <div className="flex text-[70%] 2xl:text-[100%] lg:text-[85%] md:text-[80%] sm:text-[75%]">
           <span className="mr-2">
             <span className='text-green-600'>[</span>
             <span className='text-white'>cody</span>
