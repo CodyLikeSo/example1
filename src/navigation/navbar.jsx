@@ -106,7 +106,7 @@ const InteractiveBars = () => {
           return (
             <div
               key={bar.id}
-              className={`absolute w-3/5 h-3/5 p-4 rounded-[30px] shadow-[0_0px_40px_10px_rgba(0,0,0,0.25)] text-[#D9D9D9] transition-all duration-700 ease-in-out ${
+              className={`absolute w-3/5 h-3/5 p-4 rounded-[30px] shadow-[0_0px_40px_10px_rgba(0,0,0,0.5)] text-[#D9D9D9] transition-all duration-700 ease-in-out ${
                 activeScreen === bar.id ? 'opacity-100 transform scale-100' : 'opacity-0 transform scale-90 pointer-events-none'
               }`}
               style={{
@@ -121,7 +121,7 @@ const InteractiveBars = () => {
         })}
 
         <div
-          className={`absolute w-3/5 h-3/5 p-4 rounded-[30px] shadow-[0_0px_40px_10px_rgba(0,0,0,0.25)] text-[#D9D9D9] transition-all duration-700 ease-in-out ${
+          className={`absolute w-3/5 h-3/5 p-4 rounded-[30px] shadow-[0_0px_40px_10px_rgba(0,0,0,0.5)] text-[#D9D9D9] transition-all duration-700 ease-in-out ${
             activeScreen === null ? 'opacity-100 transform scale-100' : 'opacity-0 transform scale-90 pointer-events-none'
           }`}
           style={{

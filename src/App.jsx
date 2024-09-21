@@ -7,7 +7,6 @@ import Management from './segments/home/management/management';
 import Sound_design from './segments/home/sound_design/sound_design';
 
 import { AnimatePresence } from 'framer-motion';
-import Transition from './navigation/transition';
 
 function AnimatedRoutes() {
   const location = useLocation();

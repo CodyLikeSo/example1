@@ -18,13 +18,13 @@ export const Box = ({ isActive }) => {
       <div className="h-full bg-[#1A1A1A] rounded-md opacity-80 shadow-[0_0px_10px_5px_rgba(0,0,0,0.15)] z-0 flex items-center justify-center">
         <h2
           className={`text-2xl ${
-            isActive ? "tracking-[12px]" : "tracking-[8px]"
+            isActive ? "tracking-[8px]" : "tracking-[7px]"
           } transition-all duration-[1500ms]`}
         >
           MANAGEMENT
         </h2>
         <div
-          className={`absolute bottom-24 transition-all duration-700 2xl:block ${
+          className={`absolute bottom-24 transition-all duration-700 2xl:block hidden ${
             isActive
               ? "opacity-100 blur-none"
               : "opacity-0 blur-sm group-hover:opacity-100 group-hover:blur-none"

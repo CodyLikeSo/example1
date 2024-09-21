@@ -4,7 +4,7 @@ import ParticleEffect from './particle';
 export const Hero = () => {
   return (
     <div className="font-extrabold font-poppins text-center">
-      <div className="rounded-[30px] hidden 2xl:block">
+      <div className="rounded-[30px]">
         <ParticleEffect />
       </div>
       <div className="relative 2xl:right-[20%] xl:right-[20%] lg:right-0 md:right-0 sm:right-0 mt-[12%]">

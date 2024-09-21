@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 const ParticleEffect = () => {
   const canvasRef = useRef(null);
   const particles = [];
-  const numParticles = 350;
+  const numParticles = 1500;
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -27,11 +27,11 @@ const ParticleEffect = () => {
         this.size = size;
         this.vx = 0;
         this.vy = dy;
-        this.repulsionSpeed = Math.random() * 1.5 + 0.5; // Random speed factor between 0.5 and 2
+        this.repulsionSpeed = Math.random() * 1.5 + 0.1; // Random speed factor between 0.5 and 2
       }
 
       draw() {
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
         ctx.fillRect(this.x, this.y, this.size, this.size);
       }
 
@@ -64,10 +64,10 @@ const ParticleEffect = () => {
 
     const initParticles = () => {
       for (let i = 0; i < numParticles; i++) {
-        const size = 4;
+        const size = 2;
         const x = Math.random() * canvas.width;
         const y = Math.random() * canvas.height;
-        const dy = Math.random() * 0.2 + 0.1; // Speed of falling
+        const dy = Math.random() * 0.01 + 0.1; // Speed of falling
         particles.push(new Particle(x, y, dy, size));
       }
     };
