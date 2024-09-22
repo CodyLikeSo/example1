@@ -24,7 +24,7 @@ function ConsoleSlide() {
 
           {isHovered && (
             <div className="absolute right-12 left-full ml-5 bg-inherit text-white p-[2%]">
-              {/* Try command --list-- */}
+              {/* Try command --list--d */}
             </div>
           )}
         </div>

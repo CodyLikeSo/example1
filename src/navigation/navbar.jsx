@@ -15,8 +15,8 @@ const InteractiveBars = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const bars = [
-    { id: 1, name: 'Experience', component: <Home /> },
-    { id: 2, name: 'About', component: <About /> },
+    { id: 1, name: 'About', component: <About /> },
+    { id: 2, name: 'Experience', component: <Home /> },
     { id: 3, name: 'Project', component: <Project /> },
     { id: 4, name: 'Stack', component: <Stack /> },
     { id: 5, name: 'Llama', component: <Llama /> },

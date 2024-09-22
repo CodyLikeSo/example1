@@ -1,7 +1,11 @@
-import { Text_about } from "./text_about";
+import React, { useState, useEffect } from 'react';
+import { Preview } from './preview';
 
-export const About = () => (
-  <div className="relative h-full w-full">
-    <Text_about/>
-  </div>
-);
+export const About = () => {
+  
+  return (
+    <div>
+      <Preview/>
+    </div>
+  );
+};

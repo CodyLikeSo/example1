@@ -38,3 +38,14 @@ body {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+
+
+.st_c_c {
+  display: inline-block;
+  animation: slide-from-bottom 800ms ease-out 0ms 1;
+  animation-timing-function: cubic-bezier(.1,0,0,1);
+  animation-fill-mode: both;
+  white-space: pre;
+}
+
