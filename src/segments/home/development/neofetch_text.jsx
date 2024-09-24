@@ -26,6 +26,7 @@ const NeofetchOutput = () => {
       <div><ScrambleText targetText="  `+sso+:-`                 `.-/+oso:" /></div>
       <div><ScrambleText targetText=" `++:.                           `-/+/" /></div>
       <div><ScrambleText targetText=" .`                                 `/" /></div>
+      <div><ScrambleText targetText="                                    "/></div>
       <div className='text-white'><ScrambleText  targetText="WELCOME TO CONSOLE EMULATOR. TRY TO PRINT --list-- or --clear-- COMMAND"/></div>
     </div>
   );

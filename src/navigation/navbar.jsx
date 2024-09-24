@@ -8,7 +8,7 @@ import { Hero } from '../segments/hero/hero';
 
 import Transition from './transition';
 
-import mountain from '/home/cody/Cody/Programming/React/example1/example1/src/assets/Mountain_full.png';
+import mountain from '/home/cody/Cody/Programming/React/example1/example1/src/assets/Mountain_fix.png';
 
 const InteractiveBars = () => {
   const [activeScreen, setActiveScreen] = useState(null);

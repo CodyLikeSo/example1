@@ -2,8 +2,6 @@ import React, { useEffect, useRef } from 'react';
 
 const ParticleEffect = () => {
   const canvasRef = useRef(null);
-  const particles = [];
-  const numParticles = 1500;
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -11,7 +9,9 @@ const ParticleEffect = () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    // Define the interaction area
+    const numParticles = Math.min(1000, Math.floor(canvas.width * canvas.height / 10000));
+    const particles = new Array(numParticles);
+
     const interactionArea = {
       x: canvas.width * 0.2,
       y: canvas.height * 0.2,
@@ -19,15 +19,28 @@ const ParticleEffect = () => {
       height: canvas.height * 0.6,
     };
 
+    const mouse = { x: undefined, y: undefined };
+
+    const handleMouseMove = (event) => {
+      mouse.x = event.clientX;
+      mouse.y = event.clientY;
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
     class Particle {
-      constructor(x, y, dy, size) {
-        this.x = x;
-        this.y = y;
-        this.dy = dy;
-        this.size = size;
+      constructor() {
+        this.size = 2;
+        this.reset();
+      }
+
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.dy = Math.random() * 0.01 + 0.1;
         this.vx = 0;
-        this.vy = dy;
-        this.repulsionSpeed = Math.random() * 1.5 + 0.1; // Random speed factor between 0.5 and 2
+        this.vy = this.dy;
+        this.repulsionSpeed = Math.random() * 1.5 + 0.1;
       }
 
       draw() {
@@ -45,17 +58,14 @@ const ParticleEffect = () => {
           this.vy = (distY / distance) * this.repulsionSpeed;
         }
 
-        // Apply velocity decay
         this.vx *= 0.95;
         this.vy = this.vy * 0.95 + this.dy * 0.05;
 
         this.x += this.vx;
         this.y += this.vy;
 
-        // Reset particle to top if it goes out of bounds
         if (this.y - this.size > canvas.height) {
-          this.y = -this.size;
-          this.x = Math.random() * canvas.width;
+          this.reset();
         }
 
         this.draw();
@@ -64,25 +74,9 @@ const ParticleEffect = () => {
 
     const initParticles = () => {
       for (let i = 0; i < numParticles; i++) {
-        const size = 2;
-        const x = Math.random() * canvas.width;
-        const y = Math.random() * canvas.height;
-        const dy = Math.random() * 0.01 + 0.1; // Speed of falling
-        particles.push(new Particle(x, y, dy, size));
+        particles[i] = new Particle();
       }
     };
-
-    const mouse = {
-      x: undefined,
-      y: undefined,
-    };
-
-    const handleMouseMove = (event) => {
-      mouse.x = event.x;
-      mouse.y = event.y;
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
 
     const mapMousePosition = () => {
       if (
