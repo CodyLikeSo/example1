@@ -1,45 +1,50 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import consoleImage from '/home/cody/Cody/Programming/React/example1/example1/src/assets/arch.png';
 import NeofetchOutput from './neofetch_text';
-import development from './development';
-import management from '../management/management';
-import sound_design from '../sound_design/sound_design';
-import ParticleEffect from '../../hero/particle';
-
-const json = {
-  arch: `Arch | Bash \n\n Words cannot describe how much I fell in love with this system when a friend first recommended it to me. I started using Linux systems with the Manjaro distribution. At that moment I tried out the console for the first time and realized that this is what I wanted. I've always lacked the quick startup and tracking of processes like launching applications by typing a single command or working with Git repositories without touching the code editor. Also, I can't help but notice the fast performance of the system, even on an HDD, and the ability to customize it to fit my needs. \n\n Several times I installed Arch manually or with a script, but I settled on hyprdots by prasanthrangan and still use it.\n`,
-  react: `React | CSS | HTML | Tailwind \n\n I wasn't initially very interested in frontend development, but realized that I needed to master it in order to bring my projects to a tangible conclusion. I started exploring different frameworks, libraries, and tools and eventually chose React. In parallel with learning React, I learned HTML and CSS. Instead of classic CSS, I used Tailwind for my projects. One of my first projects was the creation of this website, even though it looked very different before. Now I can confidently say that I know how to work with React and handle frontend development tasks.\n`
-};
+import ArchInfoComponent from './vim/arch';
 
 function ConsoleEmulator() {
   const [input, setInput] = useState('');
   const [history, setHistory] = useState([
-    { type: 'component', content: <NeofetchOutput className=''/> }
+    { type: 'component', content: <NeofetchOutput className='' /> }
   ]);
+  const [commandHistory, setCommandHistory] = useState([]);
+  const [historyIndex, setHistoryIndex] = useState(-1);
   const inputRef = useRef(null);
   const navigate = useNavigate();
 
   const commands = {
     hello: {
-      action: () => setHistory(prev => [...prev, { type: 'text', content: 'hello world' }]),
+      action: () => setHistory(prev => [...prev, { type: 'text', content: 'hello world', transition: 'fade' }]),
       description: 'Prints "hello world".'
     },
     bye: {
-      action: () => setHistory(prev => [...prev, { type: 'text', content: 'bye bye' }]),
+      action: () => setHistory(prev => [...prev, { type: 'text', content: 'bye bye', transition: 'fade' }]),
       description: 'Prints "bye bye".'
     },
     arch: {
       action: () => {
         setHistory([]);
-        setHistory(prev => [...prev, { type: 'text', content: json.arch }]);
+        setHistory(prev => [...prev, { type: 'component', content: <ArchInfoComponent/>, transition: 'fade' }]);
       },
       description: 'Displays information about Arch Linux.'
     },
     react: {
       action: () => {
+        const reactInfo = (
+          <div className="space-y-2">
+            <h2 className="text-lg font-bold">React | CSS | HTML | Tailwind</h2>
+            <p>
+              I wasn't initially very interested in frontend development, but realized that I needed to master it in order to bring
+              my projects to a tangible conclusion. I started exploring different frameworks, libraries, and tools and eventually
+              chose React. In parallel with learning React, I learned HTML and CSS. Instead of classic CSS, I used Tailwind for my
+              projects. One of my first projects was the creation of this website, even though it looked very different before. Now I
+              can confidently say that I know how to work with React and handle frontend development tasks.
+            </p>
+          </div>
+        );
         setHistory([]);
-        setHistory(prev => [...prev, { type: 'text', content: json.react }]);
+        setHistory(prev => [...prev, { type: 'text', content: reactInfo, transition: 'fade' }]);
       },
       description: 'Displays information about React.'
     },
@@ -56,7 +61,7 @@ function ConsoleEmulator() {
         const commandDescriptions = Object.entries(commands)
           .map(([cmd, { description }]) => `${cmd.padEnd(15)} --${description}`)
           .join('\n');
-        setHistory(prev => [...prev, { type: 'text', content: commandDescriptions }]);
+        setHistory(prev => [...prev, { type: 'text', content: commandDescriptions, transition: 'fade' }]);
       },
       description: 'Lists all available commands with descriptions.'
     },
@@ -74,7 +79,6 @@ function ConsoleEmulator() {
     }
   };
   
-
   const handleInputChange = (e) => {
     setInput(e.target.value);
   };
@@ -82,16 +86,42 @@ function ConsoleEmulator() {
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
       const command = input.trim();
+      if (command) {
+        setCommandHistory((prev) => [...prev, command]);
+        setHistoryIndex(-1);
+      }
       setInput('');
       setTimeout(() => {
         if (commands[command]) {
           commands[command].action();
         } else {
-          setHistory(prev => [...prev, { type: 'text', content: `zsh: command not found: ${command}` }]);
+          setHistory(prev => [...prev, { type: 'text', content: `zsh: command not found: ${command}`, transition: 'fade' }]);
         }
       }, 200);
     }
   };
+
+  const handleKeyUp = (e) => {
+    if (e.key === 'ArrowUp') {
+      if (historyIndex < commandHistory.length - 1) {
+        setHistoryIndex(historyIndex + 1);
+      }
+    } else if (e.key === 'ArrowDown') {
+      if (historyIndex > 0) {
+        setHistoryIndex(historyIndex - 1);
+      } else {
+        setHistoryIndex(-1);
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (historyIndex >= 0) {
+      setInput(commandHistory[commandHistory.length - 1 - historyIndex]);
+    } else {
+      setInput('');
+    }
+  }, [historyIndex, commandHistory]);
 
   const handleConsoleClick = () => {
     if (inputRef.current) {
@@ -119,9 +149,12 @@ function ConsoleEmulator() {
         className="bg-inherit text-white font-mono rounded h-full overflow-y-auto scrollbar-hide"
         onClick={handleConsoleClick}
       >
-        <div className="flex flex-col space-y-2 text-[70%] 2xl:text-[100%] lg:text-[85%] md:text-[80%] sm:text-[75%]">
+        <div className="flex flex-col space-y-2 text-[70%] 2xl:text-[90%] lg:text-[85%] md:text-[80%] sm:text-[75%]">
           {history.map((entry, index) => (
-            <div key={index} className="whitespace-pre-wrap">
+            <div
+              key={index}
+              className={`whitespace-pre-wrap transition-opacity duration-500 ease-in-out ${entry.transition === 'fade' ? 'opacity-0 animate-fadeIn' : ''}`}
+            >
               {entry.type === 'image' ? (
                 <img src={entry.src} alt="Console Image" className="w-[70%]" />
               ) : entry.type === 'component' ? (
@@ -154,6 +187,7 @@ function ConsoleEmulator() {
                 value={input}
                 onChange={handleInputChange}
                 onKeyPress={handleKeyPress}
+                onKeyDown={handleKeyUp}
                 autoFocus
               />
             </div>

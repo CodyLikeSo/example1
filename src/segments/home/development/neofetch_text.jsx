@@ -3,7 +3,7 @@ import ScrambleText from './scramble';
 
 const NeofetchOutput = () => {
   return (
-    <div className="bg-inherit text-green-600 leading-[125%] 2xl:text-[90%] text-[90%] xl:text-[92%]  lg:text-[72%] md:text-[58%] sm:text-[40%] hidden 2xl:block xl:block lg:block md:block sm:block font-mono">
+    <div className="bg-inherit text-green-600 leading-[125%] 2xl:text-[80%] text-[90%] xl:text-[92%]  lg:text-[72%] md:text-[58%] sm:text-[40%] hidden 2xl:block xl:block lg:block md:block sm:block font-mono">
       <div>
         <ScrambleText targetText="                   -`                    " />
         <span className="text-white"><ScrambleText targetText="cody@archlinux" /></span>
