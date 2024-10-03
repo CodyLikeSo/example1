@@ -149,7 +149,7 @@ function ConsoleEmulator() {
         className="bg-inherit text-white font-mono rounded h-full overflow-y-auto scrollbar-hide"
         onClick={handleConsoleClick}
       >
-        <div className="flex flex-col space-y-2 text-[70%] 2xl:text-[90%] lg:text-[85%] md:text-[80%] sm:text-[75%]">
+        <div className="flex flex-col space-y-2 text-[70%] 4xl:text-[190%] 3xl:text-[120%] 2xl:text-[90%] lg:text-[85%] md:text-[80%] sm:text-[75%]">
           {history.map((entry, index) => (
             <div
               key={index}
