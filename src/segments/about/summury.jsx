@@ -13,6 +13,9 @@ const textOptions = [
   "This site has a problem with adaptability. NO, DON'T CHECK IT!",
   "You no take candle",
   "Tape exit in console",
+  "My prince... The lady of the woods needs a favor...",
+  "Welcome to the celebration, baby the judges are jailed and the future is ours",
+  "Avicii, i love you"
 ];
 
 const Summury = () => {
