@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        sans: ['Montserrat', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       },

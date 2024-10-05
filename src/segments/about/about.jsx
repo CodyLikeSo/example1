@@ -4,7 +4,7 @@ export const About = () => {
   
   return (
     <div>
-      {/* <Summury/> */}
+      <Summury/>
     </div>
   );
 };

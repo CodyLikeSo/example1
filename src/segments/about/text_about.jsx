@@ -1,6 +1,26 @@
+import { Telegram } from "./buttons/telegram";
+import { Linkedin } from "./buttons/linkedin";
+import { Mail } from "./buttons/mail";
+import { Github } from "./buttons/github";
+
 export const Text_about = () => (
-    <div className="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 w-[102%] h-[104%] rounded-[30px] bg-[#9CA3AF] shadow-[0_0px_40px_10px_rgba(156,163,175,0.5)] p-[6%] text-[#1E1E1E] font-extrabold font-poppins 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-xl sm:text-lg text-xs">
-      Hello, I'm Senya - self-taught programmer. I have 3 years of experience, with 2 of them in a team. I love data science, machine learning and graphics. Always open to learning something new and like to solve challenging tasks! I program in Python. Also have experience with Linux, React, fintech and web (Html, Css, protocols)
+    <div className="p-[5%] font-sans text-[#d9d9d9]">
+      <h1 className="text-4xl 4xl:text-7xl font-semibold">Arseniy Sviyagin</h1>
+      <h2 className="text-xl 4xl:text-5xl">Project-manager</h2>
+
+      <div className="py-[4%] flex flex-row space-x-[3%]">
+        <Telegram/>
+        <Mail/>
+        <Linkedin/>
+        <Github/>
+      </div>
+
+      <div className="text-xl tracking-wider 4xl:text-4xl">
+        <h1 className="py-[2%]">I am a <span className="text-green-600">Project Manager</span> with over a year of experience in planning, communication, and analysis, skilled in tools like Jira and Gantt Chart. </h1>
+        <h1 className="py-[2%]">Having worked as a backend developer, I can clearly understand a company's needs. </h1>
+        <h1 className="py-[2%]">I have created several startups, assembling teams and distributing tasks among them.</h1>
+      </div>
+        
     </div>
   );
   
