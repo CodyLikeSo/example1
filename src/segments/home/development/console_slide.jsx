@@ -30,7 +30,7 @@ function ConsoleSlide() {
         </div>
         <ConsoleEmulator />
       </div>
-      <div
+      {/* <div
         className="text-center text-green-600 absolute bottom-[10%] rounded-[30px] shadow-[0_0px_40px_10px_rgba(0,0,0,0.5)] border border-green-600 py-1 font-bold transition duration-700 transform hover:scale-105 hover:text-[#D9D9D9]"
         style={{
           width: '280px',
@@ -38,7 +38,7 @@ function ConsoleSlide() {
         }}
       >
         &gt;&gt; Show Simple Version
-      </div>
+      </div> */}
     </div>
   );
 }

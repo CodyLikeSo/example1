@@ -4,7 +4,7 @@ import { Text_about } from './text_about';
 
 // List of possible texts
 const textOptions = [
-  "Hello there! Can you click this? (─‿─)",
+  "Press space (─‿─)",
   "You may not believe me, but this picture was taken with my pants ripped down my ass.",
   "And this man calls himself a programmer and a musician and a project manager at the same time.",
   "Hope you like the site. I did my best.",
@@ -17,6 +17,7 @@ const textOptions = [
   "My prince... The lady of the woods needs a favor...",
   "Welcome to the celebration, baby. The judges are jailed and the future is ours",
   "Avicii, i love you",
+  "Get your ass back here!",
   "(･`_´･ )"
 ];
 
@@ -35,9 +36,9 @@ const Summury = () => {
       // Trigger the fade-in effect
       setTimeout(() => {
         setIsAnimating(false);
-      }, 300);
+      }, 30);
 
-    }, 300); // Wait for fade-out before changing text
+    }, 200); // Wait for fade-out before changing text
   };
 
   // Effect to listen for "Space" key presses
@@ -60,11 +61,11 @@ const Summury = () => {
     <div className="flex h-screen space-x-[4%] p-[0.3%]">
 
       <div className="w-[24%] flex flex-col gap-y-[4%]">
-        <div className="w-full h-[26%] rounded-[15px] border-[1px] border-green-600 flex items-center justify-center overflow-hidden transform transition-transform duration-700 hover:scale-[102%]">
+        <div className="w-full h-[26%] rounded-[15px] border-[1px] border-green-600 flex items-center justify-center overflow-hidden transform transition-transform duration-300 hover:scale-[102%]">
           <img src={monkey} className="w-full h-full object-cover rounded-[15px]" alt="Monkey" />
         </div>
         <div
-          className="bg-[#242424] w-full h-[26%] rounded-[15px] border-[1px] border-green-600 flex items-center justify-center transform transition-transform duration-700 hover:scale-[102%] p-[4%] text-center cursor-pointer"
+          className="bg-[#242424] w-full h-[26%] rounded-[15px] border-[1px] border-green-600 flex items-center justify-center transform transition-transform duration-300 hover:scale-[102%] p-[4%] text-center cursor-pointer"
           onClick={changeRandomText}
         >
           <span
@@ -77,7 +78,7 @@ const Summury = () => {
         </div>
       </div>
 
-      <div className="bg-[#242424] w-[76%] h-[56%] rounded-[15px] border-[1px] border-green-600 transform transition-transform duration-700 hover:scale-[102%]">
+      <div className="bg-[#242424] w-[76%] h-[56%] rounded-[15px] border-[1px] border-green-600 transform transition-transform duration-300 hover:scale-[102%]">
         <Text_about/>
       </div>
     </div>
