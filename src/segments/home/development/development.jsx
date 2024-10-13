@@ -20,8 +20,14 @@ const Development = () => {
     };
   }, []);
 
+  // Movement speed for the main component
   const offsetX = Math.max(-100, Math.min(50, (mousePosition.x - window.innerWidth / 2) / 45));
   const offsetY = Math.max(-100, Math.min(50, (mousePosition.y - window.innerHeight / 2) / 35));
+
+  // Movement speed for the button (adjust these factors to change speed)
+  const buttonSpeedFactor = 0.5; // Slower than the main component
+  const buttonOffsetX = Math.max(-100, Math.min(50, (mousePosition.x - window.innerWidth / 2) * buttonSpeedFactor / 45));
+  const buttonOffsetY = Math.max(-100, Math.min(50, (mousePosition.y - window.innerHeight / 2) * buttonSpeedFactor / 35));
 
   const toggleSlides = () => {
     setIsTransitioning(true); // Start transition
@@ -44,10 +50,14 @@ const Development = () => {
         </div>
       </div>
       <button
-        className="p-[0.2%] px-[3%] bg-inherit rounded-[30px] text-green-600 border-[1px] border-green-600 transition duration-300 absolute bottom-[12%] left-1/2 transform -translate-x-1/2"
+        style={{
+          transform: `translate(${buttonOffsetX}px, ${buttonOffsetY}px)`,
+          transition: 'transform 0.4s ease-out', // Adjust transition if needed
+        }}
+        className="p-[0.2%] shadow-[0_0px_20px_4px_rgba(0,0,0,0.3)] px-[3%] bg-inherit rounded-[30px] text-green-600 border-[1px] border-green-600 transition duration-300 absolute bottom-[3%] left-[43%] transform -translate-x-1/2"
         onClick={toggleSlides}
       >
-        Simple Version
+        Change Version
       </button>
     </div>
   );

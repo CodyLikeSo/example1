@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NeofetchOutput from './neofetch_text';
 import ArchInfoComponent from './vim/arch';
+import ReactInfoComponent from './vim/react';
 
 function ConsoleEmulator() {
   const [input, setInput] = useState('');
@@ -30,6 +31,13 @@ function ConsoleEmulator() {
       description: 'Displays information about Arch Linux.'
     },
     react: {
+      action: () => {
+        setHistory([]);
+        setHistory(prev => [...prev, { type: 'component', content: <ReactInfoComponent/>, transition: 'fade' }]);
+      },
+      description: 'Displays information about React.'
+    },
+    react1: {
       action: () => {
         const reactInfo = (
           <div className="space-y-2">
