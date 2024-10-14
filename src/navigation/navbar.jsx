@@ -80,14 +80,14 @@ const InteractiveBars = () => {
                 onMouseEnter={() => setActiveScreen(bar.id)}
               />
               <div
-                className="w-6 h-[2px] rounded-[0.7px] bg-green-600 transition-transform duration-300"
+                className="w-6 h-[1px] rounded-[0.7px] bg-green-600 transition-transform duration-300"
                 style={{
                   transformOrigin: 'left',
                   transform: activeScreen === bar.id ? 'scaleX(3.0)' : 'scaleX(1)',
                 }}
               />
               <span
-                className={`absolute left-24 text-[#D9D9D9] hidden lg:block transition-all duration-700 transform ${
+                className={`absolute left-24 text-[#D9D9D9] text-sans text-[80%] hidden lg:block transition-all duration-700 transform ${
                   activeScreen === bar.id ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
                 }`}
               >

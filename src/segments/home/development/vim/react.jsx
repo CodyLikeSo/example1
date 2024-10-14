@@ -3,22 +3,23 @@ import 'tailwindcss/tailwind.css'; // Make sure you have Tailwind CSS already se
 import parse from 'html-react-parser';
 
 function ReactInfoComponent() {
-    const text = `<div>#React | Tailwind
-  
-  <span classname="text-green-600 ">## Accidantly Meeting</span>
-  
-  <span classname="text-[#d9d9d9]">React - Initially I wasn't very interested in frontend development, but I realized that I needed to master it in</span>
-  <span classname="text-[#d9d9d9]">order to bring my projects to a tangible result. I started exploring different frameworks, libraries and tools,</span>
-  <span classname="text-[#d9d9d9]">and eventually chose React. Along with learning React, I learned HTML, CSS, and JavaScript. Instead of </span>
-  <span classname="text-[#d9d9d9]">classic CSS, I used Tailwind for my projects. One of my first projects was the creation of this website, even </span>
-  <span classname="text-[#d9d9d9]">though it looked very different before. Now I can confidently say that I know how to work with React and </span>
-  <span classname="text-[#d9d9d9]">handle frontend development tasks.</span>
-  
-  ## My Setup
-  
-  <span classname="text-[#d9d9d9]">Several times I installed Arch manually or with a script, but I settled on  <span classname="text-green-600">[Hyprdots]</span>  <span classname="text-green-300">(https://</span>
-  <span className="text-green-300">github.com/prasanthrangan/hyprdots)</span> <span className="text-[#d9d9d9]">by <span className="text-[#d9d9d9] text-extrabold">**prasanthrangan**</span> and still use it.</span></div>`;
-  
+  const text = `<div>#React
+
+<span classname="text-green-600 ">## First Steps</span>
+
+<span classname="text-[#d9d9d9]">Words cannot describe how much I fell in love with this system when a friend first recommended it to me.</span>
+<span classname="text-[#d9d9d9]">I started using Linux systems with the Manjaro distribution. At that moment I tried out the console for the </span>
+<span classname="text-[#d9d9d9]">first time and realized that this is what I wanted.</span>
+
+<span classname="text-[#d9d9d9]">I've always lacked the quick startup and tracking of processes like launching applications by typing a</span>
+<span classname="text-[#d9d9d9]">single command or working with Git repositories without touching the code editor. Also, I can't help but</span>
+<span classname="text-[#d9d9d9]">notice the fast performance of the system, even on an HDD, and the ability to customize it to fit my needs.</span>
+
+## My Setup
+
+<span classname="text-[#d9d9d9]">Several times I installed Arch manually or with a script, but I settled on  <span classname="text-green-600">[Hyprdots]</span>  <span classname="text-green-300">(https://</span>
+<span className="text-green-300">github.com/prasanthrangan/hyprdots)</span> <span className="text-[#d9d9d9]">by <span className="text-[#d9d9d9] text-extrabold">**prasanthrangan**</span> and still use it.</span></div>`;
+
   // Split the text into lines
   const lines = text.split('\n');
 

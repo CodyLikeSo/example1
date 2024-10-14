@@ -54,7 +54,7 @@ const Development = () => {
           transform: `translate(${buttonOffsetX}px, ${buttonOffsetY}px)`,
           transition: 'transform 0.4s ease-out', // Adjust transition if needed
         }}
-        className="p-[0.2%] shadow-[0_0px_20px_4px_rgba(0,0,0,0.3)] px-[3%] bg-inherit rounded-[30px] text-green-600 border-[1px] border-green-600 transition duration-300 absolute bottom-[3%] left-[43%] transform -translate-x-1/2"
+        className="p-[0.2%] shadow-[0_0px_20px_4px_rgba(0,0,0,0.3)] bg-inherit rounded-[30px] text-green-600 border-[1px] border-green-600 transition duration-300 absolute bottom-[3%] transform inset-x-1/3"
         onClick={toggleSlides}
       >
         Change Version

@@ -13,7 +13,7 @@ function ConsoleSlide() {
           background: 'linear-gradient(to bottom, #2a2a2a 30%, #242424 70%)',
         }}
       >
-        <div
+        {/* <div
           className="absolute top-[50px] right-[-80px] bg-inherit border border-green-600 py-1 text-center rounded-r-[15px] text-green-600 flex items-center justify-center font-bold transition-transform duration-700 origin-left hover:scale-[105%] hover:text-[#D9D9D9]"
           style={{ width: '80px' }}
           onMouseEnter={() => setIsHovered(true)}
@@ -26,7 +26,7 @@ function ConsoleSlide() {
             <div className="absolute right-12 left-full ml-5 bg-inherit text-white p-[2%]">
             </div>
           )}
-        </div>
+        </div> */}
         <ConsoleEmulator />
       </div>
       {/* <div
