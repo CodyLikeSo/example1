@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ConsoleSlide from "./console_slide";
 import Transition from "../../../navigation/transition";
-import Slides_development from './simple_version';
 
 const Development = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [showSlides, setShowSlides] = useState(true); // State to toggle between components
   const [isTransitioning, setIsTransitioning] = useState(false); // State for transition
+  const navigate = useNavigate(); // Initialize the navigate function
 
   const handleMouseMove = (event) => {
     setMousePosition({ x: event.clientX, y: event.clientY });
@@ -29,12 +29,8 @@ const Development = () => {
   const buttonOffsetX = Math.max(-100, Math.min(50, (mousePosition.x - window.innerWidth / 2) * buttonSpeedFactor / 45));
   const buttonOffsetY = Math.max(-100, Math.min(50, (mousePosition.y - window.innerHeight / 2) * buttonSpeedFactor / 35));
 
-  const toggleSlides = () => {
-    setIsTransitioning(true); // Start transition
-    setTimeout(() => {
-      setShowSlides((prev) => !prev); // Toggle the component after transition duration
-      setIsTransitioning(false); // End transition
-    }, 300); // Match this duration with the CSS transition duration
+  const handleButtonClick = () => {
+    navigate("/develop/pages"); // Navigate to the specified route
   };
 
   return (
@@ -46,16 +42,16 @@ const Development = () => {
         }}
       >
         <div className={`transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
-          {showSlides ? <ConsoleSlide /> : <Slides_development/>}
+          <ConsoleSlide />
         </div>
       </div>
       <button
+        onClick={handleButtonClick} // Set the onClick handler to navigate
         style={{
           transform: `translate(${buttonOffsetX}px, ${buttonOffsetY}px)`,
           transition: 'transform 0.4s ease-out', // Adjust transition if needed
         }}
         className="p-[0.2%] shadow-[0_0px_20px_4px_rgba(0,0,0,0.3)] bg-inherit rounded-[30px] text-green-600 border-[1px] border-green-600 transition duration-300 absolute bottom-[3%] transform inset-x-1/3"
-        onClick={toggleSlides}
       >
         Change Version
       </button>
