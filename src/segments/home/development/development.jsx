@@ -5,8 +5,8 @@ import Transition from "../../../navigation/transition";
 
 const Development = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isTransitioning, setIsTransitioning] = useState(false); // State for transition
-  const navigate = useNavigate(); // Initialize the navigate function
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const navigate = useNavigate();
 
   const handleMouseMove = (event) => {
     setMousePosition({ x: event.clientX, y: event.clientY });
@@ -15,22 +15,32 @@ const Development = () => {
   useEffect(() => {
     window.addEventListener('mousemove', handleMouseMove);
 
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        navigate("/"); // Replace with your desired route
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    // Cleanup the event listeners on component unmount
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('keydown', handleKeyDown);
     };
-  }, []);
+  }, [navigate]);
 
   // Movement speed for the main component
   const offsetX = Math.max(-100, Math.min(50, (mousePosition.x - window.innerWidth / 2) / 45));
   const offsetY = Math.max(-100, Math.min(50, (mousePosition.y - window.innerHeight / 2) / 35));
 
-  // Movement speed for the button (adjust these factors to change speed)
-  const buttonSpeedFactor = 0.5; // Slower than the main component
+  // Movement speed for the button
+  const buttonSpeedFactor = 0.5;
   const buttonOffsetX = Math.max(-100, Math.min(50, (mousePosition.x - window.innerWidth / 2) * buttonSpeedFactor / 45));
   const buttonOffsetY = Math.max(-100, Math.min(50, (mousePosition.y - window.innerHeight / 2) * buttonSpeedFactor / 35));
 
   const handleButtonClick = () => {
-    navigate("/develop/pages"); // Navigate to the specified route
+    navigate("/develop/pages");
   };
 
   return (
@@ -46,10 +56,10 @@ const Development = () => {
         </div>
       </div>
       <button
-        onClick={handleButtonClick} // Set the onClick handler to navigate
+        onClick={handleButtonClick}
         style={{
           transform: `translate(${buttonOffsetX}px, ${buttonOffsetY}px)`,
-          transition: 'transform 0.4s ease-out', // Adjust transition if needed
+          transition: 'transform 0.4s ease-out',
         }}
         className="p-[0.2%] shadow-[0_0px_20px_4px_rgba(0,0,0,0.3)] bg-inherit rounded-[30px] text-green-600 border-[1px] border-green-600 transition duration-300 absolute bottom-[3%] transform inset-x-1/3"
       >

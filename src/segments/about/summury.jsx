@@ -19,7 +19,8 @@ const textOptions = [
   "Welcome to the celebration, baby. The judges are jailed and the future is ours",
   "Avicii, i love you",
   "Get your ass back here!",
-  "(･`_´･ )"
+  "(･`_´･ )",
+  "There no sound design. Sad"
 ];
 
 const Summury = () => {

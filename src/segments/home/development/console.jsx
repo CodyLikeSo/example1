@@ -3,6 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import NeofetchOutput from './neofetch_text';
 import ArchInfoComponent from './vim/arch';
 import ReactInfoComponent from './vim/react';
+import RustInfoComponent from './vim/rust';
+import PythonInfoComponent from './vim/python';
+
 
 function ConsoleEmulator() {
   const [input, setInput] = useState('');
@@ -15,14 +18,6 @@ function ConsoleEmulator() {
   const navigate = useNavigate();
 
   const commands = {
-    hello: {
-      action: () => setHistory(prev => [...prev, { type: 'text', content: 'hello world', transition: 'fade' }]),
-      description: 'Prints "hello world".'
-    },
-    bye: {
-      action: () => setHistory(prev => [...prev, { type: 'text', content: 'bye bye', transition: 'fade' }]),
-      description: 'Prints "bye bye".'
-    },
     arch: {
       action: () => {
         setHistory([]);
@@ -37,24 +32,19 @@ function ConsoleEmulator() {
       },
       description: 'Displays information about React.'
     },
-    react1: {
+    rust: {
       action: () => {
-        const reactInfo = (
-          <div className="space-y-2">
-            <h2 className="text-lg font-bold">React | CSS | HTML | Tailwind</h2>
-            <p>
-              I wasn't initially very interested in frontend development, but realized that I needed to master it in order to bring
-              my projects to a tangible conclusion. I started exploring different frameworks, libraries, and tools and eventually
-              chose React. In parallel with learning React, I learned HTML and CSS. Instead of classic CSS, I used Tailwind for my
-              projects. One of my first projects was the creation of this website, even though it looked very different before. Now I
-              can confidently say that I know how to work with React and handle frontend development tasks.
-            </p>
-          </div>
-        );
         setHistory([]);
-        setHistory(prev => [...prev, { type: 'text', content: reactInfo, transition: 'fade' }]);
+        setHistory(prev => [...prev, { type: 'component', content: <RustInfoComponent/>, transition: 'fade' }]);
       },
-      description: 'Displays information about React.'
+      description: 'Displays information about Rust.'
+    },
+    python: {
+      action: () => {
+        setHistory([]);
+        setHistory(prev => [...prev, { type: 'component', content: <PythonInfoComponent/>, transition: 'fade' }]);
+      },
+      description: 'Displays information about Python.'
     },
     clear: {
       action: () => setHistory([]),
@@ -79,7 +69,7 @@ function ConsoleEmulator() {
     },
     simple: {
       action: () => navigate('/develop/pages'),
-      description: 'Redirects to the main page.'
+      description: 'Go to the simple version of development page.'
     },
     management: {
       action: () => navigate('/manage'),
