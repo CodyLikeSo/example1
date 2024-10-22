@@ -7,13 +7,13 @@ function ArchInfoComponent() {
 
 <span classname="text-green-600 ">## First Steps</span>
 
-<span classname="text-[#d9d9d9]">Words cannot describe how much I fell in love with this system when a friend first recommended it to me.</span>
-<span classname="text-[#d9d9d9]">I started using Linux systems with the Manjaro distribution. At that moment I tried out the console for the </span>
-<span classname="text-[#d9d9d9]">first time and realized that this is what I wanted.</span>
+<span classname="text-[#d9d9d9]">Words cannot describe how much I fell in love with this system when a friend first recommended it to me. I started using</span>
+<span classname="text-[#d9d9d9]">Linux systems with the Manjaro distribution. At that moment I tried out the console for the first time and realized that this is  </span>
+<span classname="text-[#d9d9d9]">i wanted.</span>
 
-<span classname="text-[#d9d9d9]">I've always lacked the quick startup and tracking of processes like launching applications by typing a</span>
-<span classname="text-[#d9d9d9]">single command or working with Git repositories without touching the code editor. Also, I can't help but</span>
-<span classname="text-[#d9d9d9]">notice the fast performance of the system, even on an HDD, and the ability to customize it to fit my needs.</span>
+<span classname="text-[#d9d9d9]">I've always lacked the quick startup and tracking of processes like launching applications by typing a single command or</span>
+<span classname="text-[#d9d9d9]">working with Git repositories without touching the code editor. Also, I can't help but notice the fast performance of the </span>
+<span classname="text-[#d9d9d9]">system, even on an HDD, and the ability to customize it to fit my needs.</span>
 
 ## My Setup
 

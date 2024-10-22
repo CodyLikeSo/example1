@@ -77,6 +77,10 @@ function ConsoleEmulator() {
       action: () => navigate('/'),
       description: 'Redirects to the main page.'
     },
+    simple: {
+      action: () => navigate('/develop/pages'),
+      description: 'Redirects to the main page.'
+    },
     management: {
       action: () => navigate('/manage'),
       description: 'Redirects to the management page.'
