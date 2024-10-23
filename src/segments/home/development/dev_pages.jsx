@@ -104,7 +104,7 @@ function Dev_pages() {
           {tabs.map(tab => (
             <button
               key={tab.id}
-              className={`tab-button relative xl:px-12 lg:px-8 md:px-4 sm:px-2 py-[7px] rounded-tl-[12px] text-[70%] xl:text-[100%] md:text-[100%] lg:text-[100%] sm:text-[70%] rounded-tr-[12px] transition-all duration-300 
+              className={`tab-button relative xl:px-12 lg:px-8 md:px-4 sm:px-8 py-[7px] rounded-tl-[12px] text-[70%] xl:text-[100%] md:text-[100%] lg:text-[100%] sm:text-[70%] rounded-tr-[12px] transition-all duration-300 
                 ${activeTab === tab.id ? 'bg-[#242424] text-[#d9d9d9] border-[1px] border-green-600' : 'bg-transparent text-green-600 border-[1px] border-transparent'}`}
               onClick={() => handleTabChange(tab.id)}
               style={{
@@ -119,7 +119,7 @@ function Dev_pages() {
             </button>
           ))}
         </div>
-        <div className="tab-content flex-grow px-[2%] overflow-hidden" style={{ height: 'calc(100% - 50px)' }}>
+        <div className="tab-content flex-grow px-[2%] text-inherit 2xl:text-[150%] 4xl:text-4xl overflow-hidden" style={{ height: 'calc(100% - 50px)' }}>
           <div style={tabContentStyle}>
             {renderTabContent()}
           </div>
