@@ -8,7 +8,7 @@ import Sound_design from './segments/home/sound_design/sound_design';
 import Dev_pages from './segments/home/development/dev_pages';
 
 import { AnimatePresence } from 'framer-motion'; // Import AnimatePresence for route transitions
-import keyboard from '/home/cody/Cody/Programming/React/example1/example1/src/assets/keyboard.png';
+import keyboard from '/home/cody/Cody/Programming/React/example1/example1/src/assets/keyboard2.png';
 
 // Popup Component for the guide
 function GuidePopup({ onClose }) {
@@ -18,7 +18,7 @@ function GuidePopup({ onClose }) {
     // Function to handle key press
     const handleKeyPress = () => {
       setIsExiting(true); // Start exit animation on key press
-      setTimeout(onClose, 1500); // Close the popup after the animation (500ms)
+      setTimeout(onClose, 2500); // Close the popup after the animation (500ms)
     };
 
     // Function to handle mouse click
@@ -43,7 +43,7 @@ function GuidePopup({ onClose }) {
       className={`fixed inset-0 flex items-center justify-center bg-[#1a1a1a] bg-opacity-80 z-50 
         ${isExiting ? 'animate-fadeOut' : 'animate-fadeIn'}`} // Apply fadeIn or fadeOut animation
     >
-      <img src={keyboard} alt="Guide" className="max-w-[80%] max-h-[80%]" />
+      <img src={keyboard} alt="Guide" className="max-w-[60%] max-h-[60%]" />
     </div>
   );
 }
