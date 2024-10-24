@@ -119,7 +119,7 @@ function Dev_pages() {
             </button>
           ))}
         </div>
-        <div className="tab-content flex-grow px-[2%] text-inherit 2xl:text-[150%] 4xl:text-4xl overflow-hidden" style={{ height: 'calc(100% - 50px)' }}>
+        <div className="tab-content flex-grow px-[2%] text-[100%] 3xl:text-[150%] 4xl:text-4xl overflow-hidden" style={{ height: 'calc(100% - 50px)' }}>
           <div style={tabContentStyle}>
             {renderTabContent()}
           </div>

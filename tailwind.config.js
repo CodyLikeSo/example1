@@ -15,6 +15,20 @@ export default {
         '3xl': '1921px', // Custom breakpoint for any screen wider than 1920px
         '4xl': '3841px'
       },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0', filter: 'blur(100px)' }, // Start with opacity 0 and blur
+          '100%': { opacity: '1', filter: 'blur(0)' },   // End with opacity 1 and no blur
+        },
+        fadeOut: {
+          '0%': { opacity: '1', filter: 'blur(0)' },     // Start with opacity 1 and no blur
+          '100%': { opacity: '0', filter: 'blur(100px)' }, // End with opacity 0 and blur
+        },
+      },
+      animation: {
+        fadeIn: 'fadeIn 1.5s ease-out forwards',
+        fadeOut: 'fadeOut 1.5s ease-out forwards',
+      },
     },
   },
   plugins: [],
