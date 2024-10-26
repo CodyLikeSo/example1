@@ -17,7 +17,7 @@ export const Box1 = ({ isActive }) => {
       ></div>
       <div className="h-full bg-[#1A1A1A] rounded-md opacity-80 shadow-[0_0px_10px_5px_rgba(0,0,0,0.15)] z-0 flex items-center justify-center">
         <h2
-          className={`text-lg ${
+          className={`text-[70%] sm:text-lg ${
             isActive ? "tracking-[8px]" : "tracking-[7px]"
           } transition-all duration-[1500ms]`}
         >
