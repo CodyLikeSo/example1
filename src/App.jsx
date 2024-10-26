@@ -8,7 +8,7 @@ import Sound_design from './segments/home/sound_design/sound_design';
 import Dev_pages from './segments/home/development/dev_pages';
 
 import { AnimatePresence } from 'framer-motion'; // Import AnimatePresence for route transitions
-import keyboard from '/home/cody/Cody/Programming/React/example1/example1/src/assets/keyboard2.png';
+import keyboard from '/home/cody/Cody/Programming/React/example1/example1/src/assets/keyboard3.png';
 
 // Popup Component for the guide
 function GuidePopup({ onClose }) {
@@ -43,7 +43,7 @@ function GuidePopup({ onClose }) {
       className={`fixed inset-0 flex items-center justify-center bg-[#1a1a1a] bg-opacity-80 z-50 
         ${isExiting ? 'animate-fadeOut' : 'animate-fadeIn'}`} // Apply fadeIn or fadeOut animation
     >
-      <img src={keyboard} alt="Guide" className="max-w-[60%] max-h-[60%]" />
+      <img src={keyboard} alt="Guide" className="max-w-[100%] max-h-[120%]" />
     </div>
   );
 }

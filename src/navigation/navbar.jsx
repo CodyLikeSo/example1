@@ -81,7 +81,7 @@ const InteractiveBars = () => {
                 onMouseEnter={() => setActiveScreen(bar.id)}
               />
               <div
-                className="w-6 h-[1px] rounded-[0.7px] bg-green-600 transition-transform duration-300"
+                className="md:w-6 h-[1px] w-2 sm:w-2 rounded-[0.7px] bg-green-600 transition-transform duration-300"
                 style={{
                   transformOrigin: 'left',
                   transform: activeScreen === bar.id ? 'scaleX(3.0)' : 'scaleX(1)',
@@ -107,7 +107,7 @@ const InteractiveBars = () => {
           return (
             <div
               key={bar.id}
-              className={`absolute w-3/5 h-3/5 p-4 rounded-[30px] shadow-[0_0px_40px_10px_rgba(0,0,0,0.5)] text-[#D9D9D9] transition-all duration-700 ease-in-out ${
+              className={`absolute w-4/5 sm:w-4/5 md:w-3/5 h-full sm:h-full md:h-3/5  p-4 rounded-[30px] shadow-[0_0px_40px_10px_rgba(0,0,0,0.5)] text-[#D9D9D9] transition-all duration-700 ease-in-out ${
                 activeScreen === bar.id ? 'opacity-100 transform scale-100' : 'opacity-0 transform scale-90 pointer-events-none'
               }`}
               style={{
@@ -122,7 +122,7 @@ const InteractiveBars = () => {
         })}
 
         <div
-          className={`absolute w-3/5 h-3/5 p-4 rounded-[30px] shadow-[0_0px_40px_10px_rgba(0,0,0,0.5)] text-[#D9D9D9] transition-all duration-700 ease-in-out ${
+          className={`absolute w-4/5 sm:w-4/5 md:w-3/5 h-full sm:h-full md:h-3/5 rounded-[30px] shadow-[0_0px_40px_10px_rgba(0,0,0,0.5)] text-[#D9D9D9] transition-all duration-700 ease-in-out ${
             activeScreen === null ? 'opacity-100 transform scale-100' : 'opacity-0 transform scale-90 pointer-events-none'
           }`}
           style={{
