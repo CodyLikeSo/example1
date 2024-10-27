@@ -18,8 +18,8 @@ const InteractiveBars = () => {
   const bars = [
     { id: 1, name: 'About', component: <About /> },
     { id: 2, name: 'Experience', component: <Home /> },
-    { id: 3, name: 'Project', component: <Project /> },
-    { id: 4, name: 'Stack', component: <Stack /> },
+    { id: 3, name: 'Stack', component: <Stack /> },
+    { id: 4, name: 'Projects', component: <Project /> },
     { id: 5, name: 'Llama', component: <Llama /> },
   ];
 
