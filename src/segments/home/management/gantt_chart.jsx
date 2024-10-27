@@ -3,26 +3,26 @@ import React from 'react';
 const projects = [
   {
     name: 'IVCaptial',
-    start: new Date('2020-01-01'),
-    end: new Date('2021-01-01'),
+    start: new Date('2021-09-01'),
+    end: new Date('2022-08-01'),
     color: 'bg-green-400', // Добавляем цвет для проекта
   },
   {
     name: 'Moneyfactory',
-    start: new Date('2021-06-01'),
+    start: new Date('2022-08-01'),
     end: new Date('2023-06-01'),
     color: 'bg-green-300', // Добавляем цвет для проекта
   },
   {
     name: 'Jetsite',
-    start: new Date('2023-02-01'),
+    start: new Date('2023-06-01'),
     end: new Date('2024-05-01'),
     color: 'bg-green-700',
   },
   {
     name: 'Svetoch press',
-    start: new Date('2023-02-01'),
-    end: new Date('2024-05-01'),
+    start: new Date('2024-05-01'),
+    end: new Date('2024-12-01'),
     color: 'bg-green-900',
   },
 ];

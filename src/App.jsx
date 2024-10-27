@@ -61,9 +61,9 @@ function AnimatedRoutes() {
   return (
     <>
       {/* Only show the guide popup on the home page */}
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {location.pathname === '/' && showGuide && <GuidePopup onClose={closeGuide} />}
-      </AnimatePresence>
+      </AnimatePresence> */}
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<InteractiveBars />} />

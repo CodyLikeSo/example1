@@ -4,14 +4,13 @@ import Text_block from "./text_block";
 import GanttChart from "./gantt_chart";
 
 function Management() {
-  const navigate = useNavigate();
-
   return (
         <div>
-          <div className="py-8">
+          <div className="sm:block hidden">
+            <h1 className="text-center text-[#D9D9D9] font-extrabold text-2xl py-[3%]">GANTT CHART OF MY WORK EXPERIENCE</h1>
             <GanttChart/>
           </div>
-          <div className="py-[10%]">
+          <div className="py-[5%]">
             <Text_block/>
           </div>
         </div>
