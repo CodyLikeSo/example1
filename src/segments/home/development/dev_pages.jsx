@@ -99,13 +99,13 @@ function Dev_pages() {
       transform: `translate(${offsetX}px, ${offsetY}px)`,
       transition: 'transform 0.4s ease-out',
     }}>
-      <div className="w-4/5 sm:w-4/5 md:w-3/5 h-5/6 sm:h-5/6 md:h-3/5 flex flex-col items-center justify-center bg-[#242424] rounded-[30px] shadow-[0_0px_40px_10px_rgba(0,0,0,0.5)] text-[#d9d9d9] border-[1px] border-green-600">
+      <div className="w-4/5 sm:w-4/5 md:w-3/5 h-5/6 sm:h-5/6 md:h-3/5 flex flex-col items-center justify-center bg-[#242424] rounded-[30px] md:shadow-[0_0px_40px_10px_rgba(0,0,0,0.5)] text-[#d9d9d9] md:border-[1px] border-green-600">
         <div className="flex xl:space-x-20 lg:space-x-12 md:space-x-8 sm:space-x-6 mb-4 text-green-600 xl:-mt-10 md:-mt-10 lg:-mt-10 sm:-mt-8 -mt-8">
           {tabs.map(tab => (
             <button
               key={tab.id}
               className={`tab-button relative px-4 xl:px-12 lg:px-8 md:px-4 sm:px-8 py-[7px] rounded-tl-[12px] text-[70%] xl:text-[100%] md:text-[100%] lg:text-[100%] sm:text-[70%] rounded-tr-[12px] transition-all duration-300 
-                ${activeTab === tab.id ? 'bg-[#242424] text-[#d9d9d9] border-[1px] border-green-600' : 'bg-transparent text-green-600 border-[1px] border-transparent'}`}
+                ${activeTab === tab.id ? 'bg-[#242424] text-[#d9d9d9] md:border-[1px] border-green-600' : 'bg-transparent text-green-600 md:border-[1px] border-transparent'}`}
               onClick={() => handleTabChange(tab.id)}
               style={{
                 borderColor: activeTab === tab.id ? '#16A34A' : 'transparent',

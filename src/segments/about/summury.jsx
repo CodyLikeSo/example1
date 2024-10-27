@@ -62,7 +62,7 @@ const Summury = () => {
     <div className="flex flex-col sm:flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row h-screen md:space-x-[4%] sm:space-x-0 space-x-0 p-[0.3%]">
 
       {/* Left Column: Photo and Random Text */}
-      <div className="w-full sm:w-full md:w-[50%] lg:w-[45%] xl:w-[30%] 2xl:w-[28%] 3xl:w-[24%] 4xl:w-[24%] flex flex-col gap-y-[4%]">
+      <div className="w-full sm:w-full md:w-[50%] lg:w-[45%] xl:w-[30%] 2xl:w-[24%] 3xl:w-[24%] 4xl:w-[24%] flex flex-col gap-y-[4%]">
         
         {/* Photo */}
         <div className="w-full hidden sm:hidden md:block  h-[300px] sm:h-[300px] md:h-[46.3%] lg:h-[26%] xl:h-[26%] 2xl:h-[26%] 3xl:h-[26%] 4xl:h-[26%] rounded-[15px] border-[1px] border-green-600 flex items-center justify-center overflow-hidden transform transition-transform duration-300 hover:scale-[102%]">
