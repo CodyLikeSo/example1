@@ -62,10 +62,10 @@ const Summury = () => {
     <div className="flex flex-col sm:flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row h-screen md:space-x-[4%] sm:space-x-0 space-x-0 p-[0.3%]">
 
       {/* Left Column: Photo and Random Text */}
-      <div className="w-full sm:w-full md:w-[24%] lg:w-[24%] xl:w-[24%] 2xl:w-[24%] 3xl:w-[24%] 4xl:w-[24%] flex flex-col gap-y-[4%]">
+      <div className="w-full sm:w-full md:w-[50%] lg:w-[45%] xl:w-[30%] 2xl:w-[28%] 3xl:w-[24%] 4xl:w-[24%] flex flex-col gap-y-[4%]">
         
         {/* Photo */}
-        <div className="w-full hidden sm:hidden md:block  h-[300px] sm:h-[300px] md:h-[26%] lg:h-[26%] xl:h-[26%] 2xl:h-[26%] 3xl:h-[26%] 4xl:h-[26%] rounded-[15px] border-[1px] border-green-600 flex items-center justify-center overflow-hidden transform transition-transform duration-300 hover:scale-[102%]">
+        <div className="w-full hidden sm:hidden md:block  h-[300px] sm:h-[300px] md:h-[46.3%] lg:h-[26%] xl:h-[26%] 2xl:h-[26%] 3xl:h-[26%] 4xl:h-[26%] rounded-[15px] border-[1px] border-green-600 flex items-center justify-center overflow-hidden transform transition-transform duration-300 hover:scale-[102%]">
           <img src={monkey} className="w-full h-full object-cover rounded-[15px]" alt="Monkey" />
         </div>
 
@@ -85,7 +85,7 @@ const Summury = () => {
       </div>
 
       {/* Right Column: Text_about */}
-      <div className="bg-[#242424] w-full sm:w-full md:w-[76%] lg:w-[76%] xl:w-[76%] 2xl:w-[76%] 3xl:w-[76%] 4xl:w-[76%] md:h-[56%] sm:h-[95%] h-[95%] rounded-[15px] border-[1px] border-green-600 transform transition-transform duration-300 hover:scale-[102%] overflow-hidden">
+      <div className="bg-[#242424] w-full sm:w-full md:w-[76%] lg:w-[76%] xl:w-[76%] 2xl:w-[76%] 3xl:w-[76%] 4xl:w-[76%] md:h-[76.3%] lg:h-[56%] sm:h-[95%] h-[95%] rounded-[15px] border-[1px] border-green-600 transform transition-transform duration-300 hover:scale-[102%] overflow-hidden">
         <div className="h-full overflow-y-auto p-[4%]">
           <Text_about className="text-[#d9d9d9]" />
         </div>
