@@ -1,82 +1,55 @@
 import React from 'react';
 
+// Динамическое создание массива лет
+const startYear = 2020;
+const endYear = 2028;
+const years = Array.from({ length: endYear - startYear + 1 }, (_, i) => startYear + i);
+
 const projects = [
-  {
-    name: 'IVCaptial',
-    start: new Date('2021-09-01'),
-    end: new Date('2022-08-01'),
-    color: 'bg-green-400', // Добавляем цвет для проекта
-  },
-  {
-    name: 'Moneyfactory',
-    start: new Date('2022-08-01'),
-    end: new Date('2023-06-01'),
-    color: 'bg-green-300', // Добавляем цвет для проекта
-  },
-  {
-    name: 'Jetsite',
-    start: new Date('2023-06-01'),
-    end: new Date('2024-05-01'),
-    color: 'bg-green-700',
-  },
-  {
-    name: 'Svetoch press',
-    start: new Date('2024-05-01'),
-    end: new Date('2024-12-01'),
-    color: 'bg-green-900',
-  },
+  { name: 'MoneyFactory', startDate: '2021-08-01', endDate: '2022-10-01' },
+  { name: 'IVCapital', startDate: '2022-10-01', endDate: '2023-08-01' },
+  { name: 'Jetsite.ru', startDate: '2023-08-01', endDate: '2024-06-01' },
+  { name: 'Svetoch press', startDate: '2024-06-01', endDate: '2025-03-01' },
 ];
 
-const years = [2020, 2021, 2022, 2023, 2024];
-
-const getMonthDifference = (start, end) => {
-  return (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+// Функция для получения позиции года/месяца относительно начала (2020)
+const getYearPosition = (date) => {
+  const year = new Date(date).getFullYear();
+  const month = new Date(date).getMonth();
+  return (year - startYear) * 12 + month;
 };
 
 const GanttChart = () => {
-  const startYear = Math.min(...projects.map(p => p.start.getFullYear()));
-  const totalMonths = getMonthDifference(new Date(`${startYear}-01-01`), new Date(`${Math.max(...years)}-12-31`));
-
-  // Рассчитываем количество колонок для каждого года
-  const yearColumnSpan = Math.floor(10 / years.length); // 10 колонок для временной шкалы
-
+  const totalMonths = (endYear - startYear + 1) * 12;
   return (
-    <div className="container mx-auto p-4">
-      {/* Временная шкала */}
-      <div className="grid grid-cols-12 gap-2">
-        <div className="col-span-2"></div>
-        {years.map((year, index) => (
-          <div
-            key={index}
-            className={`col-span-${yearColumnSpan} text-center font-bold bg-[#1a1a1a] text-[#d9d9d9] rounded-[10px] py-2`}
-          >
+    <div className="container mx-auto mt-10">
+      <div className="flex">
+        <div className="w-48"></div> {/* Пустое место для колонки с проектами */}
+        {years.map((year) => (
+          <div key={year} className="flex-1 text-center text-[#d9d9d9] bg-[#1a1a1a] rounded-[15px]">
             {year}
           </div>
         ))}
       </div>
 
-      {projects.map((project, index) => {
-        const startOffset = getMonthDifference(new Date(`${startYear}-01-01`), project.start);
-        const projectDuration = getMonthDifference(project.start, project.end);
-        const projectColor = project.color || 'bg-green-500'; // Используем цвет проекта или цвет по умолчанию
+      {/* Рендеринг проектов */}
+      {projects.map((project) => {
+        const startPos = getYearPosition(project.startDate);
+        const endPos = getYearPosition(project.endDate);
+        const duration = endPos - startPos;
 
         return (
-          <div key={index} className="grid grid-cols-12 gap-2 items-start mt-8">
-            {/* Название проекта */}
-            <div className="col-span-2 text-green-500 font-bold mt-4">
-              {project.name}
-            </div>
-
-            {/* Визуализация проекта */}
-            <div className="col-span-10 relative">
+          <div key={project.name} className="flex items-center text-green-600 font-extrabold py-[2%]">
+            <div className="w-48 text-right pr-4">{project.name}</div>
+            <div className="flex-1 relative">
               <div
-                className={`absolute ${projectColor} rounded-[10px] p-1 h-8`} // Используем переменную для цвета
+                className="absolute bg-green-600 text-white text-[80%] font-normal rounded-[15px] p-2 -mt-5"
                 style={{
-                  left: `${(startOffset / totalMonths) * 100}%`,
-                  width: `${(projectDuration / totalMonths) * 100}%`,
+                  left: `${(startPos / totalMonths) * 100}%`, // Позиция начала проекта
+                  width: `${(duration / totalMonths) * 100}%`, // Ширина проекта
                 }}
               >
-                <span className="text-[#1a1a1a] p-2">{project.name}</span>
+                {project.name}
               </div>
             </div>
           </div>
@@ -86,12 +59,4 @@ const GanttChart = () => {
   );
 };
 
-function App() {
-  return (
-    <div className="md:shadow-[0_0px_40px_10px_rgba(0,0,0,0.5)] rounded-[30px] border-[1px] border-green-600 bg-inherit max-w-6xl mx-auto p-4">
-      <GanttChart />
-    </div>
-  );
-}
-
-export default App;
+export default GanttChart;
