@@ -97,7 +97,7 @@ export const Project = () => {
           >
             <a 
               href={project.link} 
-              className={`bg-[#242424] rounded-[15px] shadow-[0_0px_10px_3px_rgba(0,0,0,0.3)] md:p-0 xl:p-0 flex-grow no-underline transition-all duration-300 border-[1px] ${hoveredIndex === index ? 'border-green-600' : 'border-transparent'}`}
+              className={`md:bg-[#242424] bg-[#16A34A] rounded-[15px] shadow-[0_0px_10px_3px_rgba(0,0,0,0.3)] md:p-0 xl:p-0 flex-grow no-underline transition-all duration-300 border-[1px] ${hoveredIndex === index ? 'border-green-600' : 'border-transparent'}`}
             >
               <div className='md:flex-row  flex-col'>
                 <div className="flex md:justify-center mb-0 md:mb-4">
