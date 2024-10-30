@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import monkey from '/home/cody/Cody/Programming/React/example1/example1/src/assets/monkey.jpg';
-import monkey2 from '/home/cody/Cody/Programming/React/example1/example1/src/assets/wolf.jpg';
-
+// import monkey from '/home/cody/Cody/Programming/React/example1/example1/src/assets/monkey.jpg';
+import monkey from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/monkey.jpg';
 
 import { GrArchlinux } from "react-icons/gr";
 
