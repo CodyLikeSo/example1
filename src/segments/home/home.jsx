@@ -19,15 +19,26 @@ export const Home = () => {
       setActiveBox((prev) => (prev === null ? 0 : (prev + 1) % boxes.length));
     } else if (event.key === "ArrowLeft") {
       setActiveBox((prev) => (prev === null ? boxes.length - 1 : (prev - 1 + boxes.length) % boxes.length));
+    } else if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+      // Сбрасываем активный бокс
+      setActiveBox(null);
     } else if (event.key === "Enter" && activeBox !== null) {
       navigate(boxes[activeBox].route);
     }
   };
 
+  const handleWheel = (event) => {
+    // Сбрасываем активный бокс при прокрутке колесика мыши
+    setActiveBox(null);
+  };
+
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("wheel", handleWheel);
+    
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("wheel", handleWheel);
     };
   }, [activeBox]);
 

@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-// import monkey from '/home/cody/Cody/Programming/React/example1/example1/src/assets/monkey.jpg';
-import monkey from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/monkey.jpg'
+import monkey from '/home/cody/Cody/Programming/React/example1/example1/src/assets/monkey.jpg';
+// import monkey from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/monkey.jpg'
 import { Text_about } from './text_about';
 
 // List of possible texts
 const textOptions = [
-  "Press space (─‿─)",
+  "Press Alt (─‿─)",
   "You may not believe me, but this picture was taken with my pants ripped down my ass.",
   "And this man calls himself a programmer and a musician and a project manager at the same time.",
   "Hope you like the site. I did my best.",
@@ -46,7 +46,7 @@ const Summury = () => {
   // Effect to listen for "Space" key presses
   useEffect(() => {
     const handleKeyPress = (event) => {
-      if (event.key === ' ') {
+      if (event.key === 'Alt') {
         changeRandomText();
         event.preventDefault(); // Prevent scrolling with space bar
       }

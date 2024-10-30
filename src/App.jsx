@@ -9,8 +9,8 @@ import Dev_pages from './segments/home/development/dev_pages';
 
 import { AnimatePresence } from 'framer-motion'; // Import AnimatePresence for route transitions
 
-import keyboard from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/keyboard3.png';
-// import keyboard from '/home/cody/Cody/Programming/React/example1/example1/src/assets/keyboard3.png';
+// import keyboard from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/keyboard3.png';
+import keyboard from '/home/cody/Cody/Programming/React/example1/example1/src/assets/keyboard3.png';
 
 // Popup Component for the guide
 function GuidePopup({ onClose }) {
