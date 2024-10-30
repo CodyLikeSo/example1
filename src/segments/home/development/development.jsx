@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ConsoleSlide from "./console_slide";
 import Transition from "../../../navigation/transition";
+import lines from '/home/cody/Cody/Programming/React/example1/example1/src/assets/lines.png';
+import stars from '/home/cody/Cody/Programming/React/example1/example1/src/assets/stars2.png';
+
+
 
 const Development = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -45,6 +49,15 @@ const Development = () => {
 
   return (
     <div>
+            <div
+              className="absolute inset-0 z-0 hidden md:block"
+              style={{
+                backgroundImage: `url(${lines})`,
+                backgroundSize: '150%', // Set to 200% to make it 2x size
+                backgroundPosition: 'center 33%',
+                backgroundRepeat: 'no-repeat',
+              }}
+            ></div>
       <div
         style={{
           transform: `translate(${offsetX}px, ${offsetY}px)`,
@@ -61,7 +74,7 @@ const Development = () => {
           transform: `translate(${buttonOffsetX}px, ${buttonOffsetY}px)`,
           transition: 'transform 0.4s ease-out',
         }}
-        className="p-[0.2%] shadow-[0_0px_20px_4px_rgba(0,0,0,0.3)] bg-inherit rounded-[30px] text-green-600 border-[1px] border-green-600 transition duration-300 absolute bottom-[3%] transform inset-x-1/3"
+        className="p-[0.2%] shadow-[0_0px_20px_4px_rgba(0,0,0,0.3)] bg-transparent rounded-[30px] text-green-600 border-[1px] border-green-600 transition duration-300 absolute bottom-[3%] transform inset-x-1/3"
       >
         Change Version
       </button>
