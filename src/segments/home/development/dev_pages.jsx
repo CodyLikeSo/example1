@@ -5,6 +5,8 @@ import ArchInfoComponent from './vim/arch';
 import ReactInfoComponent from './vim/react';
 import PythonInfoComponent from './vim/python';
 import RustInfoComponent from './vim/rust';
+import lines from '/home/cody/Cody/Programming/React/example1/example1/src/assets/lines.png';
+import stars from '/home/cody/Cody/Programming/React/example1/example1/src/assets/stars2.png';
 
 const tabs = [
   { id: 'Arch', label: 'Arch', component: ArchInfoComponent },
@@ -95,11 +97,27 @@ function Dev_pages() {
   }, [activeTab]);
 
   return (
+    <div>
+                  <div
+                    className="absolute inset-0 z-0 "
+                    style={{
+                      backgroundImage: `url(${lines})`,
+                      backgroundSize: '150%', // Set to 200% to make it 2x size
+                      backgroundPosition: 'center 33%',
+                      backgroundRepeat: 'no-repeat',
+                    }}
+                  ></div>
     <div className="flex items-center justify-center h-screen" style={{
       transform: `translate(${offsetX}px, ${offsetY}px)`,
       transition: 'transform 0.4s ease-out',
     }}>
-      <div className="w-4/5 sm:w-4/5 md:w-3/5 h-5/6 sm:h-5/6 md:h-3/5 flex flex-col items-center justify-center bg-[#242424] rounded-[30px] md:shadow-[0_0px_40px_10px_rgba(0,0,0,0.5)] text-[#d9d9d9] md:border-[1px] border-green-600">
+      <div className="w-4/5 sm:w-4/5 md:w-3/5 h-5/6 sm:h-5/6 md:h-3/5 flex flex-col items-center justify-center md:bg-[#242424] bg-transparent rounded-[30px] md:shadow-[0_0px_40px_10px_rgba(0,0,0,0.5)] text-[#d9d9d9] md:border-[1px] border-green-600">
+          <div
+              className='absolute md:top-[8%] top-[2%] md:left-[4%] left-[2%] md:text-[100%] text-[50%] border-green-600 border-[1px] px-1 md:p-2 rounded-[15px] md:shadow-[0_0px_40px_10px_rgba(0,0,0,0.5)] cursor-pointer'
+              onClick={() => navigate('/')}
+          >
+              Back to main
+          </div>
         <div className="flex xl:space-x-20 lg:space-x-12 md:space-x-8 sm:space-x-6 mb-4 text-green-600 xl:-mt-10 md:-mt-10 lg:-mt-10 sm:-mt-8 -mt-8">
           {tabs.map(tab => (
             <button
@@ -121,7 +139,15 @@ function Dev_pages() {
         </div>
         <div className="tab-content flex-grow px-[2%] text-[100%] 3xl:text-[150%] 4xl:text-4xl overflow-hidden" style={{ height: 'calc(100% - 50px)' }}>
           <div style={tabContentStyle}>
+            
             {renderTabContent()}
+                  <div
+                    className="absolute inset-0 z-0 hidden md:block"
+                    style={{
+                      backgroundImage: `url(${stars})`,
+                      backgroundSize: '100%', // Set to 200% to make it 2x size
+                    }}
+                  ></div>
           </div>
         </div>
       </div>
@@ -135,6 +161,7 @@ function Dev_pages() {
       >
         Terminal
       </button>
+    </div>
     </div>
   );
 }

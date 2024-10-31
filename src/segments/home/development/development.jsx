@@ -49,8 +49,9 @@ const Development = () => {
 
   return (
     <div>
+
             <div
-              className="absolute inset-0 z-0 hidden md:block"
+              className="absolute inset-0 z-0"
               style={{
                 backgroundImage: `url(${lines})`,
                 backgroundSize: '150%', // Set to 200% to make it 2x size
@@ -66,6 +67,12 @@ const Development = () => {
       >
         <div className={`transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
           <ConsoleSlide />
+                          <div
+                              className='absolute text-[#d9d9d9] md:top-[8%] top-[2%] md:left-[4%] left-[2%] md:text-[100%] text-[50%] border-green-600 border-[1px] px-1 md:p-2 rounded-[15px] md:shadow-[0_0px_40px_10px_rgba(0,0,0,0.5)] cursor-pointer'
+                              onClick={() => navigate('/')}
+                          >
+                              Back to main
+                          </div>
         </div>
       </div>
       <button

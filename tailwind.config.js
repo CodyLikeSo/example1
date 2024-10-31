@@ -10,6 +10,12 @@ export default {
         sans: ['Montserrat', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
+        rubik: ['"Rubik Mono One"', 'sans-serif'], // Add Rubik Mono One here
+      },
+      fontWeight: {
+        extrabold: '1000', // Existing extrabold weight
+        '1000': '1000',   // Custom weight of 1000
+        '1200': '1200',   // Custom weight of 1200 (if needed)
       },
       screens: {
         '3xl': '1921px', // Custom breakpoint for any screen wider than 1920px

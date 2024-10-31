@@ -97,7 +97,7 @@ export const Project = () => {
                     }}
                   ></div>
       <div className="flex md:flex-col flex-col items-center h-screen overflow-hidden md:py-[12%] lg:py-0 py-0">
-        <div className={`flex flex-col md:flex-row justify-center items-stretch w-full h-5/6  md:h-[50%] lg:h-[45%] xl:h-[55%]  transition-opacity duration-[300ms] ${isTransitioning ? 'opacity-0' : 'opacity-100'} overflow-y-auto`}>
+        <div className={`flex flex-col md:flex-row justify-center items-stretch w-full h-5/6  md:h-[70%] lg:h-[55%] xl:h-[55%]  transition-opacity duration-[300ms] ${isTransitioning ? 'opacity-0' : 'opacity-100'} overflow-y-auto`}>
           {currentProjects.map((project, index) => (
             <div
               key={project.id}

@@ -30,7 +30,7 @@ const ParticleEffect = () => {
 
     class Particle {
       constructor() {
-        this.size = 2;
+        this.size = 3;
         this.reset();
       }
 

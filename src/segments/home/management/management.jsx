@@ -1,73 +1,36 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useNavigate } from "react-router-dom"; // Импортируем useNavigate
 import Transition from "../../../navigation/transition";
-import { useNavigate } from "react-router-dom";
-import Text_block from "./text_block";
 import GanttChart from "./gantt_chart";
+import lines from '/home/cody/Cody/Programming/React/example1/example1/src/assets/lines.png';
 
 function Management() {
-  const navigate = useNavigate(); // Initialize useNavigate
-  const [mousePosition, setMousePosition] = useState({ x: -30, y: 0 });
+  const navigate = useNavigate(); // Создаем экземпляр navigate
 
-  useEffect(() => {
-    const handleMouseMove = (event) => {
-      setMousePosition({ x: event.clientX, y: event.clientY });
-    };
 
-    const handleKeyDown = (event) => {
-      if (event.key === 'Escape') {
-        navigate('/'); // Navigate to the root path on Escape key press
-      }
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("keydown", handleKeyDown); // Add keydown listener
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("keydown", handleKeyDown); // Clean up listener
-    };
-  }, [navigate]); // Add navigate to dependencies
-
-  // Calculate offsets for GanttChart
-  const offsetX = mousePosition.x * 0.025; 
-  const offsetY = mousePosition.y * 0.025; 
-
-  // Function to handle button click
-  const handleButtonClick = () => {
-    navigate('/'); // Navigate to the root path
-  };
 
   return (
-    <div>
-      <div className="block md:hidden">
-        <button 
-          onClick={handleButtonClick} 
-          className="absolute top-0 w-full bg-green-800 text-white py-2 px-4"
-        >
-          Main page
-        </button>
-      </div>
-      <div className="md:block hidden py-6">
-        <h1 className="text-center text-white font-extrabold text-2xl py-[3%]">GANTT CHART OF MY WORK EXPERIENCE</h1>
-        <div
-          className="md:shadow-[0_0px_40px_10px_rgba(0,0,0,0.5)] md:block hidden rounded-[30px] border-[1px] border-green-600 bg-inherit max-w-[80%] mx-auto p-4"
-          style={{
-            transform: `translate(${offsetX}px, ${offsetY}px)`,
-            transition: "transform 0.4s ease-out"
-          }}
-        >
-          <GanttChart />
-        </div>
-      </div>
+    <div style={{ position: 'relative', height: '100vh' }}>
+      <GanttChart />
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `url(${lines})`,
+          backgroundSize: '200%', // Установить на 200%, чтобы сделать в 2 раза больше
+          backgroundPosition: 'center 33%',
+          backgroundRepeat: 'no-repeat',
+          filter: 'blur(3px)',
+          zIndex: -1 // Убедитесь, что фоновый элемент находится под другими элементами
+        }}
+      ></div>
 
-      <div className="py-[5%]"
-           style={{
-             transform: `translate(${offsetX}px, ${offsetY}px)`,
-             transition: "transform 0.9s ease-out"
-           }}
+      {/* Кнопка для перехода на главную страницу */}
+      <button
+        className="fixed bottom-5 right-5 px-5 py-2 bg-[#1a1a1a] text-white rounded-[12px] transition-colors duration-700 ease-in-out hover:bg-green-700 "
+        onClick={() => navigate('/')} // Навигация на главную страницу
       >
-        <Text_block />
-      </div>
+        Main
+      </button>
     </div>
   );
 }
