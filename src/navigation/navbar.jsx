@@ -131,11 +131,11 @@ const InteractiveBars = () => {
             key={bar.id}
             onClick={() => handleComponentClick(bar.id)} // Добавляем обработчик клика
             className={`absolute w-4/5 sm:w-4/5 md:w-4/5 h-full  sm:h-full md:h-4/5 lg:h-3/5 lg:w-3/5 p-4 rounded-[30px] md:shadow-[0_0px_40px_10px_rgba(0,0,0,0.5)]  text-[#D9D9D9] transition-all duration-700 ease-in-out ${
-              activeScreen === bar.id ? 'opacity-100 transform scale-100' : 'opacity-0 transform scale-90 pointer-events-none'
+              activeScreen === bar.id ? 'transform scale-100 opacity-80' : 'opacity-0 transform scale-90 pointer-events-none'
             }`}
             style={{
               transform: `translate(${offsetX}px, ${offsetY}px)`,
-              transition: 'transform 0.4s ease-out, opacity 0.4s ease-out',
+              transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
               background: isMdOrHigher ? 'linear-gradient(to bottom, #2a2a2a 30%, #242424 70%)' : 'transparent',
             }}
           >
@@ -152,7 +152,7 @@ const InteractiveBars = () => {
               transform: `translate(${Math.max(-100, Math.min(50, (mousePosition.x - window.innerWidth / 2) / 45))}px, ${Math.max(-100, Math.min(50, (mousePosition.y - window.innerHeight / 2) / 35))}px)`,
               transition: 'transform 0.4s ease-out, opacity 0.4s ease-out',
               background: isMdOrHigher ? 'rgba(42, 42, 42, 0.7)' : 'transparent', // Use a semi-transparent background
-              backdropFilter: isMdOrHigher ? 'blur(5px)' : 'none', // Apply blur only for md and higher
+              backdropFilter: isMdOrHigher ? 'blur(2px)' : 'none', // Apply blur only for md and higher
             }}
           >
             <div className="container mx-auto p-4">
