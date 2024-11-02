@@ -3,9 +3,6 @@ import { useNavigate } from "react-router-dom";
 import Box2 from "./boxes/box2";
 import Box1 from "./boxes/box1";
 import Box from "./boxes/box";
-// import stars from '/home/cody/Cody/Programming/React/example1/example1/src/assets/stars2.png';
-import stars from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/stars2.png';
-
 
 export const Home = () => {
   const [activeBox, setActiveBox] = useState(null);
@@ -50,7 +47,7 @@ export const Home = () => {
                   <div
                     className="absolute inset-0 z-0 rounded-[30px] opacity-95 hidden md:block"
                     style={{
-                      backgroundImage: `url(${stars})`,
+                      backgroundImage: `url('src/assets/stars2.png')`,
                       backgroundSize: 'cover', // or 'contain' depending on your needs
                       backgroundPosition: 'center',
                       backgroundRepeat: 'no-repeat',

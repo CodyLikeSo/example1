@@ -1,5 +1,5 @@
 // constants.js
-export const CONTENT = `Info about MY WORK EXPERIENCE:
+export const CONTENT1 = `Info about MY WORK EXPERIENCE:
 Over the past three and a bit years I have tried my hand at being a project manager and Python programmer. I am very happy with the projects I have been involved in and the experience I have gained. These years have not only helped me develop my skills in project management, but also helped me become a better programmer, analyst, and DevOps professional."; // Your constant content
 
 - MoneyFactory: Python dev | React dev
@@ -66,3 +66,4 @@ Dev-ops: Docker, Render and Vercel as services, kubernetes, load handling
 
 
 `; // Your constant content
+export const CONTENT = 'bruh'

@@ -2,12 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ConsoleSlide from "./console_slide";
 import Transition from "../../../navigation/transition";
-// import lines from '/home/cody/Cody/Programming/React/example1/example1/src/assets/lines.png';
-// import stars from '/home/cody/Cody/Programming/React/example1/example1/src/assets/stars2.png';
-
-import lines from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/lines.png';
-import stars from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/stars2.png';
-
 
 const Development = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -51,11 +45,10 @@ const Development = () => {
 
   return (
     <div>
-
             <div
               className="absolute inset-0 z-0"
               style={{
-                backgroundImage: `url(${lines})`,
+                backgroundImage: `url('src/assets/lines.png')`,
                 backgroundSize: '150%', // Set to 200% to make it 2x size
                 backgroundPosition: 'center 33%',
                 backgroundRepeat: 'no-repeat',
@@ -69,12 +62,6 @@ const Development = () => {
       >
         <div className={`transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
           <ConsoleSlide />
-                          <div
-                              className='absolute text-[#d9d9d9] md:top-[8%] top-[2%] md:left-[4%] left-[2%] md:text-[100%] text-[50%] border-green-600 border-[1px] px-1 md:p-3 rounded-[15px] md:shadow-[0_0px_40px_10px_rgba(0,0,0,0.5)] cursor-pointer'
-                              onClick={() => navigate('/')}
-                          >
-                              Back to main
-                          </div>
         </div>
       </div>
       <button
@@ -86,6 +73,12 @@ const Development = () => {
         className="p-[0.2%] shadow-[0_0px_20px_4px_rgba(0,0,0,0.3)] bg-transparent rounded-[30px] text-green-600 border-[1px] border-green-600 transition duration-300 absolute bottom-[3%] transform inset-x-1/3"
       >
         Change Version
+      </button>
+      <button
+        className="fixed bottom-5 right-5 px-5 py-2 bg-[#1a1a1a] text-white rounded-[12px] transition-colors duration-700 ease-in-out hover:bg-green-700 "
+        onClick={() => navigate('/')} // Навигация на главную страницу
+      >
+        Main
       </button>
     </div>
   );

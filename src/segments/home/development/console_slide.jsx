@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { GoQuestion } from 'react-icons/go';
 import ConsoleEmulator from './console';
-// import stars from '/home/cody/Cody/Programming/React/example1/example1/src/assets/stars2.png';
-import stars from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/stars2.png';
-
-
 
 function ConsoleSlide() {
   const [isMdOrLarger, setIsMdOrLarger] = useState(window.innerWidth >= 768);
@@ -30,7 +26,7 @@ function ConsoleSlide() {
               <div
                 className="absolute inset-0 z-0 hidden md:block"
                 style={{
-                backgroundImage: `url(${stars})`,
+                backgroundImage: `url('src/assets/stars2.png')`,
                 backgroundSize: '100%', // Set to 200% to make it 2x size
                 backgroundPosition: 'center 33%',
                 backgroundRepeat: 'no-repeat',

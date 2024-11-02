@@ -8,13 +8,6 @@ import { Hero } from '../segments/hero/hero';
 
 import Transition from './transition';
 
-import mountain from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/mountaion_glow.png';
-// import mountain from '/home/cody/Cody/Programming/React/example1/example1/src/assets/mountaion_glow.png';
-
-// import lines from '/home/cody/Cody/Programming/React/example1/example1/src/assets/lines.png';
-import lines from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/lines.png';
-
-
 
 const InteractiveBars = () => {
   const [activeScreen, setActiveScreen] = useState(null);
@@ -81,7 +74,7 @@ const InteractiveBars = () => {
       <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: `url(${lines})`,
+          backgroundImage: `url('/src/assets/lines.png')`,
           backgroundSize: '150%', // Set to 200% to make it 2x size
           backgroundPosition: 'center 33%',
           backgroundRepeat: 'no-repeat',
@@ -130,22 +123,22 @@ const InteractiveBars = () => {
             const offsetY = Math.max(-100, Math.min(50, (mousePosition.y - window.innerHeight / 2) / 35));
 
             return (
-<div
-    key={bar.id}
-    onClick={() => handleComponentClick(bar.id)}
-    className={`absolute w-4/5 sm:w-4/5 md:w-4/5 h-full sm:h-full md:h-4/5 lg:h-3/5 lg:w-3/5 p-4 rounded-[30px] md:shadow-[0_0px_40px_10px_rgba(0,0,0,0.5)] text-[#D9D9D9] transition-all duration-700 ease-in-out ${
-      activeScreen === bar.id ? 'transform scale-100 opacity-80' : 'opacity-0 transform scale-90 pointer-events-none'
-    }`}
-    style={{
-      backdropFilter: 'blur(5px)', // Добавляем эффект размытия
-      transform: `translate(${offsetX}px, ${offsetY}px)`,
-      transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
-      background: isMdOrHigher ? 'linear-gradient(to bottom, #2a2a2a 30%, #242424 70%)' : 'transparent',
+          <div
+              key={bar.id}
+              onClick={() => handleComponentClick(bar.id)}
+              className={`absolute w-4/5 sm:w-4/5 md:w-4/5 h-full sm:h-full md:h-4/5 lg:h-3/5 lg:w-3/5 p-4 rounded-[30px] md:shadow-[0_0px_40px_10px_rgba(0,0,0,0.5)] text-[#D9D9D9] transition-all duration-700 ease-in-out ${
+                activeScreen === bar.id ? 'transform scale-100 opacity-90' : 'opacity-0 transform scale-90 pointer-events-none'
+              }`}
+              style={{
+                backdropFilter: 'blur(5px)', // Добавляем эффект размытия
+                transform: `translate(${offsetX}px, ${offsetY}px)`,
+                transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
+                background: isMdOrHigher ? 'linear-gradient(to bottom, #2a2a2a 30%, #242424 70%)' : 'transparent',
 
-    }}
->
-    {bar.component}
-</div>
+              }}
+          >
+              {bar.component}
+          </div>
 
             );
           })}
@@ -162,7 +155,7 @@ const InteractiveBars = () => {
             }}
           >
             <div className="container mx-auto p-4">
-              <img src={mountain} className="absolute bottom-0 left-0 right-0 mx-auto object-contain rounded-[30px]" alt="Mountain" />
+              <img src='src/assets/mountaion_glow.png' className="absolute bottom-0 left-0 right-0 mx-auto object-contain rounded-[30px]" alt="Mountain" />
             </div>
             <Hero/>
           </div>

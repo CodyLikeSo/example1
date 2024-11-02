@@ -5,11 +5,11 @@ import ArchInfoComponent from './vim/arch';
 import ReactInfoComponent from './vim/react';
 import PythonInfoComponent from './vim/python';
 import RustInfoComponent from './vim/rust';
-// import lines from '/home/cody/Cody/Programming/React/example1/example1/src/assets/lines.png';
-// import stars from '/home/cody/Cody/Programming/React/example1/example1/src/assets/stars2.png';
+import lines from '/home/cody/Cody/Programming/React/example1/example1/src/assets/lines.png';
+import stars from '/home/cody/Cody/Programming/React/example1/example1/src/assets/stars2.png';
 
-import lines from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/lines.png';
-import stars from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/stars2.png';
+// import lines from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/lines.png';
+// import stars from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/stars2.png';
 
 const tabs = [
   { id: 'Arch', label: 'Arch', component: ArchInfoComponent },
@@ -115,12 +115,6 @@ function Dev_pages() {
       transition: 'transform 0.4s ease-out',
     }}>
       <div className="w-4/5 sm:w-4/5 md:w-3/5 h-5/6 sm:h-5/6 md:h-3/5 flex flex-col items-center justify-center md:bg-[#242424] bg-transparent rounded-[30px] md:shadow-[0_0px_40px_10px_rgba(0,0,0,0.5)] text-[#d9d9d9] md:border-[1px] border-green-600">
-          <div
-              className='absolute md:top-[8%] top-[2%] md:left-[4%] left-[2%] md:text-[100%] text-[50%] border-green-600 border-[1px] px-1 md:p-2 rounded-[15px] md:shadow-[0_0px_40px_10px_rgba(0,0,0,0.5)] cursor-pointer'
-              onClick={() => navigate('/')}
-          >
-              Back to main
-          </div>
         <div className="flex xl:space-x-20 lg:space-x-12 md:space-x-8 sm:space-x-6 mb-4 text-green-600 xl:-mt-10 md:-mt-10 lg:-mt-10 sm:-mt-8 -mt-8">
           {tabs.map(tab => (
             <button
@@ -165,6 +159,12 @@ function Dev_pages() {
         Terminal
       </button>
     </div>
+    <button
+        className="fixed bottom-5 right-5 px-5 py-2 bg-[#1a1a1a] text-white rounded-[12px] transition-colors duration-700 ease-in-out hover:bg-green-700 "
+        onClick={() => navigate('/')} // Навигация на главную страницу
+      >
+        Main
+      </button>
     </div>
   );
 }

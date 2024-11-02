@@ -1,7 +1,5 @@
 import React from 'react';
 import ParticleEffect from './particle';
-// import stars from '/home/cody/Cody/Programming/React/example1/example1/src/assets/stars2.png';
-import stars from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/stars2.png';
 
 export const Hero = () => {
   return (
@@ -9,7 +7,7 @@ export const Hero = () => {
       <div
         className="absolute inset-0 z-0 rounded-[30px] opacity-95 hidden md:block"
         style={{
-          backgroundImage: `url(${stars})`,
+          backgroundImage: `url('src/assets/stars2.png')`,
           backgroundSize: 'cover', // or 'contain' depending on your needs
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',

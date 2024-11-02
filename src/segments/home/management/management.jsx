@@ -2,8 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom"; // Импортируем useNavigate
 import Transition from "../../../navigation/transition";
 import GanttChart from "./gantt_chart";
-// import lines from '/home/cody/Cody/Programming/React/example1/example1/src/assets/lines.png';
-import lines from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/lines.png';
 
 function Management() {
   const navigate = useNavigate(); // Создаем экземпляр navigate
@@ -14,7 +12,7 @@ function Management() {
       <div
         className="fixed inset-0" // Changed from absolute to fixed
         style={{
-          backgroundImage: `url(${lines})`,
+          backgroundImage: `url('src/assets/lines.png')`,
           backgroundSize: '200%', // Установить на 200%, чтобы сделать в 2 раза больше
           backgroundPosition: 'center 33%',
           backgroundRepeat: 'no-repeat',
