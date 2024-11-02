@@ -2,18 +2,17 @@ import React from "react";
 import { useNavigate } from "react-router-dom"; // Импортируем useNavigate
 import Transition from "../../../navigation/transition";
 import GanttChart from "./gantt_chart";
-import lines from '/home/cody/Cody/Programming/React/example1/example1/src/assets/lines.png';
+// import lines from '/home/cody/Cody/Programming/React/example1/example1/src/assets/lines.png';
+import lines from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/lines.png';
 
 function Management() {
   const navigate = useNavigate(); // Создаем экземпляр navigate
-
-
 
   return (
     <div style={{ position: 'relative', height: '100vh' }}>
       <GanttChart />
       <div
-        className="absolute inset-0"
+        className="fixed inset-0" // Changed from absolute to fixed
         style={{
           backgroundImage: `url(${lines})`,
           backgroundSize: '200%', // Установить на 200%, чтобы сделать в 2 раза больше

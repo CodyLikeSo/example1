@@ -8,10 +8,13 @@ import { Hero } from '../segments/hero/hero';
 
 import Transition from './transition';
 
-// import mountain from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/Mountain_fix.png';
-import mountain from '/home/cody/Cody/Programming/React/example1/example1/src/assets/mountaion_glow.png';
+import mountain from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/mountaion_glow.png';
+// import mountain from '/home/cody/Cody/Programming/React/example1/example1/src/assets/mountaion_glow.png';
 
-import lines from '/home/cody/Cody/Programming/React/example1/example1/src/assets/lines.png';
+// import lines from '/home/cody/Cody/Programming/React/example1/example1/src/assets/lines.png';
+import lines from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/lines.png';
+
+
 
 const InteractiveBars = () => {
   const [activeScreen, setActiveScreen] = useState(null);
@@ -127,20 +130,23 @@ const InteractiveBars = () => {
             const offsetY = Math.max(-100, Math.min(50, (mousePosition.y - window.innerHeight / 2) / 35));
 
             return (
-        <div
-            key={bar.id}
-            onClick={() => handleComponentClick(bar.id)} // Добавляем обработчик клика
-            className={`absolute w-4/5 sm:w-4/5 md:w-4/5 h-full  sm:h-full md:h-4/5 lg:h-3/5 lg:w-3/5 p-4 rounded-[30px] md:shadow-[0_0px_40px_10px_rgba(0,0,0,0.5)]  text-[#D9D9D9] transition-all duration-700 ease-in-out ${
-              activeScreen === bar.id ? 'transform scale-100 opacity-80' : 'opacity-0 transform scale-90 pointer-events-none'
-            }`}
-            style={{
-              transform: `translate(${offsetX}px, ${offsetY}px)`,
-              transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
-              background: isMdOrHigher ? 'linear-gradient(to bottom, #2a2a2a 30%, #242424 70%)' : 'transparent',
-            }}
-          >
-            {bar.component}
-        </div>
+<div
+    key={bar.id}
+    onClick={() => handleComponentClick(bar.id)}
+    className={`absolute w-4/5 sm:w-4/5 md:w-4/5 h-full sm:h-full md:h-4/5 lg:h-3/5 lg:w-3/5 p-4 rounded-[30px] md:shadow-[0_0px_40px_10px_rgba(0,0,0,0.5)] text-[#D9D9D9] transition-all duration-700 ease-in-out ${
+      activeScreen === bar.id ? 'transform scale-100 opacity-80' : 'opacity-0 transform scale-90 pointer-events-none'
+    }`}
+    style={{
+      backdropFilter: 'blur(5px)', // Добавляем эффект размытия
+      transform: `translate(${offsetX}px, ${offsetY}px)`,
+      transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
+      background: isMdOrHigher ? 'linear-gradient(to bottom, #2a2a2a 30%, #242424 70%)' : 'transparent',
+
+    }}
+>
+    {bar.component}
+</div>
+
             );
           })}
 

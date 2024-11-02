@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import monkey from '/home/cody/Cody/Programming/React/example1/example1/src/assets/monkey.jpg';
-// import monkey from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/monkey.jpg'
+// import monkey from '/home/cody/Cody/Programming/React/example1/example1/src/assets/monkey.jpg';
+import monkey from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/monkey.jpg'
 import { Text_about } from './text_about';
-import stars from '/home/cody/Cody/Programming/React/example1/example1/src/assets/stars2.png';
+// import stars from '/home/cody/Cody/Programming/React/example1/example1/src/assets/stars2.png';
+import stars from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/stars2.png';
 
 // List of possible texts
 const textOptions = [

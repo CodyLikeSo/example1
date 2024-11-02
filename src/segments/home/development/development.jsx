@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ConsoleSlide from "./console_slide";
 import Transition from "../../../navigation/transition";
-import lines from '/home/cody/Cody/Programming/React/example1/example1/src/assets/lines.png';
-import stars from '/home/cody/Cody/Programming/React/example1/example1/src/assets/stars2.png';
+// import lines from '/home/cody/Cody/Programming/React/example1/example1/src/assets/lines.png';
+// import stars from '/home/cody/Cody/Programming/React/example1/example1/src/assets/stars2.png';
 
+import lines from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/lines.png';
+import stars from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/stars2.png';
 
 
 const Development = () => {
@@ -68,7 +70,7 @@ const Development = () => {
         <div className={`transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
           <ConsoleSlide />
                           <div
-                              className='absolute text-[#d9d9d9] md:top-[8%] top-[2%] md:left-[4%] left-[2%] md:text-[100%] text-[50%] border-green-600 border-[1px] px-1 md:p-2 rounded-[15px] md:shadow-[0_0px_40px_10px_rgba(0,0,0,0.5)] cursor-pointer'
+                              className='absolute text-[#d9d9d9] md:top-[8%] top-[2%] md:left-[4%] left-[2%] md:text-[100%] text-[50%] border-green-600 border-[1px] px-1 md:p-3 rounded-[15px] md:shadow-[0_0px_40px_10px_rgba(0,0,0,0.5)] cursor-pointer'
                               onClick={() => navigate('/')}
                           >
                               Back to main

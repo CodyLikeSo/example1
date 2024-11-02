@@ -5,8 +5,11 @@ import ArchInfoComponent from './vim/arch';
 import ReactInfoComponent from './vim/react';
 import PythonInfoComponent from './vim/python';
 import RustInfoComponent from './vim/rust';
-import lines from '/home/cody/Cody/Programming/React/example1/example1/src/assets/lines.png';
-import stars from '/home/cody/Cody/Programming/React/example1/example1/src/assets/stars2.png';
+// import lines from '/home/cody/Cody/Programming/React/example1/example1/src/assets/lines.png';
+// import stars from '/home/cody/Cody/Programming/React/example1/example1/src/assets/stars2.png';
+
+import lines from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/lines.png';
+import stars from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/stars2.png';
 
 const tabs = [
   { id: 'Arch', label: 'Arch', component: ArchInfoComponent },

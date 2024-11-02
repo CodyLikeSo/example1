@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { GoQuestion } from 'react-icons/go';
 import ConsoleEmulator from './console';
-import stars from '/home/cody/Cody/Programming/React/example1/example1/src/assets/stars2.png';
+// import stars from '/home/cody/Cody/Programming/React/example1/example1/src/assets/stars2.png';
+import stars from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/stars2.png';
+
 
 
 function ConsoleSlide() {

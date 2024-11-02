@@ -61,7 +61,7 @@ const InputComponent = () => {
         <div className="relative h-screen text-lg">
           <div className="absolute md:max-w-xl max-w-md transform mt-[12%]">
             <div className="break-words overflow-wrap-normal whitespace-normal text-green-300 font-extrabold">
-              {responseText} {/* Display only the API response */}
+              {responseText} {}{/* Display only the API response */}
             </div>
           </div>
         </div>

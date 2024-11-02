@@ -1,6 +1,7 @@
 import React from 'react';
 import ParticleEffect from './particle';
-import stars from '/home/cody/Cody/Programming/React/example1/example1/src/assets/stars2.png';
+// import stars from '/home/cody/Cody/Programming/React/example1/example1/src/assets/stars2.png';
+import stars from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/stars2.png';
 
 export const Hero = () => {
   return (
