@@ -139,7 +139,7 @@ function Dev_pages() {
             
             {renderTabContent()}
                   <div
-                    className="absolute inset-0 z-0 hidden md:block"
+                    className="absolute inset-0 z-0 hidden"
                     style={{
                       backgroundImage: `url(${stars})`,
                       backgroundSize: '100%', // Set to 200% to make it 2x size

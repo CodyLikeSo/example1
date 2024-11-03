@@ -30,6 +30,7 @@ const NeofetchOutput = () => {
       <div><ScrambleText targetText="                                    "/></div>
       </div>
       <h1 className='text-xl block md:hidden'>Type "main" to exit or "list" to see command set</h1>
+      <h1 className='text-[140%]'>type list</h1>
     </div>
   );
 };

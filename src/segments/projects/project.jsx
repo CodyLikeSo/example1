@@ -7,9 +7,9 @@ const projects = [
   { 
     id: 1, 
     title: 'Dream-Game', 
-    content: 'Dream game what i build with my own team using Godot and Bevy ', 
+    content: 'Dream game what i build with my own team', 
     link: '/project1', 
-    image: 'src/assets/monkey.jpg',
+    image: 'src/assets/chel.jpg',
     tags: ['Godot', 'C#', 'Design'] 
   },
   { 
@@ -17,7 +17,7 @@ const projects = [
     title: 'Gym-bro', 
     content: 'Telegram bot for fitness', 
     link: '/project2', 
-    image: 'src/assets/monkey.jpg',
+    image: 'src/assets/gymbro.jpg',
     tags: ['Python','PostgreSQL'] 
   },
   { 
@@ -111,7 +111,7 @@ export const Project = () => {
                   <img 
                       src={project.image} 
                       alt={project.title} 
-                      className="justify-start size-[33%] md:size-[100%] md:h-auto md:w-full hidden md:block rounded-[15px] border-[2px] border-green-900 object-contain" 
+                      className="justify-start size-[33%] opacity-80 md:size-[100%] md:h-auto md:w-full hidden md:block rounded-[15px] border-[2px] border-green-900 object-contain" 
                     />
                   </div>
                   <h2 className="md:text-xl text-2xl flex font-bold text-white py-1 justify-center md:py-0 md:px-0 md:text-center md:block">{project.title}</h2>
