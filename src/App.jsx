@@ -7,6 +7,8 @@ import Management from './segments/home/management/management';
 import Sound_design from './segments/home/sound_design/sound_design';
 import Dev_pages from './segments/home/development/dev_pages';
 
+import { ProjectDreamGave } from './segments/projects/project_dream_gave';
+
 import { AnimatePresence } from 'framer-motion'; // Import AnimatePresence for route transitions
 
 // Popup Component for the guide
@@ -70,6 +72,7 @@ function AnimatedRoutes() {
           <Route path="/manage" element={<Management />} />
           <Route path="/sound" element={<Sound_design />} />
           <Route path="/develop/pages" element={<Dev_pages />} />
+          <Route path="/project1" element={<ProjectDreamGave />} />
         </Routes>
       </AnimatePresence>
     </>

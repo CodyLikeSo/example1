@@ -129,7 +129,7 @@ function Dev_pages() {
             >
               {tab.label}
               {activeTab === tab.id && (
-                <div className="absolute inset-x-0 bottom-0 h-[0.2px] bg-green-600 rounded-full" />
+                <div className="absolute inset-x-0 bottom-0 h-[0.1px] bg-green-600 rounded-full" />
               )}
             </button>
           ))}
