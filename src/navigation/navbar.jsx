@@ -117,41 +117,45 @@ const InteractiveBars = () => {
           })}
         </div>
 
-        <div className="flex justify-center items-center w-full overflow-hidden">
+        <div className="flex justify-center items-center w-full overflow-hidden ">
           {bars.map((bar) => {
             const offsetX = Math.max(-100, Math.min(50, (mousePosition.x - window.innerWidth / 2) / 45));
             const offsetY = Math.max(-100, Math.min(50, (mousePosition.y - window.innerHeight / 2) / 35));
 
             return (
-          <div
-              key={bar.id}
-              onClick={() => handleComponentClick(bar.id)}
-              className={`absolute w-4/5 sm:w-4/5 md:w-4/5 h-full sm:h-full md:h-4/5 lg:h-3/5 lg:w-3/5 p-4 rounded-[30px] md:shadow-[0_0px_40px_10px_rgba(0,0,0,0.5)] text-[#D9D9D9] transition-all duration-700 ease-in-out ${
-                activeScreen === bar.id ? 'transform scale-100 opacity-90' : 'opacity-0 transform scale-90 pointer-events-none'
-              }`}
-              style={{
-                backdropFilter: 'blur(5px)', // Добавляем эффект размытия
-                transform: `translate(${offsetX}px, ${offsetY}px)`,
-                transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
-                background: isMdOrHigher ? 'linear-gradient(to bottom, #2a2a2a 30%, #242424 70%)' : 'transparent',
-
-              }}
-          >
-              {bar.component}
+        <div className='flex justify-center items-center '>
+          <div  className='absolute w-4/5 sm:w-4/5 md:w-4/5 h-full sm:h-full md:h-4/5 lg:h-3/5 lg:w-3/5 rounded-[30px] md:shadow-[0_0px_40px_10px_rgba(0,0,0,0.2)] transform -translate-x-1/2 -translate-y-1/2'
+                style={{
+                    transform: `translate(${offsetX}px, ${offsetY}px)`,
+                    transition: 'transform 0.3s ease-out, opacity 0.3s ease-out',
+                }}>
           </div>
-
-            );
-          })}
+            <div
+                key={bar.id}
+                onClick={() => handleComponentClick(bar.id)}
+                className={`absolute w-4/5 sm:w-4/5 md:w-4/5 h-full sm:h-full md:h-4/5 lg:h-3/5 lg:w-3/5 p-4 rounded-[30px] text-[#D9D9D9] transition-all duration-700 ease-in-out ${
+                    activeScreen === bar.id ? 'transform opacity-100' : 'opacity-0'
+                }`}
+                style={{
+                    transform: `translate(${offsetX}px, ${offsetY}px)`,
+                    transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
+                }}
+            >
+                {bar.component}
+                
+            </div>
+          </div>
+          );
+        })}
 
           <div
-            className={`absolute w-4/5 sm:w-4/5 md:w-4/5 h-full sm:h-full md:h-4/5 lg:h-3/5 lg:w-3/5 rounded-[30px] md:shadow-[0_0px_40px_10px_rgba(0,0,0,0.5)] text-[#D9D9D9] transition-all duration-700 ease-in-out ${
-              activeScreen === null ? 'opacity-100 transform scale-100' : 'opacity-0 transform scale-90 pointer-events-none'
+            className={`absolute w-4/5 sm:w-4/5 md:w-4/5 h-full sm:h-full md:h-4/5 lg:h-3/5 lg:w-3/5 rounded-[30px] text-[#D9D9D9] transition-all duration-700 ease-in-out ${
+              activeScreen === null ? 'opacity-100 transform scale-100' : 'opacity-0 transform scale-100 pointer-events-none'
             }`}
             style={{
               transform: `translate(${Math.max(-100, Math.min(50, (mousePosition.x - window.innerWidth / 2) / 45))}px, ${Math.max(-100, Math.min(50, (mousePosition.y - window.innerHeight / 2) / 35))}px)`,
-              transition: 'transform 0.4s ease-out, opacity 0.4s ease-out',
-              background: isMdOrHigher ? 'rgba(42, 42, 42, 0.7)' : 'transparent', // Use a semi-transparent background
-              backdropFilter: isMdOrHigher ? 'blur(2px)' : 'none', // Apply blur only for md and higher
+              transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
+              backdropFilter: isMdOrHigher ? 'blur(3px)' : 'none', // Apply blur only for md and higher
             }}
           >
             <div className="container mx-auto p-4">
