@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "custom-cursor-react": "^1.0.5",
     "framer-motion": "^11.5.4",
     "html-react-parser": "^5.1.16",
     "isomorphic-fetch": "^3.0.0",

@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import InteractiveBars from './navigation/navbar';
 
+// import CustomCursor from 'custom-cursor-react';
+// import 'custom-cursor-react/dist/index.css';
+
 import Development from './segments/home/development/development';
 import Management from './segments/home/management/management';
 import Sound_design from './segments/home/sound_design/sound_design';

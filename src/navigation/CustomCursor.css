@@ -1,0 +1,11 @@
+/* CustomCursor.css */
+.custom-cursor {
+    position: absolute;
+    width: 20px; /* Ширина курсора */
+    height: 20px; /* Высота курсора */
+    background-color: red; /* Цвет курсора */
+    border-radius: 50%; /* Форма курсора */
+    pointer-events: none; /* Игнорировать события мыши */
+    transition: left 0.1s ease-in-out, top 0.1s ease-in-out; /* Плавное движение */
+  }
+  

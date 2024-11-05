@@ -12,8 +12,13 @@ export const ProjectDreamGave = () => {
 
   return (
     <div className=''>
-        <div className='text-white text-2xl'>text</div>
-        <ImageSlider images={images}/>
+        <div className='text-white text-4xl py-10 text-center'>Name of project</div>
+        <div className='text-green-400 text-3xl px-16 text-left'>Text1</div>
+
+        <div className=''>
+          <ImageSlider images={images}/>
+        </div>
+        
     </div>
   );
 }  

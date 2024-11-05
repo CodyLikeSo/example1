@@ -28,30 +28,30 @@ const projects = [
     image: 'src/assets/monkey.jpg',
     tags: ['React', 'Node-js','Tailwind'] 
   },
-  { 
-    id: 4, 
-    title: 'Project 4', 
-    content: 'Content Project 4', 
-    link: '/project4', 
-    image: 'src/assets/monkey.jpg',
-    tags: ['Rust', 'React'] 
-  },
-  { 
-    id: 5, 
-    title: 'Project 5', 
-    content: 'Content Project 5', 
-    link: '/project5', 
-    image: 'src/assets/monkey.jpg',
-    tags: ['Python'] 
-  },
-  { 
-    id: 6, 
-    title: 'Project 6', 
-    content: 'Content Project 6', 
-    link: '/project6', 
-    image: 'src/assets/monkey.jpg',
-    tags: ['React', 'Python'] 
-  },
+  // { 
+  //   id: 4, 
+  //   title: 'Project 4', 
+  //   content: 'Content Project 4', 
+  //   link: '/project4', 
+  //   image: 'src/assets/monkey.jpg',
+  //   tags: ['Rust', 'React'] 
+  // },
+  // { 
+  //   id: 5, 
+  //   title: 'Project 5', 
+  //   content: 'Content Project 5', 
+  //   link: '/project5', 
+  //   image: 'src/assets/monkey.jpg',
+  //   tags: ['Python'] 
+  // },
+  // { 
+  //   id: 6, 
+  //   title: 'Project 6', 
+  //   content: 'Content Project 6', 
+  //   link: '/project6', 
+  //   image: 'src/assets/monkey.jpg',
+  //   tags: ['React', 'Python'] 
+  // },
 ];
 
 export const Project = () => {
@@ -107,15 +107,15 @@ export const Project = () => {
                 className={`md:bg-[#242424] rounded-[15px] shadow-[0_0px_10px_3px_rgba(0,0,0,0.3)] md:p-0 xl:p-0 flex-grow no-underline transition-all duration-300 border-[1px] ${hoveredIndex === index ? 'border-green-600' : 'border-transparent'}`}
               >
                 <div className='md:flex-row  flex-col'>
-                  <div className="flex md:justify-center mb-0 md:mb-4">
+                  <div className="flex md:justify-center mb-0 md:mb-4 xl:p-6 md:p-2">
                   <img 
                       src={project.image} 
                       alt={project.title} 
-                      className="justify-start size-[33%] opacity-80 md:size-[100%] md:h-auto md:w-full hidden md:block rounded-[15px] border-[2px] border-green-900 object-contain" 
+                      className="justify-start size-[33%] opacity-80 md:size-[100%] md:h-auto md:w-full hidden md:block rounded-[15px] border-[2px]object-contain" 
                     />
                   </div>
-                  <h2 className="md:text-xl text-2xl flex font-bold text-white py-1 justify-center md:py-0 md:px-0 md:text-center md:block">{project.title}</h2>
-                  <p className="text-gray-300 md:text-center md:hidden xl:block justify-center flex px-[15%] md:px-0">{project.content}</p>
+                  <h2 className="md:text-xl text-2xl flex text-green-500 py-1 justify-center md:py-0 md:px-0 md:text-center md:block font-rubik font-bold ">{project.title}</h2>
+                  <p className="text-gray-300 md:text-left md:hidden xl:block justify-center flex px-[15%] md:px-4 font-thin font-sans">{project.content}</p>
 
                   <div className="absolute bottom-6 md:left-8 right-8 flex flex-row lg:flex-col md:flex-col  xl:flex-row">
                     {project.tags.map((tag, index) => (
@@ -129,7 +129,7 @@ export const Project = () => {
             </div>
           ))}
         </div>
-        <div className="mt-12 space-x-12">
+        {/* <div className="mt-12 space-x-12">
           <button
             onClick={handlePrev}
             disabled={currentIndex === 0}
@@ -144,7 +144,7 @@ export const Project = () => {
           >
             Next
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
