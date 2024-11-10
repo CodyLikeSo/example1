@@ -5,11 +5,6 @@ import ArchInfoComponent from './vim/arch';
 import ReactInfoComponent from './vim/react';
 import PythonInfoComponent from './vim/python';
 import RustInfoComponent from './vim/rust';
-import lines from '/home/cody/Cody/Programming/React/example1/example1/src/assets/lines.png';
-import stars from '/home/cody/Cody/Programming/React/example1/example1/src/assets/stars2.png';
-
-// import lines from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/lines.png';
-// import stars from '/home/cody/Cody/Programming/React/my_site/example1/src/assets/stars2.png';
 
 const tabs = [
   { id: 'Arch', label: 'Arch', component: ArchInfoComponent },
@@ -18,7 +13,7 @@ const tabs = [
   { id: 'Python', label: 'Python', component: PythonInfoComponent },
 ];
 
-function Dev_pages() {
+const Dev_pages = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState(tabs[0].id);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -104,7 +99,7 @@ function Dev_pages() {
                   <div
                     className="absolute inset-0 z-0 "
                     style={{
-                      backgroundImage: `url(${lines})`,
+                      backgroundImage: `url('/src/assets/lines.png')`,
                       backgroundSize: '150%', // Set to 200% to make it 2x size
                       backgroundPosition: 'center 33%',
                       backgroundRepeat: 'no-repeat',
@@ -141,7 +136,7 @@ function Dev_pages() {
                   <div
                     className="absolute inset-0 z-0 hidden"
                     style={{
-                      backgroundImage: `url(${stars})`,
+                      backgroundImage: `url('/src/assets/stars2.png')`,
                       backgroundSize: '100%', // Set to 200% to make it 2x size
                     }}
                   ></div>

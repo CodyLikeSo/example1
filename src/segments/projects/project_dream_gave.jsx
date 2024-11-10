@@ -1,7 +1,7 @@
 import React from 'react';
 import ImageSlider from './image_slider';
-import chel from '/home/cody/Cody/Programming/React/example1/example1/src/assets/chel.jpg';
-import gymbro from '/home/cody/Cody/Programming/React/example1/example1/src/assets/gymbro.jpg';
+import chel from '/src/assets/chel.jpg';
+import gymbro from '/src/assets/gymbro.jpg';
 
 export const ProjectDreamGave = () => {
     const images = [

@@ -32,27 +32,39 @@ export const Home = () => {
     setActiveBox(null);
   };
 
+  const handleMouseMove = (event) => {
+    const screenWidth = window.innerWidth;
+    const cursorX = event.clientX;
+
+    // Проверяем, находится ли курсор в левой 1/5 ширины экрана
+    if (cursorX < screenWidth / 5) {
+      setActiveBox(null);
+    }
+  };
+
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("wheel", handleWheel);
+    window.addEventListener("mousemove", handleMouseMove); // Добавляем обработчик движения мыши
     
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("mousemove", handleMouseMove); // Убираем обработчик
     };
   }, [activeBox]);
 
   return (
     <div className="flex flex-col 2xl:flex-row h-full w-full py-4 px-4 gap-4">
-                  <div
-                    className="absolute inset-0 z-0 rounded-[30px] opacity-95 hidden md:block"
-                    style={{
-                      backgroundImage: `url('src/assets/stars2.png')`,
-                      backgroundSize: 'cover', // or 'contain' depending on your needs
-                      backgroundPosition: 'center',
-                      backgroundRepeat: 'no-repeat',
-                    }}
-                  ></div>
+      <div
+        className="absolute inset-0 z-0 rounded-[30px] opacity-95 hidden md:block"
+        style={{
+          backgroundImage: `url('src/assets/stars2.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      ></div>
       {boxes.map((box, index) => (
         <div
           key={index}
