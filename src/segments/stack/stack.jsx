@@ -1,44 +1,49 @@
-const projectManagementSkills = [
-  'Work with cross-functional team',
-  'Full Documentation',
-  'Scrum & Kanban',
-  'Negotiations',
-];
-
-const technicalSkills = [
-  'Python, Rust, React',
-  'Arch Linux, Bash',
-  'PostgreSQL',
-  'Dev-ops',
-  'Docker',
-  'Api',
-  'Git',
-];
-
 export const Stack = () => (
-  <div className="p-1">
-    <div className="flex flex-col md:flex-row rounded-[15px] md:h-[515px]">
-      <div className="hidden md:block md:w-1/3 w-full pr-4 border-green-600 border-[1px] rounded-[15px] p-6 mr-4 md:max-h-[calc(80vh-150px)] md:overflow-y-auto">
-        <h2 className="md:text-xl text-md font-bold mb-4 text-green-300">Project Management Skills:</h2>
-        <ul className="list-disc text-sm md:text-inherit list-inside mb-6">
-          {projectManagementSkills.map((skill, index) => (
-            <li key={index} className="mb-2">{skill}</li>
-          ))}
-        </ul>
-        
-        <h2 className="md:text-xl font-bold mb-4 text-green-300">Technical Skills:</h2>
-        <ul className="list-disc text-sm md:text-inherit list-inside">
-          {technicalSkills.map((skill, index) => (
-            <li key={index} className="mb-2">{skill}</li>
-          ))}
-        </ul>
+  <div className="w-full h-full">
+    <div className="p-4 flex flex-col md:flex-row overflow-auto h-[100%]">
+    <h3 className="text-lg font-semibold mb-2 md:hidden block text-center">Skills</h3>
+      <div className="md:w-1/3 w-full grid md:grid-cols-1 grid-cols-2 grid-rows-1 gap-4 border-[1px] border-green-600 p-4 rounded-[15px] ">
+        <div>
+          <h3 className="text-xl font-semibold mb-2 hidden md:block text-green-300 text-center">Skills:</h3>
+          <h3 className="text-xl font-semibold mb-2 md:hidden block text-green-300">Project Management Skills:</h3>
+          <ul className="list-disc list-inside">
+            <li>Work with cross-functional team;</li>
+            <li>Full Documentation;</li>
+            <li>Scrum & Kanban;</li>
+            <li>Negotiations;</li>
+          </ul>
+          <div className="hidden md:block">
+            <ul className="list-disc list-inside">
+              <li>Python, Rust, React;</li>
+              <li>Arch Linux, Bash;</li>
+              <li>AI Tools Usage;</li>
+              <li>PostgreSQL;</li>
+              <li>Dev-ops;</li>
+              <li>Docker;</li>
+              <li>Api;</li>
+              <li>Git;</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h3 className="text-xl font-semibold mb-2 md:hidden block text-green-300">Technical Skills:</h3>
+          <ul className="list-disc list-inside md:hidden block">
+            <li>Python, Rust, React;</li>
+            <li>Arch Linux, Bash;</li>
+            <li>AI Tools Usage;</li>
+            <li>PostgreSQL;</li>
+            <li>Dev-ops;</li>
+            <li>Docker;</li>
+            <li>Api;</li>
+            <li>Git;</li>
+          </ul>
+        </div>
       </div>
-      <div className=" md:w-2/3 border-[1px]  p-6 border-green-600 rounded-[15px] pl-4 md:max-h-[calc(80vh-150px)] md:overflow-y-auto md:h-[515px]">
-        <h2 className="text-xl font-bold mb-4 text-green-300 text-center">Description</h2>
-        <p className="">This is a short list of my skills. To learn more you can go to the DEVELOPMENT or MANAGEMENT page. Also, my resume can be found on LinkedIn.</p>
-        <img src="src/assets/cat2.png" className="hidden md:block py-[30%] ml-auto"/>
+      <div className="md:ml-4 mt-4 md:mt-0 md:w-2/3 w-full border-[1px] border-green-600 rounded-[15px] p-4">
+        <h3 className="text-xl font-semibold mb-2 text-center text-green-300">Description</h3>
+        text
+        <img src="src/assets/cat2.png" className="absolute hidden md:block right-12 bottom-12"/>
       </div>
     </div>
   </div>
 );
-

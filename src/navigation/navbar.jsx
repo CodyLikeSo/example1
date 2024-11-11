@@ -117,7 +117,7 @@ const InteractiveBars = () => {
           })}
         </div>
 
-        <div className="flex justify-center items-center w-full overflow-hidden ">
+        <div className="flex justify-center items-center w-full overflow-hidden">
           {bars.map((bar) => {
             const offsetX = Math.max(-100, Math.min(50, (mousePosition.x - window.innerWidth / 2) / 45));
             const offsetY = Math.max(-100, Math.min(50, (mousePosition.y - window.innerHeight / 2) / 35));
