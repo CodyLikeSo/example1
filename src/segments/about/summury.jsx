@@ -96,7 +96,7 @@ const Summury = () => {
 
         {/* Right Column: Text_about */}
         <div className="md:bg-[#202020] bg-transparent w-full md:shadow-[0_0px_10px_4px_rgba(0,0,0,0.1)] opacity-85 sm:w-full md:w-[76%] lg:w-[76%] xl:w-[76%] 2xl:w-[76%] 3xl:w-[76%] 4xl:w-[76%] md:h-[76.3%] lg:h-[56%] sm:h-[95%] h-[95%] rounded-[15px] border-[1px] border-green-600 transform transition-transform duration-300 hover:scale-[102%] overflow-hidden">
-          <div className="h-full overflow-hidden p-[4%] ">
+          <div className="h-full overflow-hidden">
             <Text_about className="text-[#d9d9d9] overflow-hidden"/>
           </div>
         </div>

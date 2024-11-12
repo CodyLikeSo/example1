@@ -1,66 +1,87 @@
-import React from 'react';
-import 'tailwindcss/tailwind.css'; // Make sure you have Tailwind CSS already set up in your project
-import parse from 'html-react-parser';
+import React, { useState, useEffect, useRef } from 'react';
 
-function ReactInfoComponent() {
-  const text = `<div>#React
+// Child component with updated text
+const TextContent = () => {
+  return (
+  <div>
+    <p className='text-green-600'># React</p>
+    <br />
+    <p className='text-green-600'>## Как это могло произойти 🤔</p>
+    <br />
+    <p>React — изначально я не был очень заинтересован в фронтенд-разработке, но понял, что мне нужно овладеть этим, чтобы довести свои проекты до осязаемого результата. Я начал изучать различные фреймворки, библиотеки и инструменты, в конечном итоге выбрав React. Вместе с изучением React я освоил HTML, CSS и JavaScript. Вместо классического CSS я использовал Tailwind для своих проектов.</p>
+    <br />
+    <p>Одним из моих первых проектов было создание этого веб-сайта, хотя раньше он выглядел совсем иначе. Теперь я могу уверенно сказать, что знаю, как работать с React и выполнять задачи фронтенд-разработки.</p>
+    <br />
+    <p className='text-green-600'>## Моя настройка</p>
+    <br />
+    <p>Несколько раз я устанавливал Arch вручную или с помощью скрипта, но остановился на <a href="https://github.com/prasanthrangan/hyprodots">Hyprodots</a> от <strong>prasanthrangan</strong> и до сих пор его использую.</p>
+  </div>
+  );
+};
 
-<span classname="text-green-600 ">## How could this even happen 🤨</span>
+// Main component that calculates and displays line numbers
+const ReactInfoComponent = () => {
+  const textRef = useRef(null);
+  const [lineCount, setLineCount] = useState(1);
 
-<span classname="text-[#d9d9d9]">React - Initially I wasn't very interested in frontend development, but I realized that I needed to master it in order to bring my </span>
-<span classname="text-[#d9d9d9]">projects to a tangible result. I started exploring different frameworks, libraries and tools, and eventually chose React. I started</span>
-<span classname="text-[#d9d9d9]">exploring different frameworks, libraries and tools, and eventually chose React. Along with learning React, I learned HTML,</span>
-<span classname="text-[#d9d9d9]">CSS, and JavaScript. Instead of classic CSS, I used Tailwind for my projects.</span>
+  useEffect(() => {
+    const calculateLines = () => {
+      if (textRef.current) {
+        const element = textRef.current;
+        const lineHeight = parseFloat(window.getComputedStyle(element).lineHeight);
+        const height = element.offsetHeight;
+        const newLineCount = Math.round(height / lineHeight);
 
-<span classname="text-[#d9d9d9]">One of my first projects was the creation of this</span>
-<span classname="text-[#d9d9d9]">website, even though it looked very different before. Now I can confidently say that I know how to work with React and handle</span>
-<span classname="text-[#d9d9d9]">frontend development tasks.</span>
+        // Ensure that the line count is always updated
+        if (newLineCount !== lineCount) {
+          setLineCount(newLineCount);
+        }
+      }
+    };
 
-## My Setup
+    // Use ResizeObserver to observe changes in the text container's size
+    const observer = new ResizeObserver(() => {
+      calculateLines();
+    });
 
-<span classname="text-[#d9d9d9]">Several times I installed Arch manually or with a script, but I settled on  <span classname="text-green-600">[Hyprdots]</span>  <span classname="text-green-300">(https://</span>
-<span className="text-green-300">github.com/prasanthrangan/hyprdots)</span> <span className="text-[#d9d9d9]">by <span className="text-[#d9d9d9] text-extrabold">**prasanthrangan**</span> and still use it.</span></div>`;
+    if (textRef.current) {
+      observer.observe(textRef.current);
+    }
 
-// Now I can confidently say that I know how to work with React and handle frontend development tasks.
+    // Cleanup observer on component unmount
+    return () => {
+      if (textRef.current) {
+        observer.unobserve(textRef.current);
+      }
+    };
+  }, [lineCount]); // Add lineCount as a dependency to ensure recalculation
 
-
-
-
-  // Split the text into lines
-  const lines = text.split('\n');
+  // Create an array of line numbers from 1 to lineCount
+  const lineNumbers = Array.from({ length: lineCount }, (_, i) => i + 1);
 
   return (
-    <div className="bg-inherit text-gray-700">
-        {/* <div className='border-t border-gray-500 pt-2'>
+    <div className="p-4 w-full">
+      <div className="flex">
+        {/* Line numbers column */}
+        <div className="text-right pr-4 text-gray-700">
+          {lineNumbers.map((lineNumber) => (
+            <div key={lineNumber} className="leading-[28px]">
+              {lineNumber}
+            </div>
+          ))}
+        </div>
 
-        </div> */}
-      <div className="grid grid-cols-12">
-        {lines.map((line, index) => (
-          <React.Fragment key={index}>
-            <div className="text-right pr-16 col-span-1">
-              {index + 1}
-            </div>
-            <div className="col-span-11 text-green-600">
-              {parse(line)}
-            </div>
-          </React.Fragment>
-        ))}
+        {/* Text column */}
+        <div ref={textRef} className="text-lg font-mono">
+          <TextContent />
+        </div>
       </div>
-      <div className="text-gray-400 mt-6"> {/* Added margin-top for spacing */}
-        {/* <div className='text-right py-2'>
-            <span>markdown </span>
-            <span className='text-green-600'>utf-8[unix] </span>
-            <span>Characters count: </span>
-            <span className='text-green-600'>
-            {`${text.length}`}
-            </span>
-        </div> */}
-      {/* <div className='border-t border-gray-500 pt-2'>
 
-        </div> */}
+      <div className="mt-2 text-sm text-green-600">
+        Estimated number of lines: {lineCount}
       </div>
     </div>
   );
-}
+};
 
 export default ReactInfoComponent;

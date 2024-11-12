@@ -1,41 +1,81 @@
-import React from 'react';
-import 'tailwindcss/tailwind.css'; // Make sure you have Tailwind CSS already set up in your project
-import parse from 'html-react-parser';
+import React, { useState, useEffect, useRef } from 'react';
 
-function RustInfoComponent() {
-  const text = `<div>#Rust
+// Child component with updated text
+const TextContent = () => {
+  return (
+  <div>
+    <p className='text-green-600'># Rust</p>
+    <br />
+    <p>Rust. A beautiful language in every respect except the threshold of entry))). It was quite hard for me to get into its syntax until the end. However, I love it and continue to learn it, as it is very useful for Python developers.</p>
+    <br />
+    <p>There are algorithms that require speed, which Rust excels at. So why not delegate a certain function to Rust instead of Python?</p>
+  </div>
+  );
+};
 
-<span className="text-green-600">## My Experience with Rust</span>
+// Main component that calculates and displays line numbers
+const RustInfoComponent = () => {
+  const textRef = useRef(null);
+  const [lineCount, setLineCount] = useState(1);
 
-<span className="text-[#d9d9d9]">I have very little experience with Rust, but I truly admire this language. I love its rigor and adaptability. I am very happy to</span>
-<span className="text-[#d9d9d9]"> devote some of my time. I am very happy to devote some of my time to learning it.</span>
+  useEffect(() => {
+    const calculateLines = () => {
+      if (textRef.current) {
+        const element = textRef.current;
+        const lineHeight = parseFloat(window.getComputedStyle(element).lineHeight);
+        const height = element.offsetHeight;
+        const newLineCount = Math.round(height / lineHeight);
 
-<span className="text-green-600">## Usage</span>
+        // Ensure that the line count is always updated
+        if (newLineCount !== lineCount) {
+          setLineCount(newLineCount);
+        }
+      }
+    };
 
-<span className="text-[#d9d9d9]">In particular, an actual application for me right now is the Bevy framework. My plans include creating my own games, so I </span>
-<span className="text-[#d9d9d9]">started learning Rust.</span></div>`;
+    // Use ResizeObserver to observe changes in the text container's size
+    const observer = new ResizeObserver(() => {
+      calculateLines();
+    });
 
-  // Split the text into lines
-  const lines = text.split('\n');
+    if (textRef.current) {
+      observer.observe(textRef.current);
+    }
+
+    // Cleanup observer on component unmount
+    return () => {
+      if (textRef.current) {
+        observer.unobserve(textRef.current);
+      }
+    };
+  }, [lineCount]); // Add lineCount as a dependency to ensure recalculation
+
+  // Create an array of line numbers from 1 to lineCount
+  const lineNumbers = Array.from({ length: lineCount }, (_, i) => i + 1);
 
   return (
-    <div className="bg-inherit text-gray-700">
-      <div className="grid grid-cols-12">
-        {lines.map((line, index) => (
-          <React.Fragment key={index}>
-            <div className="text-right pr-16 col-span-1">
-              {index + 1}
+    <div className="p-4 w-full">
+      <div className="flex">
+        {/* Line numbers column */}
+        <div className="text-right pr-4 text-gray-700">
+          {lineNumbers.map((lineNumber) => (
+            <div key={lineNumber} className="leading-[28px]">
+              {lineNumber}
             </div>
-            <div className="col-span-11 text-green-600">
-              {parse(line)}
-            </div>
-          </React.Fragment>
-        ))}
+          ))}
+        </div>
+
+        {/* Text column */}
+        <div ref={textRef} className="text-lg font-mono">
+          <TextContent />
+        </div>
       </div>
-      <div className="text-gray-400 mt-6">
+
+      <div className="mt-2 text-sm text-green-600">
+        Estimated number of lines: {lineCount}
       </div>
     </div>
   );
-}
+};
 
 export default RustInfoComponent;

@@ -1,60 +1,85 @@
-import React from 'react';
-import 'tailwindcss/tailwind.css'; // Make sure you have Tailwind CSS already set up in your project
-import parse from 'html-react-parser';
+import React, { useState, useEffect, useRef } from 'react';
 
-function ArchInfoComponent() {
-  const text = `<div>#Arch | Bash
+// Child component with updated text
+const TextContent = () => {
+  return (
+  <div>
+    <p className='text-green-600'># Arch | Bash</p>
+    <br />
+    <p className='text-green-600'>## First Steps</p>
+    <p>Words cannot describe how much I fell in love with this system when a friend first recommended it to me. I started using Linux systems with the Manjaro distribution. At that moment, I tried out the console for the first time and realized that this is what I wanted.</p>
+    <br />
+    <p>I've always lacked the quick startup and tracking of processes, like launching applications by typing a single command or working with Git repositories without touching the code editor. Also, I can't help but notice the fast performance of the system, even on an HDD, and the ability to customize it to fit my needs.</p>
+    <br />
+    <p className='text-green-600'>## My Setup</p>
+    <p>Several times I installed Arch manually or with a script, but I settled on [Hyprodots](<a href='https://github.com/prasanthrangan/hyprodots'>https://github.com/prasanthrangan/hyprodots</a>) by **prasanthrangan** and still use it.</p>
+  </div>
+  );
+};
 
-<span classname="text-green-600 ">## First Steps</span>
+// Main component that calculates and displays line numbers
+const ArchInfoComponent = () => {
+  const textRef = useRef(null);
+  const [lineCount, setLineCount] = useState(1);
 
-<span classname="text-[#d9d9d9]">Words cannot describe how much I fell in love with this system when a friend first recommended it to me. I started using</span>
-<span classname="text-[#d9d9d9]">Linux systems with the Manjaro distribution. At that moment I tried out the console for the first time and realized that this is  </span>
-<span classname="text-[#d9d9d9]">i wanted.</span>
+  useEffect(() => {
+    const calculateLines = () => {
+      if (textRef.current) {
+        const element = textRef.current;
+        const lineHeight = parseFloat(window.getComputedStyle(element).lineHeight);
+        const height = element.offsetHeight;
+        const newLineCount = Math.round(height / lineHeight);
 
-<span classname="text-[#d9d9d9]">I've always lacked the quick startup and tracking of processes like launching applications by typing a single command or</span>
-<span classname="text-[#d9d9d9]">working with Git repositories without touching the code editor. Also, I can't help but notice the fast performance of the </span>
-<span classname="text-[#d9d9d9]">system, even on an HDD, and the ability to customize it to fit my needs.</span>
+        // Ensure that the line count is always updated
+        if (newLineCount !== lineCount) {
+          setLineCount(newLineCount);
+        }
+      }
+    };
 
-## My Setup
+    // Use ResizeObserver to observe changes in the text container's size
+    const observer = new ResizeObserver(() => {
+      calculateLines();
+    });
 
-<span classname="text-[#d9d9d9]">Several times I installed Arch manually or with a script, but I settled on  <span classname="text-green-600">[Hyprdots]</span>  <span classname="text-green-300">(https://</span>
-<span className="text-green-300">github.com/prasanthrangan/hyprdots)</span> <span className="text-[#d9d9d9]">by <span className="text-[#d9d9d9] text-extrabold">**prasanthrangan**</span> and still use it.</span></div>`;
+    if (textRef.current) {
+      observer.observe(textRef.current);
+    }
 
-  // Split the text into lines
-  const lines = text.split('\n');
+    // Cleanup observer on component unmount
+    return () => {
+      if (textRef.current) {
+        observer.unobserve(textRef.current);
+      }
+    };
+  }, [lineCount]); // Add lineCount as a dependency to ensure recalculation
+
+  // Create an array of line numbers from 1 to lineCount
+  const lineNumbers = Array.from({ length: lineCount }, (_, i) => i + 1);
 
   return (
-    <div className="bg-inherit text-gray-700">
-        {/* <div className='border-t border-gray-500 pt-2'>
+    <div className="p-4 w-full">
+      <div className="flex">
+        {/* Line numbers column */}
+        <div className="text-right pr-4 text-gray-700">
+          {lineNumbers.map((lineNumber) => (
+            <div key={lineNumber} className="leading-[28px]">
+              {lineNumber}
+            </div>
+          ))}
+        </div>
 
-        </div> */}
-      <div className="grid grid-cols-12">
-        {lines.map((line, index) => (
-          <React.Fragment key={index}>
-            <div className="text-right pr-16 col-span-1">
-              {index + 1}
-            </div>
-            <div className="col-span-11 text-green-600">
-              {parse(line)}
-            </div>
-          </React.Fragment>
-        ))}
+        {/* Text column */}
+        <div ref={textRef} className="text-lg font-mono">
+          <TextContent />
+        </div>
       </div>
-      <div className="text-gray-400 mt-6"> {/* Added margin-top for spacing */}
-        {/* <div className='text-right py-2'>
-            <span>markdown </span>
-            <span className='text-green-600'>utf-8[unix] </span>
-            <span>Characters count: </span>
-            <span className='text-green-600'>
-            {`${text.length}`}
-            </span>
-        </div> */}
-      {/* <div className='border-t border-gray-500 pt-2'>
 
-        </div> */}
+      <div className="mt-2 text-sm text-green-600">
+        Estimated number of lines: {lineCount}
       </div>
     </div>
   );
-}
+};
 
 export default ArchInfoComponent;

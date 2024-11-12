@@ -166,7 +166,7 @@ function ConsoleEmulator() {
               )}
             </div>
           ))}
-          <div className="flex ">
+          <div className="flex text-xl md:text-inherit">
             <span className="mr-2">
               <span className='text-green-600'>[</span>
               <span className='text-white'>cody</span>

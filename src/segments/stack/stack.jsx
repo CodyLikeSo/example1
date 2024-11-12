@@ -6,25 +6,26 @@ const sectionsData = [
   { 
     title: 'Management', 
     words: [
-      { name: 'Scrum', description: <div className=''><span className='text-green-600'>Scrum</span> is an agile project management framework that helps teams structure and manage their work through a set of values, principles, and practices. It is used by project managers most often when handling <span className='text-green-600'>IT projects</span>. I was no exception)</div>, rating: 3 },
-      { name: 'Kanban', description: <div className=''><span className='text-green-600'>Kanban</span> is an agile project management method that enables teams to visualize their workflow and optimize efficiency through a continuous delivery approach. It is commonly utilized by project managers, especially in <span className='text-green-600'>software development</span> and other industries. I found it to be equally effective!)</div>, rating: 2 },
-      { name: 'Gantt Chart', description: <div className=''><span className='text-green-600'>Gantt Chart</span> is a project management tool that provides a visual timeline for planning and scheduling tasks. It helps teams track progress and manage dependencies effectively, making it particularly useful for <span className='text-green-600'>construction projects</span> and large-scale initiatives. I discovered it to be a valuable resource as well!)</div>, rating: 1 }
+      { name: 'Scrum', description: <div className=''><span className='text-green-600'>Scrum</span> is an agile project management framework that helps teams structure and manage their work through a set of values, principles, and practices. It is used by project managers most often when handling <span className='text-green-600'>IT projects</span>. I was no exception). <h1 className='py-4'>However, scrum alone is not enough and it is better to use a mixed approach to each project/organization.
+</h1></div>, rating: 3 },
+      { name: 'Kanban', description: <div className=''><span className='text-green-600'>Kanban</span> is an agile project management method that enables teams to visualize their workflow and optimize efficiency through a continuous delivery approach. It is commonly utilized by project managers, especially in <span className='text-green-600'>software development</span> and other industries. This is a tool I used everywhere before I even knew <span className='text-green-600'>project manager</span> positions</div>, rating: 2 },
+      { name: 'Gantt Chart', description: <div className=''><span className='text-green-600'>Gantt Chart</span> is a project management tool that provides a visual timeline for planning and scheduling tasks. It helps teams track progress and manage dependencies effectively, making it particularly useful for <span className='text-green-600'>construction projects</span> and large-scale initiatives. <h1 className='py-4'>I don't understand at all what jackass made these approaches, but the only insturment for Gantt chart that I like is <span className='text-green-600'>Google sheets</span></h1></div>, rating: 1 }
     ] 
   },
   { 
     title: 'Development', 
     words: [
-      { name: 'Python', description: <div>Description for word4</div>, rating: 2 },
-      { name: 'React', description: <div>Description for word5</div>, rating: 3 },
-      { name: 'Rust', description: <div>Description for word6</div>, rating: 1 }
+      { name: 'Python', description: <div><span className='text-green-600'>Python</span> was the first programming language I started my journey in IT with. Since then, I have come a long way, and Python has turned out to be not just a tool, but a real partner in solving automation tasks. Thanks to this language I was able to realize many interesting projects. <h1 className='py-4'>I highly recommend reading more on the <a href='/develop' className='text-green-600'>DEVELOPMENT</a> page.</h1></div>, rating: 2 },
+      { name: 'React', description: <div>I was introduced to the <span className='text-green-600'>React</span> framework by accident, as I'm not much interested in the <span className='text-green-600'>front-end</span>. But whatever you do, you need to be able to demonstrate the work of a <span className='text-green-600'>back-end</span> developer in a nice abstract. <h1 className='py-4'>After this site I hope I won't touch React for a long time😊</h1></div>, rating: 3 },
+      { name: 'Rust', description: <div>Rust. A beautiful language in every respect except the threshold of entry))). It was quite hard for me to get into its syntax until the end. However, I love it and continue to learn it, as it is very useful for python developers. <h1 className='py-4'>There are algorithms that require speed, which the plant is good at. So why not delegate a certain function to Rust instead of python?</h1></div>, rating: 1 }
     ] 
   },
   { 
     title: 'Soft-Skills', 
     words: [
-      { name: 'Communication', description: <div>Description for word7</div>, rating: 3 },
-      { name: 'English', description: <div>Description for word8</div>, rating: 2 },
-      { name: 'Problem Solving', description: <div>Description for word9</div>, rating: 1 }
+      { name: 'Communication', description: <div>I don't know how to characterize my “experience” in <span className='text-green-600'>communication</span>, but it's important to note that as a project-manager I've had many conversations with <span className='text-green-600'>customers, directors and other project-managers</span>. <h1 className='py-4'>I find it quite easy to get in touch with people in life, although I am an introvert at heart).</h1></div>, rating: 3 },
+      { name: 'English', description: <div><span className='text-green-600'>B2.</span> It is easy for me to negotiate in English, even though it is not my mother tongue.<h1 className='py-4'>Am I the only one who has caught myself thinking that when you think about something clever, you always think in English)? </h1></div>, rating: 2 },
+      // { name: 'Problem Solving', description: <div>Description for word9</div>, rating: 1 }
     ] 
   },
 ];
