@@ -81,7 +81,7 @@ const Summury = () => {
 
           {/* Random Text */}
           <div
-            className="bg-[#202020] text-sm 4xl:text-4xl sm:text-sm xl:text-xl text-white md:shadow-[0_0px_10px_4px_rgba(0,0,0,0.1)] opacity-85 sm:hidden md:block w-full h-[300px] sm:h-[300px] md:h-[26%] lg:h-[26%] xl:h-[26%] 2xl:h-[26%] 3xl:h-[26%] 4xl:h-[26%] rounded-[15px] border-[1px] border-green-600 flex items-center justify-center transform transition-transform duration-300 hover:scale-[102%] p-[4%] text-center cursor-pointer py-[15%]"
+            className="bg-[#202020] text-sm 4xl:text-4xl sm:text-sm xl:text-xl text-white md:shadow-[0_0px_10px_4px_rgba(0,0,0,0.1)] opacity-85 hidden md:block w-full h-[300px] sm:h-[300px] md:h-[26%] lg:h-[26%] xl:h-[26%] 2xl:h-[26%] 3xl:h-[26%] 4xl:h-[26%] rounded-[15px] border-[1px] border-green-600 flex items-center justify-center transform transition-transform duration-300 hover:scale-[102%] p-[4%] text-center cursor-pointer py-[15%]"
             onClick={changeRandomText}
           >
             <span
@@ -96,8 +96,8 @@ const Summury = () => {
 
         {/* Right Column: Text_about */}
         <div className="md:bg-[#202020] bg-transparent w-full md:shadow-[0_0px_10px_4px_rgba(0,0,0,0.1)] opacity-85 sm:w-full md:w-[76%] lg:w-[76%] xl:w-[76%] 2xl:w-[76%] 3xl:w-[76%] 4xl:w-[76%] md:h-[76.3%] lg:h-[56%] sm:h-[95%] h-[95%] rounded-[15px] border-[1px] border-green-600 transform transition-transform duration-300 hover:scale-[102%] overflow-hidden">
-          <div className="h-full overflow-y-auto p-[4%] ">
-            <Text_about className="text-[#d9d9d9] " />
+          <div className="h-full overflow-hidden p-[4%] ">
+            <Text_about className="text-[#d9d9d9] overflow-hidden"/>
           </div>
         </div>
       </div>

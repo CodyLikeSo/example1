@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Home } from '../segments/home/home';
 import { Project } from '../segments/projects/project';
 import { Llama } from '../segments/llama/llama';
-import { Stack } from '../segments/stack/stack';
 import { About } from '../segments/about/about';
 import { Hero } from '../segments/hero/hero';
+
+import Stack from '../segments/stack/stack';
 
 import Transition from './transition';
 

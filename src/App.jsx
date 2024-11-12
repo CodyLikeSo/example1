@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import InteractiveBars from './navigation/navbar';
+// import MouseFollower from './navigation/cursor';
 
 // import CustomCursor from 'custom-cursor-react';
 // import 'custom-cursor-react/dist/index.css';
@@ -64,6 +65,7 @@ function AnimatedRoutes() {
 
   return (
     <>
+    {/* <MouseFollower/> */}
       {/* Only show the guide popup on the home page */}
       {/* <AnimatePresence>
         {location.pathname === '/' && showGuide && <GuidePopup onClose={closeGuide} />}

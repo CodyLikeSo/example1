@@ -55,7 +55,7 @@ export const Home = () => {
   }, [activeBox]);
 
   return (
-    <div className="flex flex-col 2xl:flex-row h-full w-full py-4 px-4 gap-4">
+    <div className="flex flex-col 2xl:flex-row h-full w-full p-1 gap-4">
       <div
         className="absolute inset-0 z-0 rounded-[30px] opacity-95 hidden md:block"
         style={{
