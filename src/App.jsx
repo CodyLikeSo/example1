@@ -11,7 +11,9 @@ import Management from './segments/home/management/management';
 import Sound_design from './segments/home/sound_design/sound_design';
 import Dev_pages from './segments/home/development/dev_pages';
 
-import { ProjectDreamGave } from './segments/projects/project_dream_gave';
+import ProjectDreamGame from './segments/projects/project_dream_gave';
+import Project_gymbro from './segments/projects/project_gymbro';
+import Project_site from './segments/projects/project_site';
 
 import { AnimatePresence } from 'framer-motion'; // Import AnimatePresence for route transitions
 
@@ -77,7 +79,9 @@ function AnimatedRoutes() {
           <Route path="/manage" element={<Management />} />
           <Route path="/sound" element={<Sound_design />} />
           <Route path="/develop/pages" element={<Dev_pages />} />
-          <Route path="/project1" element={<ProjectDreamGave />} />
+          <Route path="/project1" element={<ProjectDreamGame />} />
+          <Route path="/project2" element={<Project_gymbro />} />
+          <Route path="/project3" element={<Project_site />} />
         </Routes>
       </AnimatePresence>
     </>

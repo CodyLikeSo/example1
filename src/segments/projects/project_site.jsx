@@ -5,7 +5,7 @@ import gymbro from '/src/assets/gymbro.jpg';
 import Transition from '../../navigation/transition';
 import { useNavigate } from "react-router-dom";
 
-function ProjectDreamGame() {
+function ProjectSite() {
     const images = [
         chel,
         gymbro,
@@ -55,10 +55,10 @@ function ProjectDreamGame() {
                 }}
             >
                 <h1 className="md:text-4xl text-2xl font-bold mb-4 text-center text-green-600">
-                    MY JOURNEY WITH LINUX: A PATH TO EFFICIENT WORK
+                    Site portfolio
                 </h1>
                 <p className="mb-8 text-xl">
-                    Эта страничка посвящену моему проекту - игре, которую мы делаем с моей командой. Одним из этапов создания игры является реализация MVP проекта на движке Godot, на языках GDScript и C#. В проекте я выступаю как Team-Lead и Project-manager.
+                What can I say? You can see for yourself. This is my business card site, which in the future I would like to use to develop as a media personality. I hope you like it
                 </p>
                 <div className='py-10 block md:hidden'>
                     <ImageSlider images={images} />
@@ -66,9 +66,9 @@ function ProjectDreamGame() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                        <h2 className="text-2xl font-semibold mb-2 text-green-300">• TEAM MEETING</h2>
+                        <h2 className="text-2xl font-semibold mb-2 text-green-300">• CONLUSION</h2>
                         <p>
-                            I started to put together a team to create a game countless times. Sometimes it was my and my friend's attempts to create something, where I acted as an animator and composer and he was a programmer, and sometimes I tried to gather people from different directions. In the end, I decided to have a “floating” team, where people come and go, and I take the main responsibility for the game creation. Now the team consists of 3 programmers, an animation designer, a composer, and me.
+                        I don't recommend it to anyone.) It's tinny. I'm more of a backend developer than a frontend developer, but this site made me bend over. Even at work it was not like this when I used it almost for the first time. All because of the idea of using slides in it. I still don't understand how to fix vertical page reduction. Even the implementation and deploy of the llama API, which is react for me, was not as hard as front
                         </p>
                         <div className='py-10 md:block hidden'>
                             <ImageSlider images={images} />
@@ -76,9 +76,9 @@ function ProjectDreamGame() {
                     </div>
 
                     <div>
-                        <h2 className="text-2xl font-semibold mb-2 text-green-300">• START OF DEVELOPMENT AND RESULTS</h2>
+                        <h2 className="text-2xl font-semibold mb-2 text-green-300">• IMPACT</h2>
                         <p>
-                            Full-fledged development began in March 2024 and proceeded with alternating success. We gained experience with the creation and implementation of sprites, complex structures, maps, and other things. In a word - the MVP of the project was ready. The main idea of the game is under NDA, so I won't tell you about it, but I can assure you that this game is bound to shoot. And if it doesn't - experience hasn't stopped anyone yet.
+                        At the beginning of my journey, it was important for me to get a grip on something - I was making Telegram bots. It became a good starting point for me. I understood how the interaction between the database and the script is set up, debugged a lot of errors and just the most important thing - got used to the syntax. All in all - a nice project for any beginner
                         </p>
                         <div>
                             <h1 className='py-10 text-2xl text-green-600 text-center'>Related info</h1>
@@ -106,4 +106,4 @@ function ProjectDreamGame() {
     );
 }
 
-export default Transition(ProjectDreamGame);
+export default Transition(ProjectSite);

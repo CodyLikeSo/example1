@@ -5,7 +5,7 @@ import gymbro from '/src/assets/gymbro.jpg';
 import Transition from '../../navigation/transition';
 import { useNavigate } from "react-router-dom";
 
-function ProjectDreamGame() {
+function ProjectGymBro() {
     const images = [
         chel,
         gymbro,
@@ -55,10 +55,10 @@ function ProjectDreamGame() {
                 }}
             >
                 <h1 className="md:text-4xl text-2xl font-bold mb-4 text-center text-green-600">
-                    MY JOURNEY WITH LINUX: A PATH TO EFFICIENT WORK
+                    Gym-Bro
                 </h1>
                 <p className="mb-8 text-xl">
-                    Эта страничка посвящену моему проекту - игре, которую мы делаем с моей командой. Одним из этапов создания игры является реализация MVP проекта на движке Godot, на языках GDScript и C#. В проекте я выступаю как Team-Lead и Project-manager.
+                    This project was conceived by me a long time ago - when I was just starting to learn programming. The essence is simple - a Telegram bot that tracks progress at the gym. It was written in python using PostgreSQL.
                 </p>
                 <div className='py-10 block md:hidden'>
                     <ImageSlider images={images} />
@@ -68,7 +68,7 @@ function ProjectDreamGame() {
                     <div>
                         <h2 className="text-2xl font-semibold mb-2 text-green-300">• TEAM MEETING</h2>
                         <p>
-                            I started to put together a team to create a game countless times. Sometimes it was my and my friend's attempts to create something, where I acted as an animator and composer and he was a programmer, and sometimes I tried to gather people from different directions. In the end, I decided to have a “floating” team, where people come and go, and I take the main responsibility for the game creation. Now the team consists of 3 programmers, an animation designer, a composer, and me.
+                        You can't say much about this project. It used python libraries - aiogram, psycopg2, etc. The list of project features: creating an exercise, recording the result on the exercise, sending progress in the form of a graph, registration, deleting and editing the recorded result and something else, if I haven't forgotten).
                         </p>
                         <div className='py-10 md:block hidden'>
                             <ImageSlider images={images} />
@@ -78,7 +78,7 @@ function ProjectDreamGame() {
                     <div>
                         <h2 className="text-2xl font-semibold mb-2 text-green-300">• START OF DEVELOPMENT AND RESULTS</h2>
                         <p>
-                            Full-fledged development began in March 2024 and proceeded with alternating success. We gained experience with the creation and implementation of sprites, complex structures, maps, and other things. In a word - the MVP of the project was ready. The main idea of the game is under NDA, so I won't tell you about it, but I can assure you that this game is bound to shoot. And if it doesn't - experience hasn't stopped anyone yet.
+                        At the beginning of my journey, it was important for me to get a grip on something - I was making Telegram bots. It became a good starting point for me. I understood how the interaction between the database and the script is set up, debugged a lot of errors and just the most important thing - got used to the syntax. All in all - a nice project for any beginner
                         </p>
                         <div>
                             <h1 className='py-10 text-2xl text-green-600 text-center'>Related info</h1>
@@ -106,4 +106,4 @@ function ProjectDreamGame() {
     );
 }
 
-export default Transition(ProjectDreamGame);
+export default Transition(ProjectGymBro);

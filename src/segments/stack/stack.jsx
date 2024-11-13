@@ -117,9 +117,9 @@ const Stack = () => {
                   onClick={() => toggleSection(index)}
                   className="w-full p-2 text-left text-md md:text-lg lg:text-lg bg-opacity-5 text-white rounded-[15px] transition-colors duration-300 ease-in-out hover:bg-opacity-20 hover:text-green-600"
                 >
-                  <div className='md:px-10 flex items-center object-center'>
+                  <div className='md:px-2 lg:px-10 flex items-center object-center'>
                     <IoIosArrowForward 
-                      className={`md:absolute left-14 mr-2 transition-transform duration-700 ${rotatedSections[index] ? 'rotate-90' : ''}`} 
+                      className={`md:absolute block md:hidden lg:block left-14 mr-2 transition-transform duration-700 ${rotatedSections[index] ? 'rotate-90' : ''}`} 
                     />
                     <h1 className=''>{section.title}</h1>
                   </div>
