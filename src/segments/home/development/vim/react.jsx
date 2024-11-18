@@ -6,15 +6,11 @@ const TextContent = () => {
   <div>
     <p className='text-green-600'># React</p>
     <br />
-    <p className='text-green-600'>## Как это могло произойти 🤔</p>
+    <p className='text-green-600'>## How could this happen🤔</p>
     <br />
-    <p>React — изначально я не был очень заинтересован в фронтенд-разработке, но понял, что мне нужно овладеть этим, чтобы довести свои проекты до осязаемого результата. Я начал изучать различные фреймворки, библиотеки и инструменты, в конечном итоге выбрав React. Вместе с изучением React я освоил HTML, CSS и JavaScript. Вместо классического CSS я использовал Tailwind для своих проектов.</p>
+    <p>Initially I wasn't very interested in frontend development, but I realized that I needed to master it to bring my projects to a visible result. I started exploring different frameworks, libraries and tools, and eventually chose React. Along with learning React, I had to familiarize myself with HTML, CSS and JavaScript.</p>
     <br />
-    <p>Одним из моих первых проектов было создание этого веб-сайта, хотя раньше он выглядел совсем иначе. Теперь я могу уверенно сказать, что знаю, как работать с React и выполнять задачи фронтенд-разработки.</p>
-    <br />
-    <p className='text-green-600'>## Моя настройка</p>
-    <br />
-    <p>Несколько раз я устанавливал Arch вручную или с помощью скрипта, но остановился на <a href="https://github.com/prasanthrangan/hyprodots">Hyprodots</a> от <strong>prasanthrangan</strong> и до сих пор его использую.</p>
+    <p> Along with classic CSS, I used Tailwind for my projects. One of my first projects was the creation of this website, although it used to look very different. Now I can confidently say that I know how to work with React and handle frontend development tasks.</p>
   </div>
   );
 };

@@ -6,37 +6,37 @@ const TextContent = () => {
     <div>
       <p className='text-green-600'># Python</p>
       <br />
-      <p className='text-green-600'>## Опыт</p>
+      <p className='text-green-600'>## Experience</p>
       <br />
-      <p>Python стал для меня первым языком программирования, с которого я начал свой путь в IT. С тех пор я прошел долгий путь, и Python оказался не просто инструментом, а настоящим партнером в решении сложных задач. Благодаря этому языку я смог реализовать множество интересных проектов, включая:</p>
-      <br />
-      <ul>
-        <li><strong><span className='text-green-600'>API-скрипты</span></strong>: Разработка RESTful API для интеграции с различными сервисами, что значительно упростило взаимодействие между системами.</li>
-        <br />
-        <li><strong><span className='text-green-600'>Телеграм-боты</span></strong>: Создание ботов для автоматизации процессов и взаимодействия с пользователями, что позволяет предоставлять информацию в реальном времени.</li>
-        <br />
-        <li><strong><span className='text-green-600'>Алгоритмы в области Data Science и Machine Learning</span></strong>: Реализация моделей машинного обучения с использованием библиотек, таких как scikit-learn и TensorFlow, что дало мне возможность анализировать данные и делать предсказания на основе статистических методов.</li>
-        <br />
-        <li><strong><span className='text-green-600'>Работа с базами данных</span></strong>: Опыт работы с SQL и NoSQL базами данных, включая PostgreSQL и MongoDB, что позволяет эффективно управлять данными и оптимизировать запросы.</li>
-      </ul>
-      <br />
-      <p>Мне нравится легкий порог вхождения и огромный потенциал для обучения, который предоставляет Python. Все говорят, что язык легкий, но это всего лишь инструмент. По-настоящему сложные задачи возникают на этапе проектирования архитектуры, оптимизации производительности и обеспечения безопасности приложений.</p>
-      <br />
-      <p>В настоящее время, работая проектным менеджером, я активно использую Python для автоматизации задач как своих, так и компании в целом. Это включает написание скриптов для обработки данных, генерации отчетов и автоматизации рутинных процессов, что позволяет команде сосредоточиться на более важных аспектах проектов.</p>
-      <br />
-      <p>Мне безумно нравится проектирование сервисов с самых основ как в роли проектного менеджера, так и разработчика. Углубляясь в свой опыт с Python, я сталкиваюсь с более сложными аспектами бэкенд-разработки, которые требуют понимания архитектуры приложений и технологий. Например:</p>
+      <p>Python became the first programming language for me, from which I started my journey in IT. Since then, I have come a long way, and Python turned out to be not just a tool, but a true partner in solving complex problems. Thanks to this language, I was able to implement many interesting projects, including:</p>
       <br />
       <ul>
-        <li><strong><span className='text-green-600'>Микросервисная архитектура</span></strong>: Проектирование и реализация микросервисов с использованием фреймворков, таких как FastAPI и Flask. Это позволяет создавать масштабируемые и гибкие системы, где каждый сервис отвечает за свою функциональность и может разрабатываться независимо. Даже будучи проектным менеджером, иногда приходилось вручную создавать API на FastAPI с последующим деплоем.</li>
-        <br />
-        <li><strong><span className='text-green-600'>Асинхронное программирование</span></strong>: Использование asyncio и библиотек, таких как aiohttp, для создания высокопроизводительных приложений, способных обрабатывать множество запросов одновременно. Это особенно полезно для приложений, требующих высокой пропускной способности и низкой задержки.</li>
-        <br />
-        <li><strong><span className='text-green-600'>Кэширование и оптимизация производительности</span></strong>: Внедрение систем кэширования, таких как Redis или Memcached, для уменьшения нагрузки на базу данных и ускорения ответов приложений. Оптимизация запросов и использование индексов также играют ключевую роль в повышении производительности.</li>
-        <br />
-        <li><strong><span className='text-green-600'>Контейнеризация и оркестрация</span></strong>: Использование Docker для создания контейнеров, что упрощает развертывание и управление приложениями. Оркестрация с помощью Kubernetes позволяет автоматизировать развертывание. Пока я использовал только Docker, но мне очень интересна dev-ops сфера, и я надеюсь в скором времени ближе познакомиться с Kubernetes. Возможно, пока вы это читаете, я уже занимаюсь чем-то подобным!</li>
+          <li><strong><span className='text-green-600'>API Scripts</span></strong>: Development of RESTful APIs for integration with various services, significantly simplifying interaction between systems.</li>
+          <br />
+          <li><strong><span className='text-green-600'>Telegram Bots</span></strong>: Creation of bots for automating processes and interacting with users, allowing for real-time information delivery.</li>
+          <br />
+          <li><strong><span className='text-green-600'>Algorithms in Data Science and Machine Learning</span></strong>: Implementation of machine learning models using libraries such as scikit-learn and TensorFlow, enabling me to analyze data and make predictions based on statistical methods.</li>
+          <br />
+          <li><strong><span className='text-green-600'>Working with Databases</span></strong>: Experience with SQL and NoSQL databases, including PostgreSQL and MongoDB, allowing for efficient data management and query optimization.</li>
       </ul>
       <br />
-      <p>Python стал для меня не просто языком программирования, а прочной основой для дальнейшего развития и достижения новых высот в карьере.</p>
+      <p>I appreciate the low entry barrier and the immense potential for learning that Python offers. Everyone says the language is easy, but it is just a tool. The truly complex challenges arise during the architecture design phase, performance optimization, and ensuring application security.</p>
+      <br />
+      <p>Currently, as a project manager, I actively use Python to automate tasks both for myself and for the company as a whole. This includes writing scripts for data processing, report generation, and automating routine processes, allowing the team to focus on more critical aspects of projects.</p>
+      <br />
+      <p>I absolutely love designing services from the ground up, both as a project manager and a developer. As I delve deeper into my experience with Python, I encounter more complex aspects of backend development that require an understanding of application architecture and technologies. For example:</p>
+      <br />
+      <ul>
+        <li><strong><span className='text-green-600'>Microservices Architecture</span></strong>: Designing and implementing microservices using frameworks such as FastAPI and Flask. This allows for the creation of scalable and flexible systems, where each service is responsible for its own functionality and can be developed independently. Even as a project manager, I sometimes had to manually create APIs with FastAPI followed by deployment.</li>
+        <br />
+        <li><strong><span className='text-green-600'>Asynchronous Programming</span></strong>: Utilizing asyncio and libraries like aiohttp to create high-performance applications capable of handling multiple requests simultaneously. This is especially useful for applications requiring high throughput and low latency.</li>
+        <br />
+        <li><strong><span className='text-green-600'>Caching and Performance Optimization</span></strong>: Implementing caching systems such as Redis or Memcached to reduce database load and speed up application responses. Query optimization and the use of indexes also play a key role in enhancing performance.</li>
+        <br />
+        <li><strong><span className='text-green-600'>Containerization and Orchestration</span></strong>: Using Docker to create containers, which simplifies the deployment and management of applications. Orchestration with Kubernetes allows for automated deployment. While I have only used Docker so far, I am very interested in the DevOps field and hope to get more familiar with Kubernetes soon. Perhaps by the time you read this, I am already working on something similar!</li>
+    </ul>
+<br />
+<p>Python has become for me not just a programming language, but a solid foundation for further development and achieving new heights in my career.</p>
     </div>
   );
 };

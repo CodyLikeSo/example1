@@ -88,7 +88,7 @@ const GanttChart = () => {
           
           {/* Introduction paragraph */}
           <p className="mb-6">
-            За последние три с небольшим года я успел попробовать себя в роли проектного менеджера и Python-программиста. Я очень доволен проектами, в которых участвовал, и тем опытом, который получил. Эти годы помогли мне не только развить навыки в управлении проектами, но и стать лучше как программист, аналитик и DevOps-специалист.
+          Over the past three and a bit years, I have had the opportunity to try my hand at being a project manager and Python programmer. I'm very satisfied with the projects I've been involved in and the experience I've gained. These years have helped me not only to develop skills in project management, but also to become better as a programmer, analyst and DevOps specialist.
           </p>
 
           {/* Section 1 */}
@@ -99,12 +99,12 @@ const GanttChart = () => {
             <div className="py-5 md:flex md:justify-between">
               <div className="md:w-1/2 p-1">
                 <p>
-                  MoneyFactory - быстрорастущий финтех-стартап, который буквально начал свое существование вместе со мной. Когда я начал искать свою первую работу я наткнулся на их вакансию python-разработчика. Однако я занимался не только python-разработкой.
+                MoneyFactory is a fast-growing fintech startup that literally started with me. When I started looking for my first job I came across their job posting for a python developer. However, I was doing more than just python development.
                 </p>
               </div>
               <div className="md:w-1/2 p-1">
                 <p>
-                  В начале мне давали мелкие задания по типу генерации картинок для наших продуктов, работы над специальными текстовыми документами, с упором в анализ и ресерч, а также работу с базами данных PostgreSQL. Потом мне начали наконец-таки давать задания связанные с python - разработка аггрегаторов, парсеров и скраперов, телеграм-ботом, выстраивание и ведение API сервисов. В последующем, узнав что я также работал c react меня стали потихоньку внедрять в Web разработку. Я участвовал в создании их основного сайта. Это работа дала мне немало опыта как backend и frontend программисту.
+                In the beginning, I was given small tasks like generating images for our products, working on special text documents, with a focus on analysis and reserch, as well as working with PostgreSQL databases. Then I was finally given tasks related to python - development of aggregators, parsers and scrapers, telegram bot, building and maintaining API services. Later, having learned that I also worked with react I was slowly introduced into Web development. I participated in the creation of their main site. This work gave me a lot of experience as a backend and frontend programmer.
                 </p>
               </div>
             </div>
@@ -134,12 +134,12 @@ const GanttChart = () => {
             <div className="py-5 md:flex md:justify-between">
               <div className="md:w-1/2 p-1">
                 <p>
-                  IVCapital — небольшой финтех-стартап, куда я пришёл по приглашению одногруппника. В нашей небольшой команде мне пришлось взять на себя несколько ролей: я работал как аналитик данных и проектный менеджер.
+                IVCapital is a small fintech startup where I came at the invitation of a classmate. In our small team, I had to take on several roles: I worked as a data analyst and project manager.
                 </p>
               </div>
               <div className="md:w-1/2 p-1">
                 <p>
-                  В роли DS-аналитика я занимался базами данных, собирая статистику по эффективности наших продуктов, включая HFT-бота для торговли на бирже. Также выполнял небольшие задания, такие как создание телеграм-ботов и их интеграция с каналами. Как проектный менеджер, я вел документацию, распределял и структурировал задачи, а также общался с заказчиками. Главное, что я вынес из работы в IVCapital — это способность адаптироваться к новым условиям и технологиям, как с точки зрения программиста, так и проектного менеджера.
+                In the role of DS-analyst, I worked on databases, gathering statistics on the effectiveness of our products, including an HFT-bot for trading on the stock exchange. I also performed small tasks, such as creating Telegram bots and integrating them with channels. As a project manager, I maintained documentation, distributed and structured tasks, and communicated with customers. The main thing I learned from working at IVCapital is the ability to adapt to new conditions and technologies, both from the point of view of a programmer and a project manager.
                 </p>
               </div>
             </div>
@@ -173,12 +173,12 @@ const GanttChart = () => {
             <div className="py-5 md:flex md:justify-between">
               <div className="md:w-1/2 p-1">
                 <p>
-                  JetSite — B2B команда по созданию веб-приложений на любой вкус и цвет. В этой компании я работал полноценным проектным менеджером и руководил командой из 4-8 человек в зависимости от проекта. У нас было около шести проектов: два сайта с акцентом на фронтенд, три — на бэкенд с использованием OpenAI API, и одно мобильное приложение, в разработке которого я также принимал участие.
+                JetSite is a B2B team building web applications for all tastes and colors. At this company, I worked as a full-fledged project manager and managed a team of 4-8 people depending on the project. We had about six projects: two websites with a focus on the frontend, three on the backend using OpenAI APIs, and one mobile app, which I was also involved in developing.
                 </p>
               </div>
               <div className="md:w-1/2 p-1">
                 <p>
-                  Моя работа заключалась в ведении технической и проектной документации, взаимодействии с командой и, что самое важное, общении с заказчиками. В этом аспекте я значительно прокачал свои навыки, так как мне приходилось вести переговоры с техническими и бизнес-специалистами заказчиков для всех шести проектов. Это было довольно стрессово, особенно учитывая, что я попал в ситуацию, когда заказчики уже были недовольны, так как мой босс не справлялся с нагрузкой. Эта работа научила меня настоящему искусству управления проектами в условиях высокой нагрузки и стресса.
+                My job was to maintain technical and project documentation, interact with the team and, most importantly, communicate with the customers. In this aspect, I pumped up my skills considerably, as I had to negotiate with the customers' technical and business specialists for all six projects. This was quite stressful, especially since I was put in a situation where the customers were already unhappy as my boss was not handling the workload. This job taught me the true art of project management in a high-stress, high-stress environment.
                 </p>
               </div>
             </div>
@@ -200,12 +200,12 @@ const GanttChart = () => {
             <div className="py-5 md:flex md:justify-between">
               <div className="md:w-1/2 p-1">
                 <p>
-                  Svetoch Press — популярный издатель книг из Петербурга. В отличие от предыдущих мест работы, здесь были выстроены бизнес-процессы. Если моя предыдущая работа научила меня действовать в условиях стресса и постоянных конфликтов, то здесь все было совершенно иначе. Я работал размеренно, занимаясь проектной документацией и единолично руководил созданием основного продукта-сервиса. Я устанавливал сроки и взаимодействовал с заказчиками.
+                Svetoch Press is a popular book publisher from St. Petersburg. Unlike my previous jobs, business processes were built here. If my previous job had taught me how to operate under stress and constant conflict, things were completely different here. I worked in a measured manner, dealing with project documentation and single-handedly managing the creation of the main product-service. I set deadlines and interacted with customers.
                 </p>
               </div>
               <div className="md:w-1/2 p-1">
                 <p>
-                  На этой работе я почувствовал, что мне доверяют и уважают. Я координировал все отделы, участвующие в создании сервиса — бэкенд, фронтенд и дизайн. Кроме того, я также выступал в роли разработчика, дорабатывая необходимые для нашего сервиса API и самостоятельно деплоил их с помощью Docker. Эта работа показала мне, каково это — быть частью спокойной команды, профессионально знающей свое дело, без конфликтов и недопонимания.
+                On this job I felt that I was trusted and respected. I coordinated all the departments involved in creating the service - backend, frontend and design. In addition, I also acted as a developer, finalizing the APIs needed for our service and deploying them myself using Docker. This work showed me what it's like to be part of a calm team that knows its business professionally, without conflicts and misunderstandings.
                 </p>
               </div>
             </div>

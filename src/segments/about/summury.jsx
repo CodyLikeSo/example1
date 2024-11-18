@@ -19,7 +19,10 @@ const textOptions = [
   "Get your ass back here!",
   "(･`_´･ )",
   "There wasn't enough budget for the Sound_design page.",
-  "🤨"
+  "🤨",
+  "Llama somitimes lies)",
+  "Будь как дома путник",
+  "Horror-punk?"
 ];
 
 const Summury = () => {

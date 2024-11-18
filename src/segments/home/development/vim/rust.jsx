@@ -6,9 +6,15 @@ const TextContent = () => {
   <div>
     <p className='text-green-600'># Rust</p>
     <br />
-    <p>Rust. A beautiful language in every respect except the threshold of entry))). It was quite hard for me to get into its syntax until the end. However, I love it and continue to learn it, as it is very useful for Python developers.</p>
+    <p>While I don't consider myself an expert in Rust, I can't help but share my experience with the language. I use Rust for tasks where speed is critical. In some cases it is easier to solve a problem using Python, but for example, if you need to implement an algorithm for processing large data sets, it is much more efficient to write a script in Rust. This language allows you to “delegate” tasks when you need high performance and stability. However, for me there are more priority applications😉</p>
     <br />
-    <p>There are algorithms that require speed, which Rust excels at. So why not delegate a certain function to Rust instead of Python?</p>
+    <p className='text-green-600'>## Bevy</p>
+    <br />
+    <p>My introduction to Rust began with a desire to create games. At the moment, the Rust community, especially in the context of Bevy, lacks scale, which affects the available documentation. Nevertheless, I am very interested in exploring this field. You can learn more about my project in this area here.</p>
+    <br />
+    <p className='text-green-600'>## Rocket | Tokio</p>
+    <br />
+    <p>To develop the APIs needed in my work, I used Rocket and Tokio to implement asynchrony. While I have not yet achieved significant mastery of these tools, using them does not require a deep understanding of all the nuances.</p>
   </div>
   );
 };
