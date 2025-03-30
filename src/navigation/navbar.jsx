@@ -9,6 +9,10 @@ import Stack from '../segments/stack/stack';
 
 import Transition from './transition';
 
+import lines  from '../assets/lines.png';
+import mountaion_glow  from '../assets/mountaion_glow.png';
+
+
 
 const InteractiveBars = () => {
   const [activeScreen, setActiveScreen] = useState(null);
@@ -75,7 +79,7 @@ const InteractiveBars = () => {
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: `url('/src/assets/lines.png')`,
+          backgroundImage: `url(${lines})`,
           backgroundSize: '150%', // Set to 200% to make it 2x size
           backgroundPosition: 'center 33%',
           backgroundRepeat: 'no-repeat',
@@ -167,7 +171,7 @@ const InteractiveBars = () => {
             }}
           >
             <div className="container mx-auto p-4">
-              <img src='src/assets/mountaion_glow.png' className="absolute bottom-0 left-0 right-0 mx-auto object-contain rounded-[30px]" alt="Mountain" />
+              <img src={mountaion_glow} className="absolute bottom-0 left-0 right-0 mx-auto object-contain rounded-[30px]" alt="Mountain" />
             </div>
             <Hero/>
           </div>

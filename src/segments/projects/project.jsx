@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import { GrArchlinux } from "react-icons/gr";
 
+import stars2 from '../../assets/stars2.png';
+
 const projects = [
   { 
     id: 1, 
@@ -63,7 +65,7 @@ export const Project = () => {
       <div
         className="absolute inset-0 z-0 rounded-[30px] opacity-95 hidden md:block"
         style={{
-          backgroundImage: `url('src/assets/stars2.png')`,
+          backgroundImage: `url(${stars2})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',

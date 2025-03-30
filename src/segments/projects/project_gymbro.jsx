@@ -5,6 +5,8 @@ import gymbro from '/src/assets/gymbro.jpg';
 import Transition from '../../navigation/transition';
 import { useNavigate } from "react-router-dom";
 
+import lines from '../../assets/lines.png';
+
 function ProjectGymBro() {
     const images = [
         chel,
@@ -40,7 +42,7 @@ function ProjectGymBro() {
             <div
                 className="absolute inset-0"
                 style={{
-                    backgroundImage: `url('/src/assets/lines.png')`,
+                    backgroundImage: `url(${lines})`,
                     backgroundSize: '150%',
                     backgroundPosition: 'center 33%',
                     backgroundRepeat: 'no-repeat',

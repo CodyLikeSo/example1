@@ -4,6 +4,8 @@ import Box2 from "./boxes/box2";
 import Box1 from "./boxes/box1";
 import Box from "./boxes/box";
 
+import stars2 from '../../assets/stars2.png';
+
 export const Home = () => {
   const [activeBox, setActiveBox] = useState(null);
   const navigate = useNavigate();
@@ -59,7 +61,7 @@ export const Home = () => {
       <div
         className="absolute inset-0 z-0 rounded-[30px] opacity-95 hidden md:block"
         style={{
-          backgroundImage: `url('src/assets/stars2.png')`,
+          backgroundImage: `url(${stars2})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',

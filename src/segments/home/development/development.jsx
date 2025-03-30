@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ConsoleSlide from "./console_slide";
 import Transition from "../../../navigation/transition";
+import lines from '../../../assets/lines.png';
+
 
 const Development = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -48,7 +50,7 @@ const Development = () => {
             <div
               className="absolute inset-0 z-0"
               style={{
-                backgroundImage: `url('src/assets/lines.png')`,
+                backgroundImage: `url(${lines})`,
                 backgroundSize: '150%', // Set to 200% to make it 2x size
                 backgroundPosition: 'center 33%',
                 backgroundRepeat: 'no-repeat',

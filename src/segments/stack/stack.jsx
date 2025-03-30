@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { IoIosArrowForward } from "react-icons/io";
 import { FaCircle } from "react-icons/fa";
 
+import stars2 from '../../assets/stars2.png';
+
 const sectionsData = [
   { 
     title: 'Management', 
@@ -100,7 +102,7 @@ const Stack = () => {
     <div className="w-full h-full">
       <div className="absolute inset-0 rounded-[30px] opacity-95 hidden md:block"
            style={{
-             backgroundImage: `url('src/assets/stars2.png')`,
+             backgroundImage: `url(${stars2})`,
              backgroundSize: 'cover',
              backgroundPosition: 'center',
              backgroundRepeat: 'no-repeat',

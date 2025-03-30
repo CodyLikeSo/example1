@@ -6,6 +6,10 @@ import ReactInfoComponent from './vim/react';
 import PythonInfoComponent from './vim/python';
 import RustInfoComponent from './vim/rust';
 
+import stars2 from '../../../assets/stars2.png';
+import lines from '../../../assets/lines.png';
+
+
 const tabs = [
   { id: 'Arch', label: 'Arch', component: ArchInfoComponent },
   { id: 'Rust', label: 'Rust', component: RustInfoComponent },
@@ -99,7 +103,7 @@ const Dev_pages = () => {
                   <div
                     className="absolute inset-0 z-0 "
                     style={{
-                      backgroundImage: `url('/src/assets/lines.png')`,
+                      backgroundImage: `url(${lines})`,
                       backgroundSize: '150%', // Set to 200% to make it 2x size
                       backgroundPosition: 'center 33%',
                       backgroundRepeat: 'no-repeat',
@@ -136,7 +140,7 @@ const Dev_pages = () => {
                   <div
                     className="absolute inset-0 z-0 hidden"
                     style={{
-                      backgroundImage: `url('/src/assets/stars2.png')`,
+                      backgroundImage: `url(${stars2})`,
                       backgroundSize: '100%', // Set to 200% to make it 2x size
                     }}
                   ></div>

@@ -1,6 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Text_about } from './text_about';
 
+import stars2 from '../../assets/stars2.png';
+import monkey from '../../assets/monkey.jpg';
+
+
+
 // List of possible texts
 const textOptions = [
   "Press Alt (─‿─)",
@@ -66,7 +71,7 @@ const Summury = () => {
             <div
               className="absolute inset-0 z-0 rounded-[30px] opacity-95 hidden md:block"
               style={{
-                backgroundImage: `url('src/assets/stars2.png')`,
+                backgroundImage: `url(${stars2})`,
                 backgroundSize: 'cover', // or 'contain' depending on your needs
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
@@ -79,7 +84,7 @@ const Summury = () => {
           
           {/* Photo */}
           <div className="w-full hidden sm:hidden md:block  h-[300px] sm:h-[300px] md:h-[46.3%]  lg:h-[26%] md:shadow-[0_0px_10px_4px_rgba(0,0,0,0.1)] xl:h-[26%] 2xl:h-[26%] 3xl:h-[26%] 4xl:h-[26%] rounded-[15px] border-[1px] border-green-600  items-center justify-center overflow-hidden transform transition-transform duration-300 hover:scale-[102%]">
-            <img src='src/assets/monkey.jpg' className="w-full h-full object-cover rounded-[15px]" alt="Monkey" />
+            <img src={monkey} className="w-full h-full object-cover rounded-[15px]" alt="Monkey" />
           </div>
 
           {/* Random Text */}
