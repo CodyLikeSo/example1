@@ -78,6 +78,10 @@ function ConsoleEmulator() {
     sound: {
       action: () => navigate('/sound'),
       description: 'Redirects to the sound design page.'
+    },
+    exit: {
+      action: () => navigate('/'),
+      description: 'Back to main'
     }
   };
   
